@@ -1,0 +1,12 @@
+Fold,Feature_Rank_in_Fold,Feature_Name
+1,1,CT_MORPHOLOGICAL_MaxIntensityCoor-PerimeterCoor-3DSmallestDist(IBSI:No)[mm]
+1,2,CT_INTENSITY-BASED_TotalLesionGlycolysis(IBSI:No)[]
+1,3,CT_GLSZM_ZoneSizeVariance(IBSI:3NSA)
+1,4,CT_INTENSITY-HISTOGRAM_MinimumHistogramGradientGreyLevel(IBSI:RHQZ)[Intensity]
+1,5,PET1_INTENSITY-HISTOGRAM_MaximumHistogramGradient(IBSI:12CE)[Intensity]
+2,1,CT_GLSZM_ZoneSizeVariance(IBSI:3NSA)
+2,2,CT_GLSZM_LargeZoneEmphasis(IBSI:48P8)
+3,1,CT_GLSZM_ZoneSizeVariance(IBSI:3NSA)
+3,2,CT_GLSZM_LargeZoneEmphasis(IBSI:48P8)
+4,1,CT_GLSZM_ZoneSizeVariance(IBSI:3NSA)
+4,2,CT_GLSZM_LargeZoneEmphasis(IBSI:48P8)
