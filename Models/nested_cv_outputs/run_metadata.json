@@ -12,9 +12,9 @@
     "run_metadata.json"
   ],
   "config": {
-    "VOLUME_COL": "_original_shape_MeshVolume_PET1",
+    "VOLUME_COL": "Morph_Volume[cm3]",
     "LABEL_COL": "Label",
-    "GROUP_COL": "INFO_PatientName_PET",
+    "GROUP_COL": "INFO_PatientName",
     "SIGNIFICANCE_ALPHA": 0.01,
     "SIGNIFICANCE_METHOD": "fdr_bh",
     "VOLUME_CORR_THRESHOLD": 0.5,
@@ -24,7 +24,7 @@
     "STABILITY_N_ITERATIONS": 2000,
     "STABILITY_SUBSAMPLE_RATIO": 0.6,
     "STABILITY_SELECTION_THRESHOLD": 0.75,
-    "TARGET_PFER": 1000.0,
+    "TARGET_PFER": 1.0,
     "ELASTICNET_L1_RATIOS": [
       0.6,
       0.7,
