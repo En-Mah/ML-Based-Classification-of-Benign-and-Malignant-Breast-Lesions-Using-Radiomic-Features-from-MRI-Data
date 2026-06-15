@@ -1,0 +1,19 @@
+{
+    "run_name": "step_3_smote_nested_cv",
+    "baseline_dir": "./nested_cv_outputs/step_2_baseline_nested_cv_no_smote",
+    "lasso_dir": "./nested_cv_outputs/step_3_smote_nested_cv",
+    "comparison_dir": "./nested_cv_outputs/step_3_smote_nested_cv/step_4c_lasso_vs_baseline_reports",
+    "best_baseline_model_by_roc_auc": "XGBoost",
+    "best_baseline_roc_auc": 0.598224852071006,
+    "best_lasso_model_by_roc_auc": "SVM_RBF",
+    "best_lasso_roc_auc": 0.6147928994082841,
+    "largest_auc_gain_model": "SVM_RBF",
+    "largest_auc_gain": 0.13727810650887584,
+    "use_smote": true,
+    "fs_method": "lasso_only",
+    "fs_n_features": 16,
+    "n_outer_folds": 5,
+    "n_inner_folds": 3,
+    "n_models_compared": 10,
+    "feature_overlap_summary": {}
+}

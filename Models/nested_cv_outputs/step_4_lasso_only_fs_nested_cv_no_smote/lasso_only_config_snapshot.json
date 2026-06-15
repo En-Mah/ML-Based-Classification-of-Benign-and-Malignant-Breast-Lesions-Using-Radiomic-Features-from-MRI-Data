@@ -1,0 +1,27 @@
+{
+    "RUN_NAME": "step_4_lasso_only_fs_nested_cv_no_smote",
+    "SAVE_DIR": "./nested_cv_outputs/step_4_lasso_only_fs_nested_cv_no_smote",
+    "USE_SMOTE": false,
+    "FS_METHOD": "lasso_only",
+    "FS_N_FEATURES": 16,
+    "LASSO_CS": [
+        0.001,
+        0.0027825594022071257,
+        0.007742636826811269,
+        0.021544346900318832,
+        0.05994842503189409,
+        0.1668100537200059,
+        0.46415888336127775,
+        1.2915496650148828,
+        3.593813663804626,
+        10.0
+    ],
+    "LASSO_COEF_THRESHOLD": 1e-06,
+    "N_OUTER_FOLDS": 5,
+    "N_INNER_FOLDS": 3,
+    "N_OPTUNA_TRIALS": 20,
+    "RANDOM_STATE": 100,
+    "N_SAMPLES": 117,
+    "N_FEATURES": 145,
+    "N_PATIENTS": 48
+}
