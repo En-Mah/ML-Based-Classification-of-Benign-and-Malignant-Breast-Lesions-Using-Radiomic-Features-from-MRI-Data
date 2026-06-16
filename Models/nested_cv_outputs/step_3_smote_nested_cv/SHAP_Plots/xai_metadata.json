@@ -1,16 +1,16 @@
 {
-  "best_model_name": "RandomForest",
+  "best_model_name": "ExtraTrees",
   "selection_criterion": "Highest nested-CV Mean_AUC from df_summary",
   "oof_metrics": {
-    "oof_auc": 0.5535502958579881,
-    "oof_pr_auc": 0.5876213825219102,
+    "oof_auc": 0.5967455621301775,
+    "oof_pr_auc": 0.6167721864707584,
     "oof_accuracy": 0.5641025641025641,
-    "oof_balanced_accuracy": 0.5634615384615385,
-    "oof_precision": 0.6166666666666667,
-    "oof_recall": 0.5692307692307692,
-    "oof_f1": 0.592,
-    "oof_specificity": 0.5576923076923077,
-    "oof_kappa": 0.12571428571428578
+    "oof_balanced_accuracy": 0.5615384615384615,
+    "oof_precision": 0.6129032258064516,
+    "oof_recall": 0.5846153846153846,
+    "oof_f1": 0.5984251968503937,
+    "oof_specificity": 0.5384615384615384,
+    "oof_kappa": 0.12237093690248568
   },
   "kappa_interpretation": "Slight agreement / very weak",
   "n_total_samples": 117,
@@ -18,10 +18,10 @@
   "stability_threshold_min_folds": 2,
   "n_feature_selection_folds": 5,
   "best_params_aggregated": {
-    "max_depth": 5,
-    "max_features": null,
+    "max_depth": 7,
+    "max_features": "log2",
     "min_samples_leaf": 5,
-    "n_estimators": 150
+    "n_estimators": 200
   },
   "features_original": [
     "Morph_Compactness2",
@@ -74,7 +74,7 @@
     "Stable features are selected by recurrence across outer folds, not by using all numeric features."
   ],
   "saved_files": {
-    "model_artifact": "./nested_cv_outputs/step_3_smote_nested_cv/SHAP_Plots/Best_Model_RandomForest_XAI_Artifact.joblib",
+    "model_artifact": "./nested_cv_outputs/step_3_smote_nested_cv/SHAP_Plots/Best_Model_ExtraTrees_XAI_Artifact.joblib",
     "feature_stability": "./nested_cv_outputs/step_3_smote_nested_cv/SHAP_Plots/xai_feature_stability.csv",
     "shap_importance": "./nested_cv_outputs/step_3_smote_nested_cv/SHAP_Plots/shap_feature_importance.csv",
     "summary_dot_png": "./nested_cv_outputs/step_3_smote_nested_cv/SHAP_Plots/shap_summary_dot_stable.png",
