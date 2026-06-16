@@ -2,7 +2,7 @@
     "RUN_NAME": "step_2_baseline_nested_cv_no_smote",
     "SAVE_DIR": "./nested_cv_outputs/step_2_baseline_nested_cv_no_smote",
     "USE_SMOTE": false,
-    "FS_METHOD": "corr_elasticnet",
+    "FS_METHOD": "boruta_like",
     "FS_N_FEATURES": 16,
     "N_OUTER_FOLDS": 5,
     "N_INNER_FOLDS": 3,

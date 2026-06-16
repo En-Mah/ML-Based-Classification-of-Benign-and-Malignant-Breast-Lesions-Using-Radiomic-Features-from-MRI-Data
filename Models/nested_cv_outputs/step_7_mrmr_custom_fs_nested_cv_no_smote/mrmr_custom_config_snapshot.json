@@ -2,7 +2,7 @@
     "RUN_NAME": "step_7_mrmr_custom_fs_nested_cv_no_smote",
     "SAVE_DIR": "./nested_cv_outputs/step_7_mrmr_custom_fs_nested_cv_no_smote",
     "USE_SMOTE": false,
-    "FS_METHOD": "corr_elasticnet",
+    "FS_METHOD": "boruta_like",
     "FS_N_FEATURES": 16,
     "MRMR_REDUNDANCY_WEIGHT": 0.5,
     "MRMR_MI_N_NEIGHBORS": 3,
