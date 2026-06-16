@@ -2,7 +2,7 @@
     "RUN_NAME": "step_5_rfe_only_fs_nested_cv_no_smote",
     "SAVE_DIR": "./nested_cv_outputs/step_5_rfe_only_fs_nested_cv_no_smote",
     "USE_SMOTE": false,
-    "FS_METHOD": "current_4stage",
+    "FS_METHOD": "corr_elasticnet",
     "FS_N_FEATURES": 16,
     "RFE_STEP": 0.1,
     "RFE_C": 1.0,
