@@ -1,9 +1,9 @@
 {
     "run_name": "step_7_mrmr_custom_fs_nested_cv_no_smote",
-    "fs_method": "boruta_like",
+    "fs_method": "hier_mrmr_elasticnet",
     "comparison_dir": "./nested_cv_outputs/step_7_mrmr_custom_fs_nested_cv_no_smote/step_8c_hier_vs_baseline_reports",
     "best_delta_model": "LogisticRegression",
     "largest_auc_gain": 0.0,
-    "best_hier_model_by_auc": "NaiveBayes",
-    "best_hier_auc": 0.5905325443786983
+    "best_hier_model_by_auc": "LogisticRegression",
+    "best_hier_auc": 0.6650887573964498
 }

@@ -1,0 +1,29 @@
+{
+    "n_samples": 117,
+    "n_features": 145,
+    "n_patients": 48,
+    "class_counts": {
+        "0": 52,
+        "1": 65
+    },
+    "missing_values_total": 0,
+    "inf_values_total": 0,
+    "features_with_nan": 0,
+    "features_with_inf": 0,
+    "potential_target_leakage_name_features": 0,
+    "potential_id_metadata_name_features": 9,
+    "full_duplicate_rows": 0,
+    "duplicate_roi_names": 0,
+    "duplicate_patient_roi_pairs": 0,
+    "constant_features_1e_12": 0,
+    "near_zero_features_1e_8": 0,
+    "near_zero_features_1e_6": 0,
+    "exact_duplicate_feature_groups": 4,
+    "high_corr_pairs_abs_spearman_ge_0_95": 458,
+    "high_corr_pairs_abs_spearman_ge_0_99": 123,
+    "features_with_robust_outlier_flags": 102,
+    "total_robust_outlier_flags": 900,
+    "mixed_label_patients": 4,
+    "patient_aware_cv_checked": true,
+    "patient_overlap_detected": false
+}

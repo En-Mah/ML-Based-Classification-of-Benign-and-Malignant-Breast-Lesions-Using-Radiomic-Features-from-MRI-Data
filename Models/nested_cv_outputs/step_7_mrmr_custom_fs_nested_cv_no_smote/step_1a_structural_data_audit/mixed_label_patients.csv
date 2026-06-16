@@ -1,0 +1,5 @@
+Patient_ID,count,nunique,min,max
+Pre_D_P50,8,2,0,1
+Pre_D_P3,7,2,0,1
+Pre_D_P12,4,2,0,1
+Pre_D_P27,2,2,0,1
