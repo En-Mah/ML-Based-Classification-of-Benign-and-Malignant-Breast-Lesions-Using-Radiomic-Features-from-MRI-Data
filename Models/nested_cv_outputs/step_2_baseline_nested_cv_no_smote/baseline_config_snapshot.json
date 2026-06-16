@@ -1,8 +1,8 @@
 {
     "RUN_NAME": "step_2_baseline_nested_cv_no_smote",
     "SAVE_DIR": "./nested_cv_outputs/step_2_baseline_nested_cv_no_smote",
-    "USE_SMOTE": false,
-    "FS_METHOD": "corr_elasticnet",
+    "USE_SMOTE": true,
+    "FS_METHOD": "rfe_only",
     "FS_N_FEATURES": 16,
     "N_OUTER_FOLDS": 5,
     "N_INNER_FOLDS": 3,

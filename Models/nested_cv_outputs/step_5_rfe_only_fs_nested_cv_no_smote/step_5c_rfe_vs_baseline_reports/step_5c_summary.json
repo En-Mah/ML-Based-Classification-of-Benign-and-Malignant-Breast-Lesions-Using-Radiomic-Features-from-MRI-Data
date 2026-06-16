@@ -1,0 +1,27 @@
+{
+    "run_name": "step_5_rfe_only_fs_nested_cv_no_smote",
+    "baseline_dir": "./nested_cv_outputs/step_2_baseline_nested_cv_no_smote",
+    "rfe_dir": "./nested_cv_outputs/step_5_rfe_only_fs_nested_cv_no_smote",
+    "comparison_dir": "./nested_cv_outputs/step_5_rfe_only_fs_nested_cv_no_smote/step_5c_rfe_vs_baseline_reports",
+    "best_baseline_model_by_roc_auc": "XGBoost",
+    "best_baseline_roc_auc": 0.598224852071006,
+    "best_rfe_model_by_roc_auc": "XGBoost",
+    "best_rfe_roc_auc": 0.6047337278106508,
+    "largest_auc_gain_model": "SVM_RBF",
+    "largest_auc_gain": 0.05428994082840244,
+    "use_smote": true,
+    "fs_method": "rfe_only",
+    "fs_n_features": 16,
+    "rfe_step": 0.1,
+    "rfe_c": 1.0,
+    "n_outer_folds": 5,
+    "n_inner_folds": 3,
+    "n_models_compared": 10,
+    "feature_overlap_summary": {
+        "baseline_unique_features": 39,
+        "rfe_unique_features": 49,
+        "shared_features": 18,
+        "union_features": 70,
+        "jaccard_overlap": 0.2571428571428571
+    }
+}

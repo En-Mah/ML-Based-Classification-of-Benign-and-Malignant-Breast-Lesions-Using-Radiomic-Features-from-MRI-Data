@@ -1,8 +1,8 @@
 {
     "RUN_NAME": "step_4_lasso_only_fs_nested_cv_no_smote",
     "SAVE_DIR": "./nested_cv_outputs/step_4_lasso_only_fs_nested_cv_no_smote",
-    "USE_SMOTE": false,
-    "FS_METHOD": "lasso_only",
+    "USE_SMOTE": true,
+    "FS_METHOD": "rfe_only",
     "FS_N_FEATURES": 16,
     "LASSO_CS": [
         0.001,

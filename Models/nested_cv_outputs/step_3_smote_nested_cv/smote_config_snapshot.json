@@ -2,7 +2,7 @@
     "RUN_NAME": "step_3_smote_nested_cv",
     "SAVE_DIR": "./nested_cv_outputs/step_3_smote_nested_cv",
     "USE_SMOTE": true,
-    "FS_METHOD": "lasso_only",
+    "FS_METHOD": "rfe_only",
     "FS_N_FEATURES": 16,
     "N_OUTER_FOLDS": 5,
     "N_INNER_FOLDS": 3,
