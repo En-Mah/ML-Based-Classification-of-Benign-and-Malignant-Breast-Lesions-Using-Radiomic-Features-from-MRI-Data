@@ -18,7 +18,7 @@
     "friedman_auc_p_value": 0.6476828233977276,
     "n_models_evaluated": 10,
     "use_smote": false,
-    "fs_method": "boruta_like",
+    "fs_method": "mrmr_custom",
     "fs_n_features": 16,
     "n_outer_folds": 5,
     "n_inner_folds": 3,
