@@ -21,7 +21,7 @@
     "VOLUME_CORR_THRESHOLD": 0.5,
     "REDUNDANCY_CORR_THRESHOLD": 0.75,
     "VIF_THRESHOLD": 6,
-    "FS_METHOD": "hier_mrmr_elasticnet",
+    "FS_METHOD": "mrmr_then_elasticnet_no_corr",
     "USE_VOLUME_FILTER": false,
     "FS_CORR_THRESHOLD": 0.95,
     "FS_N_FEATURES": 14,

@@ -2,7 +2,7 @@
     "RUN_NAME": "step_4_lasso_only_fs_nested_cv_no_smote",
     "SAVE_DIR": "./nested_cv_outputs/step_4_lasso_only_fs_nested_cv_no_smote",
     "USE_SMOTE": false,
-    "FS_METHOD": "hier_mrmr_elasticnet",
+    "FS_METHOD": "mrmr_then_elasticnet_no_corr",
     "FS_N_FEATURES": 14,
     "LASSO_CS": [
         0.001,

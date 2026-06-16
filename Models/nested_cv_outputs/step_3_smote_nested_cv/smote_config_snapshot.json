@@ -2,7 +2,7 @@
     "RUN_NAME": "step_3_smote_nested_cv",
     "SAVE_DIR": "./nested_cv_outputs/step_3_smote_nested_cv",
     "USE_SMOTE": false,
-    "FS_METHOD": "hier_mrmr_elasticnet",
+    "FS_METHOD": "mrmr_then_elasticnet_no_corr",
     "FS_N_FEATURES": 14,
     "N_OUTER_FOLDS": 5,
     "N_INNER_FOLDS": 3,
