@@ -1,0 +1,11 @@
+{
+    "loaded_experiments": [
+        "Baseline_FS",
+        "LASSO_only",
+        "RFE_only"
+    ],
+    "best_global_fs_method": "Baseline_FS",
+    "leaderboard_dir": "./nested_cv_outputs/fs_method_leaderboard",
+    "global_leaderboard_file": "./nested_cv_outputs/fs_method_leaderboard/global_fs_method_leaderboard.csv",
+    "model_specific_file": "./nested_cv_outputs/fs_method_leaderboard/model_specific_best_fs_method.csv"
+}

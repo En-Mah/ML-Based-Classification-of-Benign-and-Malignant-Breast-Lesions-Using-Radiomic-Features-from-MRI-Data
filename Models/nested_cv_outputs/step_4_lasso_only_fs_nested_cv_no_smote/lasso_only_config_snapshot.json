@@ -2,7 +2,7 @@
     "RUN_NAME": "step_4_lasso_only_fs_nested_cv_no_smote",
     "SAVE_DIR": "./nested_cv_outputs/step_4_lasso_only_fs_nested_cv_no_smote",
     "USE_SMOTE": false,
-    "FS_METHOD": "mrmr_only",
+    "FS_METHOD": "boruta_like",
     "FS_N_FEATURES": 16,
     "LASSO_CS": [
         0.001,

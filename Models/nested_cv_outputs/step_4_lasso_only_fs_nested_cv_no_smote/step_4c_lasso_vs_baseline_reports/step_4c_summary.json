@@ -1,0 +1,25 @@
+{
+    "run_name": "step_4_lasso_only_fs_nested_cv_no_smote",
+    "baseline_dir": "./nested_cv_outputs/step_2_baseline_nested_cv_no_smote",
+    "lasso_dir": "./nested_cv_outputs/step_4_lasso_only_fs_nested_cv_no_smote",
+    "comparison_dir": "./nested_cv_outputs/step_4_lasso_only_fs_nested_cv_no_smote/step_4c_lasso_vs_baseline_reports",
+    "best_baseline_model_by_roc_auc": "LogisticRegression",
+    "best_baseline_roc_auc": 0.5497041420118344,
+    "best_lasso_model_by_roc_auc": "LogisticRegression",
+    "best_lasso_roc_auc": 0.5497041420118344,
+    "largest_auc_gain_model": "ExtraTrees",
+    "largest_auc_gain": 0.0,
+    "use_smote": false,
+    "fs_method": "boruta_like",
+    "fs_n_features": 16,
+    "n_outer_folds": 5,
+    "n_inner_folds": 3,
+    "n_models_compared": 10,
+    "feature_overlap_summary": {
+        "baseline_unique_features": 145,
+        "lasso_unique_features": 24,
+        "shared_features": 24,
+        "union_features": 145,
+        "jaccard_overlap": 0.16551724137931034
+    }
+}
