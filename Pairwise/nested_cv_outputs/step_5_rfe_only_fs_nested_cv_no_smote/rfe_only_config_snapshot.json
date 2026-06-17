@@ -1,0 +1,16 @@
+{
+    "RUN_NAME": "step_5_rfe_only_fs_nested_cv_no_smote",
+    "SAVE_DIR": "./nested_cv_outputs/step_5_rfe_only_fs_nested_cv_no_smote",
+    "USE_SMOTE": false,
+    "FS_METHOD": "mrmr_then_elasticnet_no_corr",
+    "FS_N_FEATURES": 20,
+    "RFE_STEP": 0.1,
+    "RFE_C": 1.0,
+    "N_OUTER_FOLDS": 5,
+    "N_INNER_FOLDS": 3,
+    "N_OPTUNA_TRIALS": 20,
+    "RANDOM_STATE": 100,
+    "N_SAMPLES": 113,
+    "N_FEATURES": 289,
+    "N_PATIENTS": 48
+}

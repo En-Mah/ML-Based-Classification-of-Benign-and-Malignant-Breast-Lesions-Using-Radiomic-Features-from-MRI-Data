@@ -1,0 +1,6 @@
+INFO_NameOfRoi,PatientID,Unique_Original_Labels,Random_Selected_Label,Random_Seed,Resolution_Method,Original_Label_Pre,Original_Label_Post1,Original_Label_Post2,Original_Label_T2,Original_Label_ADC
+M1_S4_P12_L_#1,P12,"0,1",0,42,global_per_roi_random_choice,1,1,1,0,1
+M1_S3_P12_L_#1,P12,"0,1",0,42,global_per_roi_random_choice,1,1,1,0,1
+M1_S2_P12_R_#1,P12,"0,1",1,42,global_per_roi_random_choice,0,0,0,1,0
+M1_S1_P12_R_#1,P12,"0,1",0,42,global_per_roi_random_choice,0,0,0,1,0
+M1_S2_P17_R,P17,"0,1",0,42,global_per_roi_random_choice,0,0,1,0,0
