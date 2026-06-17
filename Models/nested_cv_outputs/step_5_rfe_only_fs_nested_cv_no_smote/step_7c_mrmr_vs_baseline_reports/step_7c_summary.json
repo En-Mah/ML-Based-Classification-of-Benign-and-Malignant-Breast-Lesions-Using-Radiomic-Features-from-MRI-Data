@@ -1,0 +1,17 @@
+{
+    "run_name": "step_5_rfe_only_fs_nested_cv_no_smote",
+    "baseline_dir": "./nested_cv_outputs/step_2_baseline_nested_cv_no_smote",
+    "mrmr_dir": "./nested_cv_outputs/step_5_rfe_only_fs_nested_cv_no_smote",
+    "comparison_dir": "./nested_cv_outputs/step_5_rfe_only_fs_nested_cv_no_smote/step_7c_mrmr_vs_baseline_reports",
+    "best_baseline_model_by_roc_auc": "SVM_Linear",
+    "best_baseline_roc_auc": 0.6653846153846154,
+    "best_mrmr_model_by_roc_auc": "SVM_Linear",
+    "best_mrmr_roc_auc": 0.6653846153846154,
+    "largest_auc_gain_model": "ExtraTrees",
+    "largest_auc_gain": 0.0,
+    "use_smote": false,
+    "fs_method": "mrmr_then_elasticnet_no_corr",
+    "fs_n_features": 14,
+    "mrmr_redundancy_weight": 0.5,
+    "n_models_compared": 10
+}

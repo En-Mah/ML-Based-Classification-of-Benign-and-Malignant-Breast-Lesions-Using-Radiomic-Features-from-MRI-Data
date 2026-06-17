@@ -1,0 +1,17 @@
+{
+    "RUN_NAME": "step_9B_fdr_corr_mrmr_elasticnet_a020_t090_n14_no_smote",
+    "SAVE_DIR": "./nested_cv_outputs/step_9B_fdr_corr_mrmr_elasticnet_a020_t090_n14_no_smote",
+    "USE_SMOTE": false,
+    "FS_METHOD": "fdr_corr_mrmr_elasticnet",
+    "FS_N_FEATURES": 14,
+    "FDR_ALPHA": 0.2,
+    "FDR_SHAPIRO_ALPHA": 0.05,
+    "FDR_MIN_KEEP": 28,
+    "FDR_MAX_KEEP": 42,
+    "CORR_THRESHOLD": 0.9,
+    "MRMR_CANDIDATES": 28,
+    "RANDOM_STATE": 100,
+    "N_SAMPLES": 117,
+    "N_FEATURES": 145,
+    "N_PATIENTS": 48
+}

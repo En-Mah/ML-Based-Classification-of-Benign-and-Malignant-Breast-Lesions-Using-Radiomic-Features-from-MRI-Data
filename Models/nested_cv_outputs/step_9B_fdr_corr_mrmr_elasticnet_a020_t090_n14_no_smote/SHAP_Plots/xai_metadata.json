@@ -1,0 +1,66 @@
+{
+  "best_model_name": "NaiveBayes",
+  "selection_criterion": "Highest nested-CV Mean_AUC from df_summary",
+  "oof_metrics": {
+    "oof_auc": 0.5075443786982248,
+    "oof_pr_auc": 0.5743474075330971,
+    "oof_accuracy": 0.5384615384615384,
+    "oof_balanced_accuracy": 0.5153846153846153,
+    "oof_precision": 0.5662650602409639,
+    "oof_recall": 0.7230769230769231,
+    "oof_f1": 0.6351351351351351,
+    "oof_specificity": 0.3076923076923077,
+    "oof_kappa": 0.03187250996015922
+  },
+  "kappa_interpretation": "Slight agreement / very weak",
+  "n_total_samples": 117,
+  "n_selected_features_for_xai": 12,
+  "stability_threshold_min_folds": 2,
+  "n_feature_selection_folds": 5,
+  "best_params_aggregated": {
+    "var_smoothing": 1.8215019929305214e-09
+  },
+  "features_original": [
+    "Morph_Compacity",
+    "IH_IntensityHistogramSkewness_Intensity",
+    "NGTDM_Strength",
+    "Morph_MaxIntensityCoor_PerimeterCoor_2DSagittalSmallestDist_mm",
+    "IH_MinimumHistogramGradientGreyLevel_Intensity",
+    "Morph_RadiusSphereNorm_MaxIntensityCoor_PerimeterCoor_2DSagittalSmallestDist",
+    "Morph_Maximum3DDiameter_mm",
+    "IH_IntensityHistogramMode_Intensity",
+    "IH_IntensityHistogramCoefficientOfVariation_Intensity",
+    "GLSZM_SmallZoneLowGreyLevelEmphasis",
+    "GLSZM_HighGrayLevelZoneEmphasis",
+    "GLSZM_GreyLevelNonUniformity"
+  ],
+  "features_sanitized": [
+    "Morph_Compacity",
+    "IH_IntensityHistogramSkewness_Intensity",
+    "NGTDM_Strength",
+    "Morph_MaxIntensityCoor_PerimeterCoor_2DSagittalSmallestDist_mm",
+    "IH_MinimumHistogramGradientGreyLevel_Intensity",
+    "Morph_RadiusSphereNorm_MaxIntensityCoor_PerimeterCoor_2DSagittalSmallestDist",
+    "Morph_Maximum3DDiameter_mm",
+    "IH_IntensityHistogramMode_Intensity",
+    "IH_IntensityHistogramCoefficientOfVariation_Intensity",
+    "GLSZM_SmallZoneLowGreyLevelEmphasis",
+    "GLSZM_HighGrayLevelZoneEmphasis",
+    "GLSZM_GreyLevelNonUniformity"
+  ],
+  "notes": [
+    "Final refit on the full cohort is used only for SHAP interpretation.",
+    "Reported performance values are OOF/nested-CV metrics.",
+    "SHAP explanations use positive-class probability when predict_proba is available.",
+    "Stable features are selected by recurrence across outer folds, not by using all numeric features."
+  ],
+  "saved_files": {
+    "model_artifact": "./nested_cv_outputs/step_9B_fdr_corr_mrmr_elasticnet_a020_t090_n14_no_smote/SHAP_Plots/Best_Model_NaiveBayes_XAI_Artifact.joblib",
+    "feature_stability": "./nested_cv_outputs/step_9B_fdr_corr_mrmr_elasticnet_a020_t090_n14_no_smote/SHAP_Plots/xai_feature_stability.csv",
+    "shap_importance": "./nested_cv_outputs/step_9B_fdr_corr_mrmr_elasticnet_a020_t090_n14_no_smote/SHAP_Plots/shap_feature_importance.csv",
+    "summary_dot_png": "./nested_cv_outputs/step_9B_fdr_corr_mrmr_elasticnet_a020_t090_n14_no_smote/SHAP_Plots/shap_summary_dot_stable.png",
+    "summary_dot_pdf": "./nested_cv_outputs/step_9B_fdr_corr_mrmr_elasticnet_a020_t090_n14_no_smote/SHAP_Plots/shap_summary_dot_stable.pdf",
+    "summary_bar_png": "./nested_cv_outputs/step_9B_fdr_corr_mrmr_elasticnet_a020_t090_n14_no_smote/SHAP_Plots/shap_summary_bar_stable.png",
+    "summary_bar_pdf": "./nested_cv_outputs/step_9B_fdr_corr_mrmr_elasticnet_a020_t090_n14_no_smote/SHAP_Plots/shap_summary_bar_stable.pdf"
+  }
+}

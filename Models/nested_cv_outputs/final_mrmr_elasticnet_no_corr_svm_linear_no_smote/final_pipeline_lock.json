@@ -1,0 +1,16 @@
+{
+    "RUN_NAME": "final_mrmr_elasticnet_no_corr_svm_linear_no_smote",
+    "SAVE_DIR": "./nested_cv_outputs/final_mrmr_elasticnet_no_corr_svm_linear_no_smote",
+    "USE_SMOTE": false,
+    "FS_METHOD": "mrmr_then_elasticnet_no_corr",
+    "FS_N_FEATURES": 14,
+    "MRMR_ELASTICNET_CANDIDATES": 28,
+    "CHAMPION_MODEL": "SVM_Linear",
+    "MODELS_TO_RUN": [
+        "SVM_Linear"
+    ],
+    "N_OUTER_FOLDS": 5,
+    "N_INNER_FOLDS": 3,
+    "N_OPTUNA_TRIALS": 20,
+    "RANDOM_STATE": 100
+}
