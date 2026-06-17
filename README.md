@@ -6,16 +6,16 @@
 
 This project focuses on developing machine learning models for classifying breast lesions as **benign** or **malignant** using radiomic features extracted from breast MRI scans.
 
-Breast cancer diagnosis frequently depends on radiological evaluation of MRI images to determine whether biopsy is necessary. Radiologists assess suspicious lesions and assign **BI-RADS (Breast Imaging-Reporting and Data System)** scores, which guide clinical decision-making.
+Breast cancer diagnosis frequently depends on radiological evaluation of MRI images to determine whether a biopsy is necessary. Radiologists assess suspicious lesions and assign **BI-RADS (Breast Imaging-Reporting and Data System)** scores, which guide clinical decision-making.
 
 The goal of this study is to leverage radiomic features derived from multiple MRI modalities to train supervised machine learning models capable of improving lesion classification accuracy and supporting radiological diagnosis.
 
----
+--- 
 
 ## Objectives
 
 * Extract and analyze radiomic features from breast MRI scans.
-* Train supervised machine learning models for lesion classification.
+* Trained supervised machine learning models for lesion classification.
 * Evaluate the influence of MRI modality and segmentation variability.
 * Investigate model interpretability using explainable AI techniques.
 * Assess diagnostic performance using comprehensive statistical metrics.
@@ -77,7 +77,7 @@ This enables:
 * Measurement of **inter-observer variability**
 * Assessment of segmentation reliability
 
-Each lesion therefore has **two segmentation masks**.
+Each lesion, therefore, has **two segmentation masks**.
 
 ---
 
@@ -223,7 +223,7 @@ Recommended because it:
 * Leave-One-Out Cross Validation (LOOCV)
 * Stratified K-Fold Cross Validation
 
-Nested CV is considered the preferred approach.
+A nested CV is considered the preferred approach.
 
 ---
 
