@@ -3,8 +3,8 @@
     "n_features": 289,
     "n_patients": 48,
     "class_counts": {
-        "0": 51,
-        "1": 63
+        "0": 50,
+        "1": 64
     },
     "total_nan": 22,
     "total_inf": 0,

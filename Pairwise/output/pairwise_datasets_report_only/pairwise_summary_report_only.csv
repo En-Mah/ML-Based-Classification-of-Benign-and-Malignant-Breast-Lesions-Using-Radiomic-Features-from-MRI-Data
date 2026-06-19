@@ -1,0 +1,11 @@
+Pair,Status,n_common_roi,n_label_mismatches,n_samples_model_ready,n_patients,n_features,class_0,class_1,model_ready_file,review_file
+Pre+Post1,MODEL_READY,116,0,116,48,290,52,64,output/pairwise_datasets_report_only/Pre_Post1_M1_pairwise.csv,
+Pre+Post2,MODEL_READY,117,0,117,48,290,52,65,output/pairwise_datasets_report_only/Pre_Post2_M1_pairwise.csv,
+Pre+T2,MODEL_READY,117,0,117,48,290,52,65,output/pairwise_datasets_report_only/Pre_T2_M1_pairwise.csv,
+Pre+ADC,MODEL_READY,114,0,114,48,289,50,64,output/pairwise_datasets_report_only/Pre_ADC_M1_pairwise.csv,
+Post1+Post2,MODEL_READY,116,0,116,48,290,52,64,output/pairwise_datasets_report_only/Post1_Post2_M1_pairwise.csv,
+Post1+T2,MODEL_READY,116,0,116,48,290,52,64,output/pairwise_datasets_report_only/Post1_T2_M1_pairwise.csv,
+Post1+ADC,MODEL_READY,113,0,113,48,289,50,63,output/pairwise_datasets_report_only/Post1_ADC_M1_pairwise.csv,
+Post2+T2,MODEL_READY,117,0,117,48,290,52,65,output/pairwise_datasets_report_only/Post2_T2_M1_pairwise.csv,
+Post2+ADC,MODEL_READY,114,0,114,48,289,50,64,output/pairwise_datasets_report_only/Post2_ADC_M1_pairwise.csv,
+T2+ADC,MODEL_READY,114,0,114,48,289,50,64,output/pairwise_datasets_report_only/T2_ADC_M1_pairwise.csv,
