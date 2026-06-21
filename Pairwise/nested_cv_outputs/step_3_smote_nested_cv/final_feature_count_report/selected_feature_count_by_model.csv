@@ -1,0 +1,2 @@
+Model,FS_METHOD,N_Outer_Folds,Mean_Selected_Features,Std_Selected_Features,Min_Selected_Features,Max_Selected_Features,Selected_Features_Per_Fold
+SVM_RBF,mrmr_then_elasticnet_no_corr,5,14.0,0.0,14,14,"[np.int64(14), np.int64(14), np.int64(14), np.int64(14), np.int64(14)]"

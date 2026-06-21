@@ -1,0 +1,10 @@
+{
+    "RUN_NAME": "step_3_smote_nested_cv",
+    "FS_METHOD": "mrmr_then_elasticnet_no_corr",
+    "FS_N_FEATURES_TARGET": 14,
+    "N_MODELS": 1,
+    "Overall_Mean_Selected_Features": 14.0,
+    "Overall_Min_Selected_Features": 14,
+    "Overall_Max_Selected_Features": 14,
+    "N_Unique_Selected_Features_Across_Run": 53
+}

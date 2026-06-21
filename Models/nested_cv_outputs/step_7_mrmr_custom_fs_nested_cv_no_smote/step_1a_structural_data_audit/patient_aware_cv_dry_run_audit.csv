@@ -1,6 +1,0 @@
-Fold,N_Train,N_Test,N_Train_Patients,N_Test_Patients,Patient_Overlap_Count,Train_Label_0,Train_Label_1,Test_Label_0,Test_Label_1,Test_Patients
-1,90,27,37,11,0,43,47,9,18,Pre_D_P1;Pre_D_P10;Pre_D_P16;Pre_D_P20;Pre_D_P22;Pre_D_P25;Pre_D_P3;Pre_D_P31;Pre_D_P4;Pre_D_P49;Pre_D_P7
-2,97,20,37,11,0,43,54,9,11,Pre_D_P13;Pre_D_P14;Pre_D_P24;Pre_D_P26;Pre_D_P29;Pre_D_P30;Pre_D_P33;Pre_D_P36;Pre_D_P40;Pre_D_P48;Pre_D_P5
-3,86,31,39,9,0,37,49,15,16,Pre_D_P15;Pre_D_P18;Pre_D_P27;Pre_D_P41;Pre_D_P43;Pre_D_P46;Pre_D_P47;Pre_D_P50;Pre_D_P6
-4,91,26,40,8,0,42,49,10,16,Pre_D_P11;Pre_D_P12;Pre_D_P17;Pre_D_P19;Pre_D_P21;Pre_D_P34;Pre_D_P35;Pre_D_P39
-5,104,13,39,9,0,43,61,9,4,Pre_D_P2;Pre_D_P23;Pre_D_P28;Pre_D_P32;Pre_D_P37;Pre_D_P42;Pre_D_P44;Pre_D_P45;Pre_D_P9

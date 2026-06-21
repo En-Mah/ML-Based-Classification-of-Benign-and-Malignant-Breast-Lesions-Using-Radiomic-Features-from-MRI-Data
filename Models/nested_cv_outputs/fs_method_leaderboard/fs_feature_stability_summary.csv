@@ -1,4 +1,0 @@
-FS_METHOD,Unique_Selected_Features,Top5_Mean_Selection_Frequency,Top10_Mean_Selection_Frequency,Max_Selection_Frequency
-Baseline_FS,43,1.0,0.9,1.0
-LASSO_only,24,0.6799999999999999,0.5,1.0
-RFE_only,43,1.0,0.9,1.0

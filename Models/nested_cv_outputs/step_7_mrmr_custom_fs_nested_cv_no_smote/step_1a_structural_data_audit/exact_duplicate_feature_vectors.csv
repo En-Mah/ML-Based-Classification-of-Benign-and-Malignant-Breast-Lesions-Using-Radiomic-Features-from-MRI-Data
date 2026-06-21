@@ -1,9 +1,0 @@
-Duplicate_Group,Feature
-1,IB_MedianIntensity
-1,IB_50thIntensityPercentile
-2,IH_IntensityHistogramMedian_Intensity
-2,IH_IntensityHistogram50thPercentile
-3,GLCM_DifferenceAverage
-3,GLCM_Dissimilarity
-4,GLCM_SumVariance
-4,GLCM_ClusterTendency
