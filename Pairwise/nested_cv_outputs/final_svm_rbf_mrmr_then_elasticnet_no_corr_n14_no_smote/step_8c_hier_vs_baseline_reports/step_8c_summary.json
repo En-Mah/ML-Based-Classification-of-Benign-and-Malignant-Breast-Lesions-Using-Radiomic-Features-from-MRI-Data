@@ -1,9 +1,0 @@
-{
-    "run_name": "final_svm_rbf_mrmr_then_elasticnet_no_corr_n14_no_smote",
-    "fs_method": "mrmr_then_elasticnet_no_corr",
-    "comparison_dir": "./nested_cv_outputs/final_svm_rbf_mrmr_then_elasticnet_no_corr_n14_no_smote/step_8c_hier_vs_baseline_reports",
-    "best_delta_model": "LogisticRegression",
-    "largest_auc_gain": 0.0,
-    "best_hier_model_by_auc": "LogisticRegression",
-    "best_hier_auc": 0.6908052884615383
-}
