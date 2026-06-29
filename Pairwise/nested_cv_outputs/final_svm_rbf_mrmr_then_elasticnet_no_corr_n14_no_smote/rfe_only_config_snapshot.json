@@ -10,7 +10,7 @@
     "N_INNER_FOLDS": 3,
     "N_OPTUNA_TRIALS": 20,
     "RANDOM_STATE": 100,
-    "N_SAMPLES": 114,
-    "N_FEATURES": 289,
+    "N_SAMPLES": 116,
+    "N_FEATURES": 290,
     "N_PATIENTS": 48
 }

@@ -12,7 +12,7 @@
     "run_metadata.json"
   ],
   "config": {
-    "VOLUME_COL": "T2_Morph_Volume_cm3",
+    "VOLUME_COL": "Pre_Morph_Volume_cm3",
     "LABEL_COL": "Label",
     "GROUP_COL": "PatientID",
     "PRINT_PATIENT_BREAKDOWN": false,
