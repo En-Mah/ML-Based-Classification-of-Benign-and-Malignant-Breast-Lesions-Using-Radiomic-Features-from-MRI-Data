@@ -1,0 +1,11 @@
+Model,FS_METHOD,N_Outer_Folds,Mean_Selected_Features,Std_Selected_Features,Min_Selected_Features,Max_Selected_Features,Selected_Features_Per_Fold
+LogisticRegression,elasticnet_then_mrmr,5,11.6,4.560701700396552,6,18,"[np.int64(10), np.int64(6), np.int64(18), np.int64(10), np.int64(14)]"
+SVM_RBF,elasticnet_then_mrmr,5,11.6,4.560701700396552,6,18,"[np.int64(10), np.int64(6), np.int64(18), np.int64(10), np.int64(14)]"
+SVM_Linear,elasticnet_then_mrmr,5,11.6,4.560701700396552,6,18,"[np.int64(10), np.int64(6), np.int64(18), np.int64(10), np.int64(14)]"
+RandomForest,elasticnet_then_mrmr,5,11.6,4.560701700396552,6,18,"[np.int64(10), np.int64(6), np.int64(18), np.int64(10), np.int64(14)]"
+GradientBoosting,elasticnet_then_mrmr,5,11.6,4.560701700396552,6,18,"[np.int64(10), np.int64(6), np.int64(18), np.int64(10), np.int64(14)]"
+ExtraTrees,elasticnet_then_mrmr,5,11.6,4.560701700396552,6,18,"[np.int64(10), np.int64(6), np.int64(18), np.int64(10), np.int64(14)]"
+KNN,elasticnet_then_mrmr,5,11.6,4.560701700396552,6,18,"[np.int64(10), np.int64(6), np.int64(18), np.int64(10), np.int64(14)]"
+NaiveBayes,elasticnet_then_mrmr,5,11.6,4.560701700396552,6,18,"[np.int64(10), np.int64(6), np.int64(18), np.int64(10), np.int64(14)]"
+XGBoost,elasticnet_then_mrmr,5,11.6,4.560701700396552,6,18,"[np.int64(10), np.int64(6), np.int64(18), np.int64(10), np.int64(14)]"
+LightGBM,elasticnet_then_mrmr,5,11.6,4.560701700396552,6,18,"[np.int64(10), np.int64(6), np.int64(18), np.int64(10), np.int64(14)]"
