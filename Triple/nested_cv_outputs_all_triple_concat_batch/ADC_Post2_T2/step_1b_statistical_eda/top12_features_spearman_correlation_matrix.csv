@@ -1,0 +1,13 @@
+,Post2_Morph_Compacity,Post2_Morph_Compactness1,Post2_Morph_Compactness2,Post2_Morph_SphericalDisproportion,Post2_Morph_Sphericity,Post2_Morph_Asphericity,Post2_IH_IntensityHistogramMode_Intensity,T2_Morph_Compacity,T2_Morph_Compactness1,T2_Morph_Compactness2,T2_Morph_SphericalDisproportion,T2_Morph_Sphericity
+Post2_Morph_Compacity,1.0,-1.0,-1.0,1.0,-1.0,1.0,0.10978146007319971,1.0,-1.0,-1.0,1.0,-1.0
+Post2_Morph_Compactness1,-1.0,1.0,1.0,-1.0,1.0,-1.0,-0.10978146007319971,-1.0,1.0,1.0,-1.0,1.0
+Post2_Morph_Compactness2,-1.0,1.0,1.0,-1.0,1.0,-1.0,-0.10978146007319971,-1.0,1.0,1.0,-1.0,1.0
+Post2_Morph_SphericalDisproportion,1.0,-1.0,-1.0,1.0,-1.0,1.0,0.10978146007319971,1.0,-1.0,-1.0,1.0,-1.0
+Post2_Morph_Sphericity,-1.0,1.0,1.0,-1.0,1.0,-1.0,-0.10978146007319971,-1.0,1.0,1.0,-1.0,1.0
+Post2_Morph_Asphericity,1.0,-1.0,-1.0,1.0,-1.0,1.0,0.10978146007319971,1.0,-1.0,-1.0,1.0,-1.0
+Post2_IH_IntensityHistogramMode_Intensity,0.10978146007319971,-0.10978146007319971,-0.10978146007319971,0.10978146007319971,-0.10978146007319971,0.10978146007319971,1.0,0.10978146007319971,-0.10978146007319971,-0.10978146007319971,0.10978146007319971,-0.10978146007319971
+T2_Morph_Compacity,1.0,-1.0,-1.0,1.0,-1.0,1.0,0.10978146007319971,1.0,-1.0,-1.0,1.0,-1.0
+T2_Morph_Compactness1,-1.0,1.0,1.0,-1.0,1.0,-1.0,-0.10978146007319971,-1.0,1.0,1.0,-1.0,1.0
+T2_Morph_Compactness2,-1.0,1.0,1.0,-1.0,1.0,-1.0,-0.10978146007319971,-1.0,1.0,1.0,-1.0,1.0
+T2_Morph_SphericalDisproportion,1.0,-1.0,-1.0,1.0,-1.0,1.0,0.10978146007319971,1.0,-1.0,-1.0,1.0,-1.0
+T2_Morph_Sphericity,-1.0,1.0,1.0,-1.0,1.0,-1.0,-0.10978146007319971,-1.0,1.0,1.0,-1.0,1.0

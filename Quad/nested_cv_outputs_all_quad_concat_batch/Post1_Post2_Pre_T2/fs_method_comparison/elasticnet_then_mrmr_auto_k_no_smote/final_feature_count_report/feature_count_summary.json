@@ -1,0 +1,10 @@
+{
+    "RUN_NAME": "elasticnet_then_mrmr_auto_k_no_smote",
+    "FS_METHOD": "elasticnet_then_mrmr",
+    "FS_N_FEATURES_TARGET": "auto",
+    "N_MODELS": 10,
+    "Overall_Mean_Selected_Features": 15.199999999999998,
+    "Overall_Min_Selected_Features": 12,
+    "Overall_Max_Selected_Features": 18,
+    "N_Unique_Selected_Features_Across_Run": 41
+}

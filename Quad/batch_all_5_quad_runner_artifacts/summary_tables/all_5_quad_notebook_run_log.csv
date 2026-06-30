@@ -1,0 +1,6 @@
+Quad_Tag,Run_Status,Executed_Notebook,Error,Started_At,Finished_At
+ADC_Post1_Post2_Pre,completed,batch_all_5_quad_runner_artifacts/executed_pairwise_notebooks_on_quads/ADC_Post1_Post2_Pre__Pairwise_executed_on_quad.ipynb,,2026-06-29T22:09:40,2026-06-29T22:15:43
+ADC_Post1_Post2_T2,completed,batch_all_5_quad_runner_artifacts/executed_pairwise_notebooks_on_quads/ADC_Post1_Post2_T2__Pairwise_executed_on_quad.ipynb,,2026-06-29T22:15:43,2026-06-29T22:20:49
+ADC_Post1_Pre_T2,completed,batch_all_5_quad_runner_artifacts/executed_pairwise_notebooks_on_quads/ADC_Post1_Pre_T2__Pairwise_executed_on_quad.ipynb,,2026-06-29T22:20:49,2026-06-29T22:27:35
+ADC_Post2_Pre_T2,completed,batch_all_5_quad_runner_artifacts/executed_pairwise_notebooks_on_quads/ADC_Post2_Pre_T2__Pairwise_executed_on_quad.ipynb,,2026-06-29T22:27:35,2026-06-29T22:32:40
+Post1_Post2_Pre_T2,completed,batch_all_5_quad_runner_artifacts/executed_pairwise_notebooks_on_quads/Post1_Post2_Pre_T2__Pairwise_executed_on_quad.ipynb,,2026-06-29T22:32:40,2026-06-29T22:37:45

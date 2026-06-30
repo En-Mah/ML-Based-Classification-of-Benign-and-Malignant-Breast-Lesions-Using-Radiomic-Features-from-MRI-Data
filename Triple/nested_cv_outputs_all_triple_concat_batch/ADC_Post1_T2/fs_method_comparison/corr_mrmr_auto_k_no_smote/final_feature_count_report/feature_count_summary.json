@@ -1,0 +1,10 @@
+{
+    "RUN_NAME": "corr_mrmr_auto_k_no_smote",
+    "FS_METHOD": "corr_mrmr",
+    "FS_N_FEATURES_TARGET": "auto",
+    "N_MODELS": 10,
+    "Overall_Mean_Selected_Features": 11.599999999999998,
+    "Overall_Min_Selected_Features": 4,
+    "Overall_Max_Selected_Features": 18,
+    "N_Unique_Selected_Features_Across_Run": 39
+}

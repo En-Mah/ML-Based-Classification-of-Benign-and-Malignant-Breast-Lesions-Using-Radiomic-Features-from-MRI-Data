@@ -1,0 +1,17 @@
+{
+    "n_samples": 113,
+    "n_features": 580,
+    "n_label_0": 50,
+    "n_label_1": 63,
+    "class_balance_binomial_p_value": 0.25886200016531546,
+    "n_normal_features_raw_p_ge_0_05": 65,
+    "n_non_normal_features_raw_p_lt_0_05": 515,
+    "n_normal_features_fdr_q_ge_0_05": 66,
+    "n_non_normal_features_fdr_q_lt_0_05": 514,
+    "n_features_with_fdr_significant_class_difference": 164,
+    "n_features_with_fdr_significant_correlation": 177,
+    "pca_pc1_explained_variance_ratio": 0.22770058288085968,
+    "pca_pc2_explained_variance_ratio": 0.16356353174359714,
+    "eda_dir": "nested_cv_outputs_all_quad_concat_batch/ADC_Post1_Post2_T2/step_1b_statistical_eda",
+    "plot_dir": "nested_cv_outputs_all_quad_concat_batch/ADC_Post1_Post2_T2/step_1b_statistical_eda/plots_publication_style"
+}
