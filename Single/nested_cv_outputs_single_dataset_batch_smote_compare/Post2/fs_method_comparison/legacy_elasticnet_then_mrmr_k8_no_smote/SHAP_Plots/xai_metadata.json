@@ -1,0 +1,58 @@
+{
+  "best_model_name": "NaiveBayes",
+  "selection_criterion": "Highest nested-CV Mean_AUC from df_summary",
+  "oof_metrics": {
+    "oof_auc": 0.735207100591716,
+    "oof_pr_auc": 0.7918840704210461,
+    "oof_accuracy": 0.6752136752136753,
+    "oof_balanced_accuracy": 0.675,
+    "oof_precision": 0.7213114754098361,
+    "oof_recall": 0.676923076923077,
+    "oof_f1": 0.6984126984126984,
+    "oof_specificity": 0.6730769230769231,
+    "oof_kappa": 0.34732824427480913
+  },
+  "kappa_interpretation": "Fair agreement / low",
+  "n_total_samples": 117,
+  "n_selected_features_for_xai": 8,
+  "stability_threshold_min_folds": 2,
+  "n_feature_selection_folds": 5,
+  "best_params_aggregated": {
+    "var_smoothing": 1.8215019929305214e-09
+  },
+  "features_original": [
+    "IH_IntensityHistogramMode_Intensity",
+    "Morph_Sphericity",
+    "Morph_Compactness2",
+    "Morph_Compactness1",
+    "IH_IntensityHistogram25thPercentile",
+    "IB_MedianIntensity",
+    "GLCM_InverseVariance",
+    "GLCM_Correlation"
+  ],
+  "features_sanitized": [
+    "IH_IntensityHistogramMode_Intensity",
+    "Morph_Sphericity",
+    "Morph_Compactness2",
+    "Morph_Compactness1",
+    "IH_IntensityHistogram25thPercentile",
+    "IB_MedianIntensity",
+    "GLCM_InverseVariance",
+    "GLCM_Correlation"
+  ],
+  "notes": [
+    "Final refit on the full cohort is used only for SHAP interpretation.",
+    "Reported performance values are OOF/nested-CV metrics.",
+    "SHAP explanations use positive-class probability when predict_proba is available.",
+    "Stable features are selected by recurrence across outer folds, not by using all numeric features."
+  ],
+  "saved_files": {
+    "model_artifact": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2/fs_method_comparison/legacy_elasticnet_then_mrmr_k8_no_smote/SHAP_Plots/Best_Model_NaiveBayes_XAI_Artifact.joblib",
+    "feature_stability": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2/fs_method_comparison/legacy_elasticnet_then_mrmr_k8_no_smote/SHAP_Plots/xai_feature_stability.csv",
+    "shap_importance": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2/fs_method_comparison/legacy_elasticnet_then_mrmr_k8_no_smote/SHAP_Plots/shap_feature_importance.csv",
+    "summary_dot_png": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2/fs_method_comparison/legacy_elasticnet_then_mrmr_k8_no_smote/SHAP_Plots/shap_summary_dot_stable.png",
+    "summary_dot_pdf": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2/fs_method_comparison/legacy_elasticnet_then_mrmr_k8_no_smote/SHAP_Plots/shap_summary_dot_stable.pdf",
+    "summary_bar_png": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2/fs_method_comparison/legacy_elasticnet_then_mrmr_k8_no_smote/SHAP_Plots/shap_summary_bar_stable.png",
+    "summary_bar_pdf": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2/fs_method_comparison/legacy_elasticnet_then_mrmr_k8_no_smote/SHAP_Plots/shap_summary_bar_stable.pdf"
+  }
+}

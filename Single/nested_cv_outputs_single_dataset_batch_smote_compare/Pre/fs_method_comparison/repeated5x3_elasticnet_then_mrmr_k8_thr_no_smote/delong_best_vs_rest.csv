@@ -1,0 +1,7 @@
+Competitor,Competitor_Mean_AUC,ΔMean_AUC,p_value,p_Bonferroni,Significant_uncorrected,Significant_Bonferroni
+LogisticRegression,0.5091,+0.1772,1.99e-04,4.18e-03,✓,✓
+SVM_RBF,0.6276,+0.0588,2.65e-02,5.57e-01,✓,✗
+NaiveBayes,0.6438,+0.0426,1.20e-01,1.00e+00,✗,✗
+SVM_Linear,0.6682,+0.0181,5.51e-01,1.00e+00,✗,✗
+XGBoost,0.6719,+0.0144,3.41e-01,1.00e+00,✗,✗
+LightGBM,0.6768,+0.0096,4.25e-01,1.00e+00,✗,✗

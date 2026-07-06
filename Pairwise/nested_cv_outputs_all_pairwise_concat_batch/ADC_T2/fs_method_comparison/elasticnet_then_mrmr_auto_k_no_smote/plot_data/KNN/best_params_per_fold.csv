@@ -1,6 +1,0 @@
-fold,n_neighbors,weights,metric
-1,10,distance,euclidean
-2,14,uniform,manhattan
-3,15,uniform,euclidean
-4,7,distance,euclidean
-5,10,uniform,manhattan

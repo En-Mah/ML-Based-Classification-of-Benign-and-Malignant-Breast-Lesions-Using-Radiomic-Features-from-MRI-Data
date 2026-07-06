@@ -1,0 +1,10 @@
+{
+    "RUN_NAME": "stability_elasticnet_only_k8_robust_no_mi_fill_no_smote",
+    "FS_METHOD": "elasticnet_only",
+    "FS_N_FEATURES_TARGET": 8,
+    "N_MODELS": 4,
+    "Overall_Mean_Selected_Features": 6.9,
+    "Overall_Min_Selected_Features": 4,
+    "Overall_Max_Selected_Features": 8,
+    "N_Unique_Selected_Features_Across_Run": 35
+}

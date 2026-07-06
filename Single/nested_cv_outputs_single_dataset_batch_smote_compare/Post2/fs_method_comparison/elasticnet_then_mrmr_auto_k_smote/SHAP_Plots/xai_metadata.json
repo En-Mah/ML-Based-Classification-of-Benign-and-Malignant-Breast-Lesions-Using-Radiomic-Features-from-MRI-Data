@@ -1,0 +1,69 @@
+{
+  "best_model_name": "SVM_RBF",
+  "selection_criterion": "Highest nested-CV Mean_AUC from df_summary",
+  "oof_metrics": {
+    "oof_auc": 0.7510355029585799,
+    "oof_pr_auc": 0.8213934890154204,
+    "oof_accuracy": 0.6837606837606838,
+    "oof_balanced_accuracy": 0.6846153846153846,
+    "oof_precision": 0.7333333333333333,
+    "oof_recall": 0.676923076923077,
+    "oof_f1": 0.704,
+    "oof_specificity": 0.6923076923076923,
+    "oof_kappa": 0.36571428571428577
+  },
+  "kappa_interpretation": "Fair agreement / low",
+  "n_total_samples": 117,
+  "n_selected_features_for_xai": 13,
+  "stability_threshold_min_folds": 2,
+  "n_feature_selection_folds": 5,
+  "best_params_aggregated": {
+    "C": 0.4819437348329684,
+    "gamma": 0.0300302028157839
+  },
+  "features_original": [
+    "Morph_Volume_cm3",
+    "IH_IntensityHistogramMode_Intensity",
+    "GLCM_AngularSecondMoment",
+    "Morph_Sphericity",
+    "Morph_Compactness1",
+    "IH_IntensityHistogramQuartileCoefficientOfDispersion_Intensity",
+    "IH_AreaUnderCurveCIVH_Intensity",
+    "GLCM_SumVariance",
+    "GLCM_NormalisedInverseDifferenceMoment",
+    "GLCM_InverseVariance",
+    "GLCM_Correlation",
+    "Morph_Compactness2",
+    "GLCM_SumAverage"
+  ],
+  "features_sanitized": [
+    "Morph_Volume_cm3",
+    "IH_IntensityHistogramMode_Intensity",
+    "GLCM_AngularSecondMoment",
+    "Morph_Sphericity",
+    "Morph_Compactness1",
+    "IH_IntensityHistogramQuartileCoefficientOfDispersion_Intensity",
+    "IH_AreaUnderCurveCIVH_Intensity",
+    "GLCM_SumVariance",
+    "GLCM_NormalisedInverseDifferenceMoment",
+    "GLCM_InverseVariance",
+    "GLCM_Correlation",
+    "Morph_Compactness2",
+    "GLCM_SumAverage"
+  ],
+  "notes": [
+    "Final refit on the full cohort is used only for SHAP interpretation.",
+    "Reported performance values are OOF/nested-CV metrics.",
+    "SHAP explanations use positive-class probability when predict_proba is available.",
+    "Stable features are selected by recurrence across outer folds, not by using all numeric features."
+  ],
+  "saved_files": {
+    "model_artifact": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote/SHAP_Plots/Best_Model_SVM_RBF_XAI_Artifact.joblib",
+    "feature_stability": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote/SHAP_Plots/xai_feature_stability.csv",
+    "shap_importance": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote/SHAP_Plots/shap_feature_importance.csv",
+    "summary_dot_png": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote/SHAP_Plots/shap_summary_dot_stable.png",
+    "summary_dot_pdf": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote/SHAP_Plots/shap_summary_dot_stable.pdf",
+    "summary_bar_png": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote/SHAP_Plots/shap_summary_bar_stable.png",
+    "summary_bar_pdf": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote/SHAP_Plots/shap_summary_bar_stable.pdf"
+  }
+}

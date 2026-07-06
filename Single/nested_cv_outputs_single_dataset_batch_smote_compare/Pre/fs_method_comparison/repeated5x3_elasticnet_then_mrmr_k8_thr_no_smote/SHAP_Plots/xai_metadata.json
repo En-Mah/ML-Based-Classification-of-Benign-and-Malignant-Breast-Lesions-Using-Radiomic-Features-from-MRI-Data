@@ -1,0 +1,53 @@
+{
+  "best_model_name": "ExtraTrees",
+  "selection_criterion": "Highest nested-CV Mean_AUC from df_summary",
+  "oof_metrics": {
+    "oof_auc": 0.5972715318869165,
+    "oof_pr_auc": 0.632337410536122,
+    "oof_accuracy": 0.5811965811965812,
+    "oof_balanced_accuracy": 0.5782051282051281,
+    "oof_precision": 0.6276595744680851,
+    "oof_recall": 0.6051282051282051,
+    "oof_f1": 0.6161879895561357,
+    "oof_specificity": 0.5512820512820513,
+    "oof_kappa": 0.15571155073388643
+  },
+  "kappa_interpretation": "Slight agreement / very weak",
+  "n_total_samples": 117,
+  "n_selected_features_for_xai": 4,
+  "stability_threshold_min_folds": 6,
+  "n_feature_selection_folds": 15,
+  "best_params_aggregated": {
+    "max_depth": 5,
+    "max_features": "log2",
+    "min_samples_leaf": 4,
+    "n_estimators": 100
+  },
+  "features_original": [
+    "IB_IntensitySkewness",
+    "GLSZM_GreyLevelVariance",
+    "Morph_Compactness2",
+    "IB_IntensityBasedEnergy"
+  ],
+  "features_sanitized": [
+    "IB_IntensitySkewness",
+    "GLSZM_GreyLevelVariance",
+    "Morph_Compactness2",
+    "IB_IntensityBasedEnergy"
+  ],
+  "notes": [
+    "Final refit on the full cohort is used only for SHAP interpretation.",
+    "Reported performance values are OOF/nested-CV metrics.",
+    "SHAP explanations use positive-class probability when predict_proba is available.",
+    "Stable features are selected by recurrence across outer folds, not by using all numeric features."
+  ],
+  "saved_files": {
+    "model_artifact": "nested_cv_outputs_single_dataset_batch_smote_compare/Pre/fs_method_comparison/repeated5x3_elasticnet_then_mrmr_k8_thr_no_smote/SHAP_Plots/Best_Model_ExtraTrees_XAI_Artifact.joblib",
+    "feature_stability": "nested_cv_outputs_single_dataset_batch_smote_compare/Pre/fs_method_comparison/repeated5x3_elasticnet_then_mrmr_k8_thr_no_smote/SHAP_Plots/xai_feature_stability.csv",
+    "shap_importance": "nested_cv_outputs_single_dataset_batch_smote_compare/Pre/fs_method_comparison/repeated5x3_elasticnet_then_mrmr_k8_thr_no_smote/SHAP_Plots/shap_feature_importance.csv",
+    "summary_dot_png": "nested_cv_outputs_single_dataset_batch_smote_compare/Pre/fs_method_comparison/repeated5x3_elasticnet_then_mrmr_k8_thr_no_smote/SHAP_Plots/shap_summary_dot_stable.png",
+    "summary_dot_pdf": "nested_cv_outputs_single_dataset_batch_smote_compare/Pre/fs_method_comparison/repeated5x3_elasticnet_then_mrmr_k8_thr_no_smote/SHAP_Plots/shap_summary_dot_stable.pdf",
+    "summary_bar_png": "nested_cv_outputs_single_dataset_batch_smote_compare/Pre/fs_method_comparison/repeated5x3_elasticnet_then_mrmr_k8_thr_no_smote/SHAP_Plots/shap_summary_bar_stable.png",
+    "summary_bar_pdf": "nested_cv_outputs_single_dataset_batch_smote_compare/Pre/fs_method_comparison/repeated5x3_elasticnet_then_mrmr_k8_thr_no_smote/SHAP_Plots/shap_summary_bar_stable.pdf"
+  }
+}

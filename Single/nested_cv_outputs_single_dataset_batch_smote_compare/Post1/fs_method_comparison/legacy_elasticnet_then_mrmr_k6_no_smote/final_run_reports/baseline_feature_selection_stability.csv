@@ -1,0 +1,16 @@
+Feature_Name,Selection_Count,Selection_Frequency
+Morph_Sphericity,5,1.0
+IH_MinimumHistogramGradientGreyLevel_Intensity,4,0.8
+IH_IntensityHistogramMode_Intensity,3,0.6
+Morph_Compactness1,3,0.6
+Morph_Compactness2,3,0.6
+GLCM_InverseDifferenceMoment,2,0.4
+IB_50thIntensityPercentile,2,0.4
+GLCM_Autocorrelation,1,0.2
+GLCM_InverseVariance,1,0.2
+GLCM_JointAverage,1,0.2
+GLCM_SumAverage,1,0.2
+GLRLM_RunPercentage,1,0.2
+GLRLM_ShortRunHighGreyLevelEmphasis,1,0.2
+GLSZM_LargeZoneEmphasis,1,0.2
+IB_75thIntensityPercentile,1,0.2

@@ -1,0 +1,10 @@
+{
+    "RUN_NAME": "repeated5x3_elasticnet_then_mrmr_k6_thr_no_smote",
+    "FS_METHOD": "elasticnet_then_mrmr",
+    "FS_N_FEATURES_TARGET": 6,
+    "N_MODELS": 7,
+    "Overall_Mean_Selected_Features": 6.0,
+    "Overall_Min_Selected_Features": 6,
+    "Overall_Max_Selected_Features": 6,
+    "N_Unique_Selected_Features_Across_Run": 29
+}

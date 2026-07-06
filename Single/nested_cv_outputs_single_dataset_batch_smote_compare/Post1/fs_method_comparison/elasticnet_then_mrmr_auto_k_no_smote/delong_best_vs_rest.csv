@@ -1,0 +1,10 @@
+Competitor,Competitor_Mean_AUC,ΔMean_AUC,p_value,p_Bonferroni,Significant_uncorrected,Significant_Bonferroni
+SVM_Linear,0.4299,+0.2619,3.30e-03,1.49e-01,✓,✗
+NaiveBayes,0.5818,+0.1099,7.71e-03,3.47e-01,✓,✗
+SVM_RBF,0.5879,+0.1039,1.02e-01,1.00e+00,✗,✗
+GradientBoosting,0.6073,+0.0844,1.27e-01,1.00e+00,✗,✗
+RandomForest,0.6279,+0.0639,2.06e-01,1.00e+00,✗,✗
+LightGBM,0.6475,+0.0442,1.92e-01,1.00e+00,✗,✗
+ExtraTrees,0.6489,+0.0428,2.32e-01,1.00e+00,✗,✗
+XGBoost,0.6493,+0.0424,3.31e-01,1.00e+00,✗,✗
+LogisticRegression,0.6885,+0.0032,2.63e-01,1.00e+00,✗,✗

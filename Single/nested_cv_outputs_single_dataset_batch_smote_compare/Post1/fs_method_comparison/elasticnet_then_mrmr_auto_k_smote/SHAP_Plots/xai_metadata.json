@@ -1,0 +1,64 @@
+{
+  "best_model_name": "KNN",
+  "selection_criterion": "Highest nested-CV Mean_AUC from df_summary",
+  "oof_metrics": {
+    "oof_auc": 0.7647235576923077,
+    "oof_pr_auc": 0.8150282786635179,
+    "oof_accuracy": 0.6982758620689655,
+    "oof_balanced_accuracy": 0.7049278846153846,
+    "oof_precision": 0.7735849056603774,
+    "oof_recall": 0.640625,
+    "oof_f1": 0.7008547008547008,
+    "oof_specificity": 0.7692307692307693,
+    "oof_kappa": 0.40188568061284624
+  },
+  "kappa_interpretation": "Moderate agreement",
+  "n_total_samples": 116,
+  "n_selected_features_for_xai": 10,
+  "stability_threshold_min_folds": 2,
+  "n_feature_selection_folds": 5,
+  "best_params_aggregated": {
+    "metric": "manhattan",
+    "n_neighbors": 14,
+    "weights": "uniform"
+  },
+  "features_original": [
+    "Morph_Sphericity",
+    "Morph_Volume_cm3",
+    "IH_IntensityHistogramMode_Intensity",
+    "IH_AreaUnderCurveCIVH_Intensity",
+    "GLCM_Correlation",
+    "GLCM_AngularSecondMoment",
+    "Morph_Compactness1",
+    "IH_MinimumHistogramGradientGreyLevel_Intensity",
+    "IH_IntensityHistogramQuartileCoefficientOfDispersion_Intensity",
+    "GLCM_Contrast"
+  ],
+  "features_sanitized": [
+    "Morph_Sphericity",
+    "Morph_Volume_cm3",
+    "IH_IntensityHistogramMode_Intensity",
+    "IH_AreaUnderCurveCIVH_Intensity",
+    "GLCM_Correlation",
+    "GLCM_AngularSecondMoment",
+    "Morph_Compactness1",
+    "IH_MinimumHistogramGradientGreyLevel_Intensity",
+    "IH_IntensityHistogramQuartileCoefficientOfDispersion_Intensity",
+    "GLCM_Contrast"
+  ],
+  "notes": [
+    "Final refit on the full cohort is used only for SHAP interpretation.",
+    "Reported performance values are OOF/nested-CV metrics.",
+    "SHAP explanations use positive-class probability when predict_proba is available.",
+    "Stable features are selected by recurrence across outer folds, not by using all numeric features."
+  ],
+  "saved_files": {
+    "model_artifact": "nested_cv_outputs_single_dataset_batch_smote_compare/Post1/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote/SHAP_Plots/Best_Model_KNN_XAI_Artifact.joblib",
+    "feature_stability": "nested_cv_outputs_single_dataset_batch_smote_compare/Post1/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote/SHAP_Plots/xai_feature_stability.csv",
+    "shap_importance": "nested_cv_outputs_single_dataset_batch_smote_compare/Post1/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote/SHAP_Plots/shap_feature_importance.csv",
+    "summary_dot_png": "nested_cv_outputs_single_dataset_batch_smote_compare/Post1/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote/SHAP_Plots/shap_summary_dot_stable.png",
+    "summary_dot_pdf": "nested_cv_outputs_single_dataset_batch_smote_compare/Post1/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote/SHAP_Plots/shap_summary_dot_stable.pdf",
+    "summary_bar_png": "nested_cv_outputs_single_dataset_batch_smote_compare/Post1/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote/SHAP_Plots/shap_summary_bar_stable.png",
+    "summary_bar_pdf": "nested_cv_outputs_single_dataset_batch_smote_compare/Post1/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote/SHAP_Plots/shap_summary_bar_stable.pdf"
+  }
+}
