@@ -24,7 +24,7 @@
 
 
 \title{Report on the Radiomics Classification Project}
-
+\author{Mahla Entezari}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -508,8 +508,6 @@ The overall comparison between the models was not statistically significant:
 p = 0.263.
 \]
 
-Therefore, the results do not prove that Linear SVM or Logistic Regression was clearly better than all other models.
-
 
 
 
@@ -717,8 +715,8 @@ The best result was obtained using:
 The selected pipeline was:
 
 \begin{center}
-\textbf{ElasticNet $\rightarrow$ mRMR $\rightarrow$ Auto-k
-$\rightarrow$ Linear SVM, without SMOTE.}
+\textbf{ElasticNet + mRMR + Auto-k
++ Linear SVM, without SMOTE.}
 \end{center}
 
 Its main results were:
@@ -834,7 +832,7 @@ The best triple result increased to:
 \section{Four-Dataset Results: ADC--Post1--Post2--Pre}
 % ============================================================
 
-This section reports the results for the combined
+This section is the results of the combined
 \textbf{ADC--Post1--Post2--Pre} dataset. The same pipeline was used.
 
 \subsection{Best Result}
@@ -842,8 +840,8 @@ This section reports the results for the combined
 The highest mean AUC was obtained using:
 
 \begin{center}
-\textbf{ElasticNet $\rightarrow$ mRMR $\rightarrow$ Auto-k
-$\rightarrow$ SVM-RBF, without SMOTE.}
+\textbf{ElasticNet + mRMR + Auto-k
++ SVM-RBF, without SMOTE.}
 \end{center}
 
 The main results were:
@@ -915,8 +913,8 @@ The combined dataset contained 113 samples and 725 radiomics features.
 The best model was:
 
 \begin{center}
-\textbf{mRMR $\rightarrow$ ElasticNet $\rightarrow$ Auto-k
-$\rightarrow$ SMOTE $\rightarrow$ Logistic Regression.}
+\textbf{mRMR + ElasticNet + Auto-k
++ SMOTE + Logistic Regression.}
 \end{center}
 
 Its results were:

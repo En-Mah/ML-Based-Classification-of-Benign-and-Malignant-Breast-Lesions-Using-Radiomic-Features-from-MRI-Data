@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  10 JUL 2026 21:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  10 JUL 2026 21:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -379,10 +379,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 41.
 
 
-LaTeX Warning: No \author given.
-
-
-
 [1
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
@@ -554,30 +550,31 @@ n input line 471.
 
 
 [9 <./figures/fig06_baseline_feature_selection_stability.png>]
-
-[10 <./figures/best_model_SVM_Linear_folds_report.png>]
-<figures/shap_summary_bar_stable.png, id=302, 564.4287pt x 615.4995pt>
+<figures/shap_summary_bar_stable.png, id=296, 564.4287pt x 615.4995pt>
 File: figures/shap_summary_bar_stable.png Graphic file (type png)
 <use figures/shap_summary_bar_stable.png>
 Package pdftex.def Info: figures/shap_summary_bar_stable.png  used on input lin
-e 535.
+e 528.
 (pdftex.def)             Requested size: 287.14601pt x 313.13046pt.
 
 
-[11 <./figures/shap_summary_bar_stable.png>]
-<figures/shap_summary_dot_stable.png, id=309, 681.2652pt x 788.82706pt>
+[10 <./figures/best_model_SVM_Linear_folds_report.png>]
+<figures/shap_summary_dot_stable.png, id=303, 681.2652pt x 788.82706pt>
 File: figures/shap_summary_dot_stable.png Graphic file (type png)
 <use figures/shap_summary_dot_stable.png>
 Package pdftex.def Info: figures/shap_summary_dot_stable.png  used on input lin
-e 567.
+e 560.
 (pdftex.def)             Requested size: 287.14601pt x 332.48468pt.
+
+
+[11 <./figures/shap_summary_bar_stable.png>]
 <figures/fig6_feature_selection_stability_ADC_M1.png, id=310, 854.11095pt x 673
 .7973pt>
 File: figures/fig6_feature_selection_stability_ADC_M1.png Graphic file (type pn
 g)
 <use figures/fig6_feature_selection_stability_ADC_M1.png>
 Package pdftex.def Info: figures/fig6_feature_selection_stability_ADC_M1.png  u
-sed on input line 592.
+sed on input line 585.
 (pdftex.def)             Requested size: 386.16006pt x 304.63509pt.
 
 
@@ -588,14 +585,14 @@ File: figures/fig6b_feature_family_contribution_ADC_M1.png Graphic file (type p
 ng)
 <use figures/fig6b_feature_family_contribution_ADC_M1.png>
 Package pdftex.def Info: figures/fig6b_feature_family_contribution_ADC_M1.png  
-used on input line 601.
+used on input line 594.
 (pdftex.def)             Requested size: 277.24234pt x 167.38545pt.
 
 
 [13 <./figures/fig6_feature_selection_stability_ADC_M1.png> <./figures/fig6b_fe
 ature_family_contribution_ADC_M1.png>]
-./Report-1.tex:643: Undefined control sequence.
-l.643 \text
+./Report-1.tex:636: Undefined control sequence.
+l.636 \text
            {Mean AUC}=0.801\pm0.072,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -603,8 +600,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:647: Undefined control sequence.
-l.647 \text
+./Report-1.tex:640: Undefined control sequence.
+l.640 \text
            {Pooled AUC}=0.749.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -612,8 +609,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:682: Undefined control sequence.
-l.682 \text
+./Report-1.tex:675: Undefined control sequence.
+l.675 \text
            {Mean AUC}=0.771\pm0.038,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -621,8 +618,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:684: Undefined control sequence.
-l.684 \text
+./Report-1.tex:677: Undefined control sequence.
+l.677 \text
            {Pooled AUC}=0.710.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -630,8 +627,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:690: Undefined control sequence.
-l.690 \text
+./Report-1.tex:683: Undefined control sequence.
+l.683 \text
            {Mean AUC}=0.801\pm0.072,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -639,8 +636,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:692: Undefined control sequence.
-l.692 \text
+./Report-1.tex:685: Undefined control sequence.
+l.685 \text
            {Pooled AUC}=0.749.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -651,8 +648,8 @@ and I'll forget about whatever was undefined.
 
 
 [14]
-./Report-1.tex:732: Undefined control sequence.
-l.732 \text
+./Report-1.tex:725: Undefined control sequence.
+l.725 \text
            {Mean AUC}=0.836\pm0.088,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -660,8 +657,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:736: Undefined control sequence.
-l.736 \text
+./Report-1.tex:729: Undefined control sequence.
+l.729 \text
            {Pooled AUC}=0.799,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -669,8 +666,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:738: Undefined control sequence.
-l.738 \text
+./Report-1.tex:731: Undefined control sequence.
+l.731 \text
            {Pooled PR-AUC}=0.832.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -678,8 +675,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:750: Undefined control sequence.
-l.750 \text
+./Report-1.tex:743: Undefined control sequence.
+l.743 \text
            {Mean AUC}=0.834\pm0.045,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -687,8 +684,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:752: Undefined control sequence.
-l.752 \text
+./Report-1.tex:745: Undefined control sequence.
+l.745 \text
            {Pooled AUC}=0.756.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -702,13 +699,13 @@ File: figures/best_model_LogisticRegression_folds_report.png Graphic file (type
  png)
 <use figures/best_model_LogisticRegression_folds_report.png>
 Package pdftex.def Info: figures/best_model_LogisticRegression_folds_report.png
-  used on input line 786.
+  used on input line 779.
 (pdftex.def)             Requested size: 495.07779pt x 134.176pt.
 
 
 [15 <./figures/best_model_LogisticRegression_folds_report.png>]
-./Report-1.tex:810: Undefined control sequence.
-l.810 \text
+./Report-1.tex:803: Undefined control sequence.
+l.803 \text
            {Mean AUC}=0.771.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -716,8 +713,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:816: Undefined control sequence.
-l.816 \text
+./Report-1.tex:809: Undefined control sequence.
+l.809 \text
            {Mean AUC}=0.801.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -725,8 +722,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:822: Undefined control sequence.
-l.822 \text
+./Report-1.tex:815: Undefined control sequence.
+l.815 \text
            {Mean AUC}=0.836.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -734,8 +731,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:857: Undefined control sequence.
-l.857 \text
+./Report-1.tex:850: Undefined control sequence.
+l.850 \text
            {Mean AUC}=0.813\pm0.035,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -743,8 +740,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:861: Undefined control sequence.
-l.861 \text
+./Report-1.tex:854: Undefined control sequence.
+l.854 \text
            {Pooled AUC}=0.765,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -752,8 +749,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:863: Undefined control sequence.
-l.863 \text
+./Report-1.tex:856: Undefined control sequence.
+l.856 \text
            {Pooled PR-AUC}=0.824.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -766,13 +763,13 @@ and I'll forget about whatever was undefined.
 File: figures/best_model_SVM_RBF_folds_report.png Graphic file (type png)
 <use figures/best_model_SVM_RBF_folds_report.png>
 Package pdftex.def Info: figures/best_model_SVM_RBF_folds_report.png  used on i
-nput line 899.
+nput line 892.
 (pdftex.def)             Requested size: 495.07779pt x 134.2223pt.
 
 
 [16]
-./Report-1.tex:930: Undefined control sequence.
-l.930 \text
+./Report-1.tex:923: Undefined control sequence.
+l.923 \text
            {Mean AUC}=0.733\pm0.038,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -780,8 +777,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Report-1.tex:932: Undefined control sequence.
-l.932 \text
+./Report-1.tex:925: Undefined control sequence.
+l.925 \text
            {Pooled AUC}=0.718.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -796,10 +793,6 @@ and I'll forget about whatever was undefined.
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Report-1.out' has not changed.
 (rerunfilecheck)             Checksum: 665F2E9FCB19037152AD217B2B493ECC;9679.
  ) 
@@ -825,7 +818,7 @@ ive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texliv
 e/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/
 2025/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/20
 25/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Report-1.pdf (17 pages, 5817146 bytes).
+Output written on Report-1.pdf (17 pages, 5818345 bytes).
 PDF statistics:
  436 PDF objects out of 1000 (max. 8388607)
  354 compressed objects within 4 object streams
