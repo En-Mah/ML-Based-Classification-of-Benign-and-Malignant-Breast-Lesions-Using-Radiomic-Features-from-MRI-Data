@@ -1,0 +1,939 @@
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage[hidelinks]{hyperref}
+
+
+\usepackage{fancyhdr}
+
+
+\geometry{margin=1.8cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\renewcommand{\arraystretch}{1.08}
+
+
+
+\title{Report on the Radiomics Classification Project}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{\small Radiomics Classification Project}
+\rhead{\small Report}
+\cfoot{\thepage}
+
+\renewcommand{\headrulewidth}{0.4pt}
+  
+\begin{document}
+
+\maketitle
+
+% ============================================================
+\section{Initial Dataset Review and Feature Analysis}
+% ============================================================
+
+This notebook was run on the \textbf{ADC\_M1 dataset}. 
+
+\subsection{Dataset Preprocessing}
+
+After cleaning, the ADC dataset contained:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item 114 ROIs;
+    \item 48 unique patients;
+    \item 145 numerical radiomics features;
+    \item 50 benign and 64 malignant ROIs.
+\end{itemize}
+
+Some patients had more than one ROI. Therefore, patient ID was used as the grouping variable during cross-validation. All ROIs from one patient were kept in the same fold, so the same patient could not appear in both the training and test sets. This was necessary to prevent patient-level data leakage.
+
+\subsection{Data Quality Control}
+
+The main data-quality results were:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item total missing values: 12;
+    \item features containing missing values: 6;
+    \item infinite values: 0;
+    \item constant features: 0;
+    \item near-zero variance features: 0;
+    \item duplicated rows: 0;
+    \item duplicated ROI names: 0;
+    \item duplicated patient--ROI pairs: 0.
+\end{itemize}
+
+The missing values were not filled before cross-validation. Median imputation was performed only using the training data of each fold.
+
+The number of ROIs per patient ranged from 1 to 7, with a median of 2 and a mean of 2.38. Four patients had both benign and malignant ROIs:
+
+\begin{center}
+\texttt{ADC\_P3}, \texttt{ADC\_P50}, \texttt{ADC\_P12}, and \texttt{ADC\_P27}.
+\end{center}
+
+
+\subsection{Outlier Analysis}
+
+At least one outlier was found in 104 of the 145 features, which is about 72\% of the feature set. The largest numbers of outliers were observed in:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \texttt{GLSZM\_SmallZoneHighGreyLevelEmphasis}: 44;
+    \item \texttt{GLRLM\_ShortRunHighGreyLevelEmphasis}: 41;
+    \item \texttt{GLRLM\_LongRunsEmphasis}: 33;
+    \item \texttt{IH\_MaximumHistogramGradientGreyLevel\_Intensity}: 29;
+    \item \texttt{GLSZM\_SmallZoneEmphasis}: 29.
+\end{itemize}
+
+No global clipping, winsorisation, or sample removal was applied. This avoided changing the complete dataset before validation. However, robust scaling or fold-specific outlier handling should be tested later because some models may be sensitive to extreme values.
+
+\subsection{Class Distribution}
+
+The dataset contained 50 benign and 64 malignant ROIs. The majority-to-minority ratio was 1.28.
+
+The exact binomial test gave:
+
+\[
+p = 0.223.
+\]
+
+Therefore, the class distribution was not significantly different from a balanced distribution. The imbalance was mild, so SMOTE was tested as an optional method rather than being applied automatically.
+
+\subsection{Feature Distribution and Statistical Tests}
+
+The normality analysis showed:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item 6 approximately normal features;
+    \item 139 non-normal features.
+\end{itemize}
+
+For this reason, non-parametric methods such as the Mann--Whitney test and Spearman correlation were mainly used.
+
+After false discovery rate correction, eight features showed a significant class difference.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{p{8.2cm}c}
+\toprule
+\textbf{Feature} & \textbf{Cohen's \(d\)} \\
+\midrule
+\texttt{Morph\_SurfaceToVolumeRatio\_cm} & 0.566 \\
+\texttt{Morph\_Compacity} & -0.621 \\
+\texttt{Morph\_Compactness1} & -0.627 \\
+\texttt{Morph\_Compactness2} & 0.579 \\
+\texttt{Morph\_SphericalDisproportion} & -0.616 \\
+\texttt{Morph\_Sphericity} & 0.579 \\
+\texttt{GLSZM\_LargeZoneEmphasis} & -0.405 \\
+\texttt{GLSZM\_LowGrayLevelZoneEmphasis} & 0.496 \\
+\bottomrule
+\end{tabular}
+\caption{ADC features with significant class differences after FDR correction.}
+\label{tab:adc_significant_features}
+\end{table}
+
+Most significant features were related to lesion geometry, while two GLSZM features described texture and zone-size patterns. This suggests that both shape and texture contained useful information for separating the two classes.
+
+The morphological features were strongly correlated. Therefore, they should not be interpreted as independent biomarkers. They mainly describe related aspects of lesion geometry.
+
+
+\subsection{Unidentified Feature Column}
+
+An additional column named \texttt{FEATURE\_RESULTS} was also found in the \texttt{ADC\_M1} dataset. Its exact meaning is currently unclear, and it may have been added by mistake. This column should be checked before the final analysis.
+
+
+% ============================================================
+\subsection{Visual Review of the Dataset}
+% ============================================================
+
+
+\subsubsection{Top FDR-Ranked Features}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.47\textwidth]
+    {figures/fig05_top_fdr_ranked_features.png}
+    \caption{Top ADC radiomics features ranked by FDR-adjusted p-value.}
+    \label{fig:adc_fdr_features}
+\end{figure}
+
+The highest-ranked features were mainly morphological, with two GLSZM texture features also passing the FDR threshold. Therefore, lesion geometry and texture were the strongest individual signals in the ADC dataset.
+
+\subsubsection{Correlation among Important Features}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.41\textwidth]
+    {figures/fig07_top12_feature_correlation_heatmap.png}
+    \caption{Spearman correlation among the highest-ranked ADC features.}
+    \label{fig:adc_feature_correlation}
+\end{figure}
+
+Several important features were strongly correlated. This showed that some variables contained repeated information and supported the use of redundancy-aware feature-selection methods such as mRMR.
+
+\subsubsection{Feature Variance}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.62\textwidth]
+    {figures/fig03_feature_variance_distribution.png}
+    \caption{Distribution of ADC radiomics feature variance.}
+    \label{fig:adc_feature_variance}
+\end{figure}
+
+The features had very different numerical scales. No constant or near-zero variance features were found, but standardisation was necessary for scale-sensitive models such as Logistic Regression, SVM, and KNN.
+
+\subsubsection{Principal Component Analysis}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.58\textwidth]
+    {figures/fig08_pca_projection.png}
+    \caption{PCA projection of benign and malignant ADC ROIs.}
+    \label{fig:adc_pca}
+\end{figure}
+
+The first two principal components explained approximately 51.2\% of the total variance:
+
+\[
+PC1 = 32.8\%, \qquad PC2 = 18.5\%.
+\]
+
+The benign and malignant samples still showed considerable overlap. Therefore, the classes were not naturally separated in a simple low-dimensional space, and supervised feature selection and classification were required.
+
+
+
+% ============================================================
+\section{Baseline, Model Definition, and Main Methods}
+% ============================================================
+
+\subsection{Baseline Experiment}
+
+A fixed baseline experiment was first used to test the complete workflow. It used:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item mRMR followed by ElasticNet;
+    \item a fixed number of 14 selected features;
+    \item no SMOTE;
+    \item five patient-aware outer folds;
+    \item three patient-aware inner folds;
+    \item Optuna for hyperparameter tuning.
+\end{itemize}
+
+The best baseline model was Logistic Regression:
+
+\[
+\text{Mean AUC} = 0.707 \pm 0.078,
+\qquad
+\text{Pooled AUC} = 0.687.
+\]
+
+The baseline showed moderate predictive performance, but the fold-to-fold variation was relatively high.
+
+\subsection{Feature-Selection Methods}
+
+Several feature-selection methods were implemented, including LASSO, RFE, a Boruta-like method, and custom mRMR. However, the main comparison focused on three pipelines.
+
+\begin{enumerate}[leftmargin=1.7em]
+    \item \textbf{ElasticNet followed by mRMR}
+
+    ElasticNet first reduced the feature space, and mRMR then selected relevant features with lower redundancy.
+
+    This was the strongest method for ADC. Without SMOTE, Logistic Regression achieved:
+
+    \[
+    0.771 \pm 0.038.
+    \]
+
+    \item \textbf{Correlation filtering followed by mRMR}
+
+    Highly correlated features were first reduced, and mRMR was then applied.
+
+    This method gave intermediate but stable performance:
+
+    \[
+    0.745 \pm 0.026
+    \]
+
+    without SMOTE. It was weaker than ElasticNet followed by mRMR, but its low standard deviation showed good fold stability.
+
+    \item \textbf{mRMR followed by ElasticNet}
+
+    mRMR was applied first, followed by ElasticNet.
+
+    This order was the weakest main strategy for ADC. Its best result without SMOTE was:
+
+    \[
+    0.711 \pm 0.075.
+    \]
+\end{enumerate}
+
+The comparison showed that the order of feature selection was important. Reversing the baseline order and applying ElasticNet before mRMR improved the mean AUC from 0.707 to 0.771 and reduced the standard deviation from 0.078 to 0.038.
+
+\subsection{Automatic Selection of Feature Number}
+
+The feature count was fixed at 14 only in the baseline. In the main experiments, the number of features was selected automatically from:
+
+\[
+k \in \{4,6,8,10,12,14,16,18\}.
+\]
+
+For the best ElasticNet--mRMR pipeline, the selected numbers across the five outer folds were:
+
+\[
+14,\;8,\;14,\;18,\;18.
+\]
+
+The average was 14.4 features. Therefore, the final pipeline did not use one fixed feature count. The selected complexity changed according to the training patients in each fold.
+
+\subsection{Machine Learning Models}
+
+Ten classifiers were compared:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item Logistic Regression;
+    \item linear SVM;
+    \item RBF SVM;
+    \item Random Forest;
+    \item Extra Trees;
+    \item Gradient Boosting;
+    \item K-Nearest Neighbours;
+    \item Naive Bayes;
+    \item XGBoost;
+    \item LightGBM.
+\end{itemize}
+
+The strongest results were obtained by simple linear models. Logistic Regression produced the highest mean AUC, while linear SVM produced a competitive result when SMOTE was used.
+
+
+\subsection{Effect of SMOTE}
+
+SMOTE was applied only to training data. It was never applied to validation or test samples.
+
+Its effect depended on the classifier:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item with ElasticNet followed by mRMR, Logistic Regression decreased from 0.771 to 0.752;
+    \item with the same feature-selection method, linear SVM increased from 0.735 to 0.764;
+    \item the pooled AUC of linear SVM increased from 0.663 to 0.720;
+    \item with correlation filtering followed by mRMR, SMOTE had almost no effect on Logistic Regression;
+    \item with mRMR followed by ElasticNet, SMOTE slightly reduced Logistic Regression performance.
+\end{itemize}
+
+Therefore, SMOTE was useful for linear SVM but not for the best Logistic Regression model. It should be considered a model-specific option rather than a required preprocessing step.
+
+\subsection{Hyperparameter Optimisation}
+
+Optuna was used inside the inner patient-aware folds to tune the main parameters of each model.
+
+\subsection{Experimental Grid}
+
+The three main feature-selection methods were tested with and without SMOTE. Each setting was evaluated using all ten classifiers:
+
+\[
+3 \times 2 \times 10 = 60
+\]
+
+model configurations.
+
+According to the primary metric, mean outer-fold AUC, the best configuration was:
+
+\begin{center}
+\textbf{ElasticNet + mRMR + Auto-k
++ Logistic Regression, without SMOTE.}
+\end{center}
+
+Its main results were:
+
+\[
+\text{Mean AUC} = 0.771 \pm 0.038,
+\qquad
+\text{Pooled AUC} = 0.710.
+\]
+
+A closely competitive model used the same feature-selection method with SMOTE and linear SVM:
+
+\[
+\text{Mean AUC} = 0.764 \pm 0.051,
+\qquad
+\text{Pooled AUC} = 0.720.
+\]
+
+The Logistic Regression model had the highest mean AUC and lower variability, while the SVM model had a slightly higher pooled AUC and balanced accuracy.
+
+\subsection{Nested Cross-Validation}
+
+The complete pipeline was evaluated using patient-aware nested cross-validation. 
+This design reduced data leakage and provided out-of-fold predictions for all samples.
+
+% ============================================================
+\section{Baseline Model Results}
+% ============================================================
+\subsection{ROC Curves}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.68\textwidth]
+    {figures/fig02_baseline_roc_curves_top_models.png}
+    \caption{ROC curves of the strongest baseline models.}
+    \label{fig:baseline_roc}
+\end{figure}
+
+All displayed models performed better than random classification. Linear SVM had the highest ROC-AUC.
+
+\subsection{Confusion Matrix}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.52\textwidth]
+    {figures/fig03_baseline_best_model_confusion_matrix.png}
+    \caption{Confusion matrix of the baseline Linear SVM model.}
+    \label{fig:baseline_confusion}
+\end{figure}
+
+The Linear SVM correctly classified 37 benign and 41 malignant ROIs. It incorrectly classified 13 benign ROIs as malignant and missed 23 malignant ROIs.
+
+The model had higher specificity than sensitivity:
+
+\[
+\text{Sensitivity} \approx 0.64,
+\qquad
+\text{Specificity} \approx 0.74.
+\]
+
+
+\subsection{Metric Profile}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.68\textwidth]
+    {figures/fig05_baseline_best_model_metric_profile.png}
+    \caption{Performance profile of the baseline Linear SVM model.}
+    \label{fig:baseline_metrics}
+\end{figure}
+
+The model achieved approximately:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item ROC-AUC: 0.72;
+    \item PR-AUC: 0.74;
+    \item balanced accuracy: 0.69;
+    \item sensitivity: 0.64;
+    \item specificity: 0.74;
+    \item positive predictive value: 0.76;
+    \item negative predictive value: 0.62;
+    \item Cohen's kappa: 0.37.
+\end{itemize}
+
+
+\subsection{Feature-Selection Stability}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.72\textwidth]
+    {figures/fig06_baseline_feature_selection_stability.png}
+    \caption{Selection frequency of the most stable baseline features across the five outer folds.}
+    \label{fig:baseline_feature_stability}
+\end{figure}
+
+Five features were selected in all five outer folds:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \texttt{GLCM\_AngularSecondMoment};
+    \item \texttt{Morph\_Compactness1};
+    \item \texttt{GLCM\_Correlation};
+    \item \texttt{IH\_IntensityHistogramMedian\_Intensity};
+    \item \texttt{GLCM\_InverseDifferenceMoment}.
+\end{itemize}
+
+Several morphological and intensity features were also selected in four of the five folds. This suggests that the most stable predictive information was mainly related to texture, lesion shape, and intensity distribution.
+
+
+% ============================================================
+\section{Main Experimental Results}
+% ============================================================
+
+\subsection{Fold-Level Performance}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]
+    {figures/best_model_SVM_Linear_folds_report.png}
+    \caption{AUC, accuracy, and number of selected features across the five outer folds for the Linear SVM model.}
+    \label{fig:svm_linear_folds}
+\end{figure}
+
+The Linear SVM achieved a mean AUC of 0.764 and a mean accuracy of 0.688 across the five outer folds.
+
+The AUC values ranged from 0.676 to 0.825. Fold 2 showed the best discrimination, while Fold 3 had the lowest AUC. Overall, the AUC remained above 0.67 in all folds, which indicates reasonably stable ranking performance.
+
+Accuracy varied more than AUC, especially in Fold 4, where accuracy decreased to 0.577 despite an AUC of 0.767. This difference shows that the model ranked the samples reasonably well, but the default classification threshold did not work equally well in every fold.
+
+The number of selected features was not fixed. It changed across folds:
+
+\[
+14,\;8,\;14,\;18,\;18.
+\]
+
+This confirms that the Auto-k procedure selected the feature count separately for each training fold. The changes in feature number did not show a simple relationship with performance. For example, Fold 2 achieved the highest AUC using only 8 features, while Fold 4 used 18 features but had the lowest accuracy.
+
+
+
+\subsection{Selected Run for Detailed Analysis}
+
+Logistic Regression without SMOTE had the highest mean AUC. However, the detailed analysis was performed on the ElasticNet--mRMR pipeline with SMOTE because Linear SVM gave a better overall balance across several metrics.
+
+
+\subsection{Uncertainty of the Result}
+
+The pooled AUC of Linear SVM was 0.720, with a 95\% confidence interval from 0.619 to 0.814.
+
+This interval is relatively wide, which shows that the exact performance is still uncertain. 
+
+\subsection{Statistical Comparison}
+
+The overall comparison between the models was not statistically significant:
+
+\[
+p = 0.263.
+\]
+
+Therefore, the results do not prove that Linear SVM or Logistic Regression was clearly better than all other models.
+
+
+
+
+
+% ============================================================
+\section{Analysis and Model Interpretation}
+% ============================================================
+
+Older experiments based on LASSO, RFE, custom mRMR, and hierarchical feature selection were skipped and did not affect the current ADC results.
+
+\subsection{SHAP Feature Importance}
+
+SHAP analysis was used to understand which features had the largest influence on the selected Linear SVM model.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.58\textwidth]
+    {figures/shap_summary_bar_stable.png}
+    \caption{Mean absolute SHAP importance for the selected Linear SVM model.}
+    \label{fig:shap_bar_adc}
+\end{figure}
+
+The most important features were:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \texttt{IB\_MedianIntensity};
+    \item \texttt{IH\_IntensityHistogramMedian\_Intensity};
+    \item \texttt{GLCM\_AngularSecondMoment};
+    \item \texttt{GLCM\_Correlation};
+    \item \texttt{GLCM\_InverseDifference};
+    \item \texttt{Morph\_SphericalDisproportion};
+    \item \texttt{Morph\_Compacity}.
+\end{itemize}
+
+The two median-intensity features had the highest average effect. Texture features from GLCM and morphological features also had important roles.
+
+Overall, the model mainly used three types of information:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item signal intensity;
+    \item texture and local spatial patterns;
+    \item lesion shape and compactness.
+\end{itemize}
+
+\subsection{Direction of Feature Effects}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.58\textwidth]
+    {figures/shap_summary_dot_stable.png}
+    \caption{SHAP summary plot showing the direction and size of feature effects on the malignant-class output.}
+    \label{fig:shap_dot_adc}
+\end{figure}
+
+The SHAP summary plot showed both the importance and direction of each feature.
+
+Higher values of the median-intensity features and \texttt{GLCM\_AngularSecondMoment} generally increased the model output for the malignant class.
+
+Higher values of \texttt{GLCM\_Correlation}, \texttt{Morph\_SphericalDisproportion}, and \texttt{Morph\_Compacity} generally reduced the malignant-class output.
+
+
+
+
+
+
+
+
+
+\subsection{Feature-Family Contribution and Selection Stability}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.78\textwidth]
+    {figures/fig6_feature_selection_stability_ADC_M1.png}
+    \caption{Selection frequency of ADC radiomics features across the five outer folds.}
+    \label{fig:adc_feature_stability}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.56\textwidth]
+    {figures/fig6b_feature_family_contribution_ADC_M1.png}
+    \caption{Total number of selected features from each radiomics feature family.}
+    \label{fig:feature_family_contribution}
+\end{figure}
+
+
+This suggests that the model mainly used texture information, especially spatial grey-level relationships, together with a smaller contribution from lesion shape and intensity.
+
+
+
+
+
+
+
+% ============================================================
+\section{Pairwise Analysis: Post2 and ADC}
+% ============================================================
+
+In the second part of the project, I combined the radiomics features from the Post2 and ADC datasets. The same patients and ROIs were used, but each ROI now had features from both datasets.
+
+The same patient-aware nested cross-validation pipeline was used. Therefore, the main difference from the previous analysis was the larger feature set.
+
+\subsection{Combined Dataset}
+
+The combined dataset contained:
+
+\begin{itemize}
+    \item 114 ROIs;
+    \item 48 patients;
+    \item 289 radiomics features;
+    \item 50 benign and 64 malignant ROIs.
+\end{itemize}
+
+The number of samples did not increase. Only the number of features increased from 145 in ADC alone to 289 after combining Post2 and ADC.
+
+\subsection{Baseline Result}
+
+The first baseline used 14 fixed features, mRMR followed by ElasticNet, and no SMOTE.
+
+The best baseline model was Logistic Regression:
+
+\[
+\text{Mean AUC}=0.801\pm0.072,
+\]
+
+\[
+\text{Pooled AUC}=0.749.
+\]
+
+
+
+\subsection{Number of Selected Features}
+
+In the Auto-k experiment, the selected numbers of features were:
+
+\[
+14,\;8,\;16,\;18,\;8.
+\]
+
+The average was 12.8 features.
+
+
+\subsection{Feature Stability}
+
+A total of 47 different features were selected across the five folds.
+
+No feature was selected in all five folds. Only one feature appeared in four folds.
+
+This shows that the selected feature set was less stable than in the ADC-only analysis. However, useful features came from both Post2 and ADC.
+
+The most repeated feature was:
+
+\begin{center}
+\texttt{Post2\_IH\_IntensityHistogramMode\_Intensity}.
+\end{center}
+
+\subsection{Comparison with ADC Alone}
+
+The best ADC-only result was:
+
+\[
+\text{Mean AUC}=0.771\pm0.038,
+\qquad
+\text{Pooled AUC}=0.710.
+\]
+
+The Pairwise baseline result was:
+
+\[
+\text{Mean AUC}=0.801\pm0.072,
+\qquad
+\text{Pooled AUC}=0.749.
+\]
+
+Therefore, combining Post2 and ADC improved the observed AUC.
+
+However, the Pairwise result had a larger standard deviation and less stable selected features. This means that performance improved, but the result was more sensitive to the patient folds.
+
+
+
+
+
+
+
+% ============================================================
+\section{Triple-Dataset Analysis}
+% ============================================================
+
+In the next stage, I combined the radiomics features from three datasets. Ten different triple combinations were created and evaluated using the same pipeline.
+
+Each combined dataset contained 435 radiomics features. Depending on the available matched ROIs, the number of samples ranged from 113 to 117.
+
+
+\subsection{Best Triple Combinations}
+
+The best result was obtained using:
+
+\begin{center}
+\textbf{ADC + Post1 + Pre}
+\end{center}
+
+The selected pipeline was:
+
+\begin{center}
+\textbf{ElasticNet $\rightarrow$ mRMR $\rightarrow$ Auto-k
+$\rightarrow$ Linear SVM, without SMOTE.}
+\end{center}
+
+Its main results were:
+
+\[
+\text{Mean AUC}=0.836\pm0.088,
+\]
+
+\[
+\text{Pooled AUC}=0.799,
+\qquad
+\text{Pooled PR-AUC}=0.832.
+\]
+
+The second-best combination was:
+
+\begin{center}
+\textbf{ADC + Post2 + T2}
+\end{center}
+
+with:
+
+\[
+\text{Mean AUC}=0.834\pm0.045,
+\qquad
+\text{Pooled AUC}=0.756.
+\]
+
+The mean AUC values of the two best combinations were almost equal. However, ADC--Post2--T2 had a smaller standard deviation, which means that its performance was more stable across the folds.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{p{4.2cm}p{2.7cm}ccc}
+\toprule
+\textbf{Triple combination} &
+\textbf{Best model} &
+\textbf{Mean AUC} &
+\textbf{SD} &
+\textbf{Pooled AUC} \\
+\midrule
+ADC--Post1--Pre & Linear SVM & 0.836 & 0.088 & 0.799 \\
+ADC--Post2--T2 & Linear SVM & 0.834 & 0.045 & 0.756 \\
+ADC--Post1--Post2 & Linear SVM & 0.795 & 0.080 & 0.759 \\
+ADC--Post2--Pre & Logistic Regression & 0.790 & 0.052 & 0.717 \\
+ADC--Pre--T2 & XGBoost & 0.762 & 0.115 & 0.666 \\
+\bottomrule
+\end{tabular}
+\caption{Five highest-performing triple-dataset combinations.}
+\label{tab:best_triple_results}
+\end{table}
+
+
+
+\subsection{Fold-Level Performance}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]
+    {figures/best_model_LogisticRegression_folds_report.png}
+    \caption{AUC, accuracy, and number of selected features across the five outer folds for the LogisticRegression model.}
+    \label{fig:triple_LogisticRegression_folds}
+\end{figure}
+
+
+
+\subsection{Importance of ADC}
+
+The five highest-ranked triple combinations all included ADC.
+
+\subsection{Feature Selection and Model Type}
+
+ElasticNet followed by mRMR was the best feature-selection method in five of the ten triple combinations.
+
+mRMR followed by ElasticNet was best in four combinations, while correlation filtering followed by mRMR was best in only one combination.
+
+Linear SVM was the best classifier in four of the ten combinations. 
+
+\subsection{Comparison with Earlier Results}
+
+The best ADC-only result was:
+
+\[
+\text{Mean AUC}=0.771.
+\]
+
+The best Post2--ADC pairwise result was approximately:
+
+\[
+\text{Mean AUC}=0.801.
+\]
+
+The best triple result increased to:
+
+\[
+\text{Mean AUC}=0.836.
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ============================================================
+\section{Four-Dataset Results: ADC--Post1--Post2--Pre}
+% ============================================================
+
+This section reports the results for the combined
+\textbf{ADC--Post1--Post2--Pre} dataset. The same pipeline was used.
+
+\subsection{Best Result}
+
+The highest mean AUC was obtained using:
+
+\begin{center}
+\textbf{ElasticNet $\rightarrow$ mRMR $\rightarrow$ Auto-k
+$\rightarrow$ SVM-RBF, without SMOTE.}
+\end{center}
+
+The main results were:
+
+\[
+\text{Mean AUC}=0.813\pm0.035,
+\]
+
+\[
+\text{Pooled AUC}=0.765,
+\qquad
+\text{Pooled PR-AUC}=0.824.
+\]
+
+The small standard deviation shows that the model had relatively stable
+performance across the five folds.
+
+\subsection{Effect of SMOTE}
+
+Using SMOTE slightly reduced the mean AUC:
+
+\[
+0.813 \rightarrow 0.806.
+\]
+
+However, it improved some other measures, including pooled AUC, balanced
+accuracy, specificity, and F1-score.
+
+Therefore:
+
+\begin{itemize}
+    \item without SMOTE gave the highest mean AUC;
+    \item with SMOTE gave a better balance between benign and malignant
+    classification.
+\end{itemize}
+
+
+\subsection{Selected Features}
+
+The best method selected between 4 and 12 features in each fold, with an
+average of 7.6 features.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]
+    {figures/best_model_SVM_RBF_folds_report.png}
+    \caption{AUC, accuracy, and number of selected features across the five outer folds for the SVM-RBF model.}
+    \label{fig:quad_svm_rbf_folds}
+\end{figure}
+
+
+
+
+
+% ============================================================
+\section{Five-Dataset Results}
+% ============================================================
+
+In the final experiment, all five datasets were combined:
+
+\begin{center}
+\textbf{Pre + Post1 + Post2 + ADC + T2}
+\end{center}
+
+The combined dataset contained 113 samples and 725 radiomics features.
+
+The best model was:
+
+\begin{center}
+\textbf{mRMR $\rightarrow$ ElasticNet $\rightarrow$ Auto-k
+$\rightarrow$ SMOTE $\rightarrow$ Logistic Regression.}
+\end{center}
+
+Its results were:
+
+\[
+\text{Mean AUC}=0.733\pm0.038,
+\qquad
+\text{Pooled AUC}=0.718.
+\]
+
+The model selected about 10 features in each fold.
+
+The result was lower than the best triple- and four-dataset combinations. Therefore, combining all five datasets did not improve performance. 
+
+
+
+
+
+
+\end{document}

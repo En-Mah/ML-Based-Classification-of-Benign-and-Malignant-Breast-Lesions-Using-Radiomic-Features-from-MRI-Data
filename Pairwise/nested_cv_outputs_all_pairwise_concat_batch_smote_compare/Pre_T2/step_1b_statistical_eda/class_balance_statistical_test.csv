@@ -1,3 +1,0 @@
-label,class_name,count,proportion,binomial_balance_p_value
-0,Benign,52,0.4444444444444444,0.26718230499039625
-1,Malignant,65,0.5555555555555556,0.26718230499039625

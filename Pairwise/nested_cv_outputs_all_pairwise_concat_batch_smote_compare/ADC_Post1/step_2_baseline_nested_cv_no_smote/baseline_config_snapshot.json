@@ -1,0 +1,18 @@
+{
+    "RUN_NAME": "step_2_baseline_nested_cv_no_smote",
+    "SAVE_DIR": "nested_cv_outputs_all_pairwise_concat_batch_smote_compare/ADC_Post1/step_2_baseline_nested_cv_no_smote",
+    "USE_SMOTE": false,
+    "FS_METHOD": "mrmr_then_elasticnet_no_corr",
+    "FS_N_FEATURES": 14,
+    "AUTO_TUNE_FS_N_FEATURES": false,
+    "N_OUTER_FOLDS": 5,
+    "N_INNER_FOLDS": 3,
+    "N_OPTUNA_TRIALS": 10,
+    "RANDOM_STATE": 100,
+    "N_SAMPLES": 113,
+    "N_FEATURES": 290,
+    "N_PATIENTS": 48,
+    "DATASET_TAG": "ADC_Post1",
+    "INPUT_FILE": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Pairwise/output/all_10_pairwise_concat_datasets/ADC_Post1_M1_pairwise.csv",
+    "CLEANED_DATASET_PATH": "output/cleaned_pairwise_all_10_smote_compare/ADC_Post1/ADC_Post1_M1_pairwise_Cleaned.csv"
+}
