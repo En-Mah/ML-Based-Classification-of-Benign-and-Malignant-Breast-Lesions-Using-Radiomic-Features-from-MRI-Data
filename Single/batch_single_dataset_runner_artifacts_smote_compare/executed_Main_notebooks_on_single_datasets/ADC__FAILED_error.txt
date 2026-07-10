@@ -1,5 +1,5 @@
 Traceback (most recent call last):
-  File "/var/folders/rf/x4s3m6qd51gcvc25nv1bpdl40000gn/T/ipykernel_71493/93342605.py", line 137, in <module>
+  File "/var/folders/rf/x4s3m6qd51gcvc25nv1bpdl40000gn/T/ipykernel_35688/93342605.py", line 137, in <module>
     pm.execute_notebook(
     ~~~~~~~~~~~~~~~~~~~^
         input_path=str(Main_EXEC_NOTEBOOK_PATH),
@@ -16,121 +16,23 @@ Traceback (most recent call last):
     raise error
 papermill.exceptions.PapermillExecutionError: 
 ---------------------------------------------------------------------------
-Exception encountered at "In [32]":
+Exception encountered at "In [68]":
 ---------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-Cell In[32], line 25
-     22     cfg_run = build_experiment_config(BASE_EXPERIMENT_CONFIG, exp)
-     23     run_name = cfg_run["RUN_NAME"]
----> 25     outputs = run_nested_cv_experiment(
-     26         config_run=cfg_run,
-     27         model_subset=MODEL_SUBSET_FOR_FS_SCREENING,
-     28         overwrite=OVERWRITE_FS_RUNS
-     29     )
-     31     ALL_FS_RUN_OUTPUTS[run_name] = outputs
-     33 print("\n" + "█" * 100)
+NameError                                 Traceback (most recent call last)
+Cell In[68], line 49
+     42 top_per_dataset = (
+     43     dfp.sort_values(["Dataset", "Mean_AUC"], ascending=[True, False])
+     44        .groupby("Dataset")
+     45        .head(1)
+     46 )
+     48 for _, r in top_per_dataset.iterrows():
+---> 49     label = f"{r['Dataset']} | {short_label(r['Run_Name'], 24)} | {r['Model']}"
+     50     plt.annotate(
+     51         label,
+     52         (r["Std_AUC"], r["Mean_AUC"]),
+   (...)     55         fontsize=8,
+     56     )
+     58 plt.axhline(0.75, linestyle="--", linewidth=1.2, alpha=0.8)
 
-Cell In[29], line 448, in run_nested_cv_experiment(config_run, model_subset, overwrite)
-    441 CONFIG_FOLD = copy.deepcopy(CONFIG)
-    443 if (
-    444     CONFIG_FOLD.get("AUTO_TUNE_FS_N_FEATURES", False)
-    445     and CONFIG_FOLD.get("FS_N_FEATURES") == "auto"
-    446     and CONFIG_FOLD.get("FS_METHOD") not in ["no_fs", "none", None]
-    447 ):
---> 448     best_k, df_k_tuning = auto_tune_fs_n_features_on_outer_train(
-    449         X_train=X_train_base,
-    450         y_train=y_train_outer,
-    451         groups_train=groups_train,
-    452         feat_names=feat_names_outer,
-    453         X_orig_train=X_train_base,
-    454         feat_names_orig=feat_names_outer,
-    455         base_config=CONFIG_FOLD
-    456     )
-    458     CONFIG_FOLD["FS_N_FEATURES"] = best_k
-    460     print(f"   ✅ Auto-selected FS_N_FEATURES for outer fold {fold_idx + 1}: {best_k}")
-
-Cell In[24], line 138, in auto_tune_fs_n_features_on_outer_train(X_train, y_train, groups_train, feat_names, X_orig_train, feat_names_orig, base_config)
-    135 X_orig_tr = X_orig_train[idx_tr] if X_orig_train is not None else X_tr
-    136 groups_tr = groups_train[idx_tr] if groups_train is not None else None
---> 138 selected_idx, selected_names = execute_fs_pipeline_on_fold(
-    139     X_train=X_tr,
-    140     y_train=y_tr,
-    141     feat_names=feat_names,
-    142     X_orig_train=X_orig_tr,
-    143     feat_names_orig=feat_names_orig,
-    144     config=cfg_k,
-    145     groups_train=groups_tr
-    146 )
-    148 X_tr_sel = X_tr[:, selected_idx]
-    149 X_val_sel = X_val[:, selected_idx]
-
-Cell In[22], line 637, in execute_fs_pipeline_on_fold(X_train, y_train, feat_names, X_orig_train, feat_names_orig, config, groups_train)
-    629 # Stage 1 — ElasticNet candidate pool
-    630 elasticnet_candidate_n = int(
-    631     min(
-    632         config.get("ELASTICNET_MRMR_CANDIDATES", max(24, fs_n_features * 2)),
-    633         current_X.shape[1]
-    634     )
-    635 )
---> 637 keep_idx_en, selected_names_en, info_en = run_elasticnet(
-    638     current_X,
-    639     y_train,
-    640     current_names,
-    641     n_features=elasticnet_candidate_n,
-    642     random_state=config.get("RANDOM_STATE", 100)
-    643 )
-    645 if len(keep_idx_en) == 0:
-    646     raise RuntimeError("ElasticNet candidate stage selected zero features.")
-
-Cell In[22], line 98, in execute_fs_pipeline_on_fold.<locals>.run_elasticnet(X_local, y_local, names_local, n_features, **kwargs)
-     97 def run_elasticnet(X_local, y_local, names_local, n_features, **kwargs):
----> 98     return stage_elasticnet_selection(
-     99         X_local,
-    100         y_local,
-    101         names_local,
-    102         n_features=n_features,
-    103         random_state=kwargs.get("random_state", config.get("RANDOM_STATE", 100)),
-    104         tune_selector=config.get("TUNE_ELASTICNET_SELECTOR", False),
-    105         C_grid=config.get(
-    106             "ELASTICNET_SELECTOR_C_GRID",
-    107             config.get("ELASTICNET_CS", [0.01, 0.03, 0.1, 0.3])
-    108         ),
-    109         l1_ratio_grid=config.get(
-    110             "ELASTICNET_SELECTOR_L1_RATIO_GRID",
-    111             config.get("ELASTICNET_L1_RATIOS", [0.2, 0.5, 0.8, 0.95])
-    112         ),
-    113         groups_train=groups_train,
-    114         inner_folds=config.get("ELASTICNET_SELECTOR_INNER_FOLDS", 3),
-    115         scaler_type=config.get("ELASTICNET_SELECTOR_SCALER", "robust"),
-    116         coef_threshold=config.get("ELASTICNET_SELECTOR_COEF_THRESHOLD", 1e-6),
-    117         scoring=config.get("ELASTICNET_SELECTOR_SCORING", "auc")
-    118     )
-
-Cell In[16], line 826, in stage_elasticnet_selection(X_train, y_train, feat_names, n_features, l1_ratio, C, random_state, tune_selector, C_grid, l1_ratio_grid, groups_train, inner_folds, scaler_type, coef_threshold, scoring)
-    821     print(f"  Fixed selector params: C={best_C}, l1_ratio={best_l1_ratio}")
-    823 # -------------------------------------------------------------------------
-    824 # Fit final selector on the full outer-training fold
-    825 # -------------------------------------------------------------------------
---> 826 scaler = _make_fs_scaler(scaler_type)
-    827 X_scaled = scaler.fit_transform(X_clean)
-    829 model = LogisticRegression(
-    830     penalty="elasticnet",
-    831     solver="saga",
-   (...)    837     tol=1e-5
-    838 )
-
-Cell In[16], line 568, in _make_fs_scaler(scaler_type)
-    565     return StandardScaler()
-    567 if scaler_type == "robust":
---> 568     return StandardScaler(
-    569         with_centering=True,
-    570         with_scaling=True,
-    571         quantile_range=(25.0, 75.0)
-    572     )
-    574 raise ValueError(
-    575     f"Unsupported scaler_type={scaler_type}. "
-    576     "Use 'standard' or 'robust'."
-    577 )
-
-TypeError: StandardScaler.__init__() got an unexpected keyword argument 'with_centering'
+NameError: name 'short_label' is not defined
 

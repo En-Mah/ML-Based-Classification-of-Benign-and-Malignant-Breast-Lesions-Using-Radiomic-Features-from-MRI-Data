@@ -1,5 +1,0 @@
-Feature_Original,Feature_Index,Feature_Sanitized,MeanAbsSHAP,Selection_Count
-Morph_Compactness2,7,Morph_Compactness2,0.043858330153513744,8
-IB_IntensitySkewness,34,IB_IntensitySkewness,0.036139028175814304,13
-GLSZM_GreyLevelVariance,142,GLSZM_GreyLevelVariance,0.033086071979554404,13
-IB_IntensityBasedEnergy,53,IB_IntensityBasedEnergy,0.001828213135498871,7

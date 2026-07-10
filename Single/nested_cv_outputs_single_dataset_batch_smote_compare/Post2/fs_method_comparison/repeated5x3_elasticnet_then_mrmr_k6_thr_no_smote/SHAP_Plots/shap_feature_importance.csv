@@ -1,4 +1,0 @@
-Feature_Original,Feature_Index,Feature_Sanitized,MeanAbsSHAP,Selection_Count
-IH_IntensityHistogramMode_Intensity,69,IH_IntensityHistogramMode_Intensity,0.07459753563809227,8
-Morph_Compactness1,6,Morph_Compactness1,0.034686825379483394,10
-Morph_Sphericity,9,Morph_Sphericity,0.033049828580526304,12

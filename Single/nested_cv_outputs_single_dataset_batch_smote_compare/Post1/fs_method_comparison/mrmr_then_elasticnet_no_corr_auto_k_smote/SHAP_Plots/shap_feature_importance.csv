@@ -1,6 +1,0 @@
-Feature_Original,Feature_Index,Feature_Sanitized,MeanAbsSHAP,Selection_Count
-GLSZM_LargeZoneEmphasis,130,GLSZM_LargeZoneEmphasis,0.051914113144311096,2
-Morph_Compacity,5,Morph_Compacity,0.04149492694119902,5
-Morph_SphericalDisproportion,8,Morph_SphericalDisproportion,0.039798112317268555,5
-Morph_Asphericity,10,Morph_Asphericity,0.03979811231726846,4
-IB_IntensityBasedEnergy,53,IB_IntensityBasedEnergy,0.014562592829270967,5

@@ -6,8 +6,6 @@
         "0": 50,
         "1": 64
     },
-    "unit_of_analysis_policy": "lesion_level",
-    "duplicate_patient_roi_policy": "raise",
     "total_nan": 12,
     "total_inf": 0,
     "empty_columns": [],

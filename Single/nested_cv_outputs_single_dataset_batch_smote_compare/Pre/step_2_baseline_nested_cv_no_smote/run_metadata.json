@@ -15,9 +15,6 @@
     "VOLUME_COL": "Morph_Volume_cm3",
     "LABEL_COL": "Label",
     "GROUP_COL": "INFO_PatientName",
-    "ROI_COL": "INFO_NameOfRoi",
-    "UNIT_OF_ANALYSIS_POLICY": "lesion_level",
-    "DUPLICATE_PATIENT_ROI_POLICY": "raise",
     "PRINT_PATIENT_BREAKDOWN": false,
     "SIGNIFICANCE_ALPHA": 0.05,
     "SIGNIFICANCE_METHOD": "fdr_bh",
@@ -48,25 +45,6 @@
       0.5
     ],
     "ELASTICNET_COEF_THRESHOLD": 0.001,
-    "MRMR_TRANSFORM": "robust",
-    "TUNE_ELASTICNET_SELECTOR": true,
-    "ELASTICNET_SELECTOR_INNER_FOLDS": 3,
-    "ELASTICNET_SELECTOR_SCALER": "robust",
-    "ELASTICNET_SELECTOR_C_GRID": [
-      0.01,
-      0.03,
-      0.1
-    ],
-    "ELASTICNET_SELECTOR_L1_RATIO_GRID": [
-      0.5,
-      0.8,
-      0.95
-    ],
-    "ELASTICNET_SELECTOR_COEF_THRESHOLD": 1e-05,
-    "ELASTICNET_SELECTOR_SCORING": "auc",
-    "MODEL_SCALER": "standard",
-    "FS_K_TUNING_SCALER": "standard",
-    "AUTO_K_USE_GROUPS": false,
     "STABILITY_FALLBACK_STEP": 0.05,
     "STABILITY_FALLBACK_MIN_THRESHOLD": 0.55,
     "STABILITY_FALLBACK_MIN_FEATURES": 6,

@@ -10,8 +10,8 @@
     "n_non_normal_features_fdr_q_lt_0_05": 139,
     "n_features_with_fdr_significant_class_difference": 8,
     "n_features_with_fdr_significant_correlation": 8,
-    "pca_pc1_explained_variance_ratio": 0.5901159673271176,
-    "pca_pc2_explained_variance_ratio": 0.397340657428744,
+    "pca_pc1_explained_variance_ratio": 0.3276378397944467,
+    "pca_pc2_explained_variance_ratio": 0.1845408136150985,
     "eda_dir": "nested_cv_outputs_single_dataset_batch_smote_compare/ADC/step_1b_statistical_eda",
     "plot_dir": "nested_cv_outputs_single_dataset_batch_smote_compare/ADC/step_1b_statistical_eda/plots_publication_style"
 }

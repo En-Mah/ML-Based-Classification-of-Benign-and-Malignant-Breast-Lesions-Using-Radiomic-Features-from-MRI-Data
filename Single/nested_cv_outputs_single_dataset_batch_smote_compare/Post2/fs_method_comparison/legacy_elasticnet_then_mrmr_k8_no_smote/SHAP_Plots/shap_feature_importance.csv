@@ -1,9 +1,0 @@
-Feature_Original,Feature_Index,Feature_Sanitized,MeanAbsSHAP,Selection_Count
-IH_IntensityHistogramMode_Intensity,69,IH_IntensityHistogramMode_Intensity,0.08592595417582075,5
-IB_MedianIntensity,36,IB_MedianIntensity,0.07067859735225852,2
-IH_IntensityHistogram25thPercentile,63,IH_IntensityHistogram25thPercentile,0.06801859254389074,2
-Morph_Sphericity,9,Morph_Sphericity,0.06681090383129694,4
-Morph_Compactness1,6,Morph_Compactness1,0.0648285296409167,3
-Morph_Compactness2,7,Morph_Compactness2,0.05984197274618898,4
-GLCM_InverseVariance,104,GLCM_InverseVariance,0.04432879933055253,2
-GLCM_Correlation,105,GLCM_Correlation,0.03516060379497445,2
