@@ -1,0 +1,11 @@
+Triple_Tag,Run_Status,Executed_Notebook,Error,Started_At,Finished_At
+ADC_Post1_Post2,completed,batch_all_10_triple_runner_artifacts_smote_compare/executed_triple_notebooks/ADC_Post1_Post2__Triple_executed.ipynb,,2026-07-11T13:18:51,2026-07-11T13:26:59
+ADC_Post1_Pre,completed,batch_all_10_triple_runner_artifacts_smote_compare/executed_triple_notebooks/ADC_Post1_Pre__Triple_executed.ipynb,,2026-07-11T13:26:59,2026-07-11T13:35:00
+ADC_Post1_T2,completed,batch_all_10_triple_runner_artifacts_smote_compare/executed_triple_notebooks/ADC_Post1_T2__Triple_executed.ipynb,,2026-07-11T13:35:00,2026-07-11T13:43:03
+ADC_Post2_Pre,completed,batch_all_10_triple_runner_artifacts_smote_compare/executed_triple_notebooks/ADC_Post2_Pre__Triple_executed.ipynb,,2026-07-11T13:43:03,2026-07-11T13:51:42
+ADC_Post2_T2,completed,batch_all_10_triple_runner_artifacts_smote_compare/executed_triple_notebooks/ADC_Post2_T2__Triple_executed.ipynb,,2026-07-11T13:51:42,2026-07-11T14:00:03
+ADC_Pre_T2,completed,batch_all_10_triple_runner_artifacts_smote_compare/executed_triple_notebooks/ADC_Pre_T2__Triple_executed.ipynb,,2026-07-11T14:00:03,2026-07-11T14:08:17
+Post1_Post2_Pre,completed,batch_all_10_triple_runner_artifacts_smote_compare/executed_triple_notebooks/Post1_Post2_Pre__Triple_executed.ipynb,,2026-07-11T14:08:17,2026-07-11T14:16:31
+Post1_Post2_T2,completed,batch_all_10_triple_runner_artifacts_smote_compare/executed_triple_notebooks/Post1_Post2_T2__Triple_executed.ipynb,,2026-07-11T14:16:31,2026-07-11T14:24:44
+Post1_Pre_T2,completed,batch_all_10_triple_runner_artifacts_smote_compare/executed_triple_notebooks/Post1_Pre_T2__Triple_executed.ipynb,,2026-07-11T14:24:44,2026-07-11T14:33:01
+Post2_Pre_T2,completed,batch_all_10_triple_runner_artifacts_smote_compare/executed_triple_notebooks/Post2_Pre_T2__Triple_executed.ipynb,,2026-07-11T14:33:01,2026-07-11T14:41:33

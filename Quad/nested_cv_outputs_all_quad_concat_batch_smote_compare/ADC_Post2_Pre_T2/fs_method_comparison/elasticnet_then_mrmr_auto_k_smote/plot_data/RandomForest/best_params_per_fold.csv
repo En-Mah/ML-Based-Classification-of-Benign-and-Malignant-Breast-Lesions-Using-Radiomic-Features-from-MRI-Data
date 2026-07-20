@@ -1,0 +1,6 @@
+fold,n_estimators,max_depth,min_samples_leaf,max_features
+1,100,7,10,sqrt
+2,100,7,10,sqrt
+3,200,3,5,sqrt
+4,150,6,2,
+5,100,7,10,sqrt

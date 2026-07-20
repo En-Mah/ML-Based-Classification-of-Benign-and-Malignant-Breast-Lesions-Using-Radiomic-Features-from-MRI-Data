@@ -71,11 +71,11 @@
       "ngtdm"
     ]
   },
-  "INPUT_FILE": "output/all_5_quad_concat_datasets/ADC_Post1_Post2_Pre_M1_pairwise.csv",
+  "INPUT_FILE": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Quad/output/all_5_quad_concat_datasets/ADC_Post1_Post2_Pre_M1_quad.csv",
   "DATASET_TAG": "ADC_Post1_Post2_Pre",
-  "BATCH_ROOT": "./nested_cv_outputs_all_quad_concat_batch_smote_compare",
-  "OUTPUT_DIR": "output/cleaned_quad/ADC_Post1_Post2_Pre",
-  "CLEANED_DATASET_PATH": "output/cleaned_quad/ADC_Post1_Post2_Pre/ADC_Post1_Post2_Pre_M1_pairwise_Cleaned.csv",
+  "BATCH_ROOT": "nested_cv_outputs_all_quad_concat_batch_smote_compare",
+  "OUTPUT_DIR": "output/cleaned_quad_all_5_smote_compare/ADC_Post1_Post2_Pre",
+  "CLEANED_DATASET_PATH": "output/cleaned_quad_all_5_smote_compare/ADC_Post1_Post2_Pre/ADC_Post1_Post2_Pre_M1_quad_Cleaned.csv",
   "DATASET_OUTPUT_ROOT": "nested_cv_outputs_all_quad_concat_batch_smote_compare/ADC_Post1_Post2_Pre",
   "RUN_NAME": "corr_mrmr_auto_k_smote",
   "SAVE_DIR": "nested_cv_outputs_all_quad_concat_batch_smote_compare/ADC_Post1_Post2_Pre/fs_method_comparison/corr_mrmr_auto_k_smote",
