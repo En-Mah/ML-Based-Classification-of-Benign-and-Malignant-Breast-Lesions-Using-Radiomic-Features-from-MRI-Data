@@ -1,0 +1,7 @@
+Dataset,Run_Name,FS_METHOD,FS_N_FEATURES,USE_SMOTE,Model,Mean_AUC,Std_AUC,Pooled_AUC,Mean_PR_AUC,Pooled_PR_AUC,Mean_Bal_Acc,Pooled_Bal_Acc,Mean_F1,Pooled_F1,Avg_Features,N_Unique_Selected_Features
+Post2_ADC,mrmr_then_elasticnet_no_corr_auto_k_smote,mrmr_then_elasticnet_no_corr,auto,True,LogisticRegression,0.794,0.091,0.738,0.872,0.817,0.699,0.667,0.658,0.661,12.8,47
+Post2_ADC,elasticnet_then_mrmr_auto_k_no_smote,elasticnet_then_mrmr,auto,False,SVM_Linear,0.787,0.089,0.691,0.817,0.741,0.66,0.616,0.667,0.667,12.8,32
+Post2_ADC,mrmr_then_elasticnet_no_corr_auto_k_no_smote,mrmr_then_elasticnet_no_corr,auto,False,LogisticRegression,0.786,0.094,0.737,0.869,0.83,0.722,0.692,0.691,0.69,12.8,47
+Post2_ADC,elasticnet_then_mrmr_auto_k_smote,elasticnet_then_mrmr,auto,True,SVM_RBF,0.773,0.086,0.717,0.829,0.784,0.69,0.662,0.666,0.672,12.8,32
+Post2_ADC,corr_mrmr_auto_k_no_smote,corr_mrmr,auto,False,LogisticRegression,0.69,0.099,0.611,0.762,0.704,0.63,0.586,0.581,0.586,13.6,41
+Post2_ADC,corr_mrmr_auto_k_smote,corr_mrmr,auto,True,LogisticRegression,0.667,0.098,0.591,0.734,0.647,0.605,0.563,0.578,0.583,13.6,41

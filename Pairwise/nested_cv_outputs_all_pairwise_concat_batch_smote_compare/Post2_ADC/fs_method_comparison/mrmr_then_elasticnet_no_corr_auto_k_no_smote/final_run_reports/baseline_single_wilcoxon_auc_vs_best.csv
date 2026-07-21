@@ -1,0 +1,10 @@
+Comparison,Best_Model,Other_Model,Mean_AUC_Best,Mean_AUC_Other,Mean_AUC_Difference,Wilcoxon_Statistic,Wilcoxon_p_value,Wilcoxon_q_value_FDR
+LogisticRegression vs ExtraTrees,LogisticRegression,ExtraTrees,0.7862304521634664,0.7152429627788479,0.07098748938461857,1.0,0.125,0.375
+LogisticRegression vs GradientBoosting,LogisticRegression,GradientBoosting,0.7862304521634664,0.6911695791360862,0.09506087302738023,3.0,0.3125,0.5625
+LogisticRegression vs KNN,LogisticRegression,KNN,0.7862304521634664,0.7319574130459298,0.05427303911753676,3.0,0.3125,0.5625
+LogisticRegression vs LightGBM,LogisticRegression,LightGBM,0.7862304521634664,0.7186584459311731,0.06757200623229334,5.0,0.625,0.625
+LogisticRegression vs NaiveBayes,LogisticRegression,NaiveBayes,0.7862304521634664,0.6922925771729599,0.09393787499050658,0.0,0.0625,0.28125
+LogisticRegression vs RandomForest,LogisticRegression,RandomForest,0.7862304521634664,0.7112371666079801,0.07499328555548648,5.0,0.625,0.625
+LogisticRegression vs SVM_Linear,LogisticRegression,SVM_Linear,0.7862304521634664,0.7638031488270722,0.022427303336394245,3.0,0.625,0.625
+LogisticRegression vs SVM_RBF,LogisticRegression,SVM_RBF,0.7862304521634664,0.7459837035195888,0.04024674864387785,0.0,0.0625,0.28125
+LogisticRegression vs XGBoost,LogisticRegression,XGBoost,0.7862304521634664,0.7075408677801022,0.0786895843833643,4.0,0.4375,0.625

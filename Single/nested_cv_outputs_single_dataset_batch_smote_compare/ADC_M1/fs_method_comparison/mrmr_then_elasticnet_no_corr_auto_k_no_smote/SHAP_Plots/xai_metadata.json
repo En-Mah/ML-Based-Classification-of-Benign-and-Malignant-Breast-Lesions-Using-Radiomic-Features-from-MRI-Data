@@ -1,0 +1,65 @@
+{
+  "best_model_name": "LogisticRegression",
+  "selection_criterion": "Highest nested-CV Mean_AUC from df_summary",
+  "oof_metrics": {
+    "oof_auc": 0.7150000000000001,
+    "oof_pr_auc": 0.7583947247864167,
+    "oof_accuracy": 0.6929824561403509,
+    "oof_balanced_accuracy": 0.698125,
+    "oof_precision": 0.7636363636363637,
+    "oof_recall": 0.65625,
+    "oof_f1": 0.7058823529411765,
+    "oof_specificity": 0.74,
+    "oof_kappa": 0.3885994483604046
+  },
+  "kappa_interpretation": "Fair agreement / low",
+  "n_total_samples": 114,
+  "n_selected_features_for_xai": 11,
+  "stability_threshold_min_folds": 2,
+  "n_feature_selection_folds": 5,
+  "best_params_aggregated": {
+    "C": 0.3675257878593652,
+    "l1_ratio": 0.20920212211718958
+  },
+  "features_original": [
+    "IH_IntensityHistogramMedian_Intensity",
+    "Morph_Sphericity",
+    "Morph_Compactness2",
+    "Morph_SurfaceToVolumeRatio_cm",
+    "Morph_SphericalDisproportion",
+    "Morph_RadiusSphereNorm_MaxIntensityCoor_PerimeterCoor_2DSagittalSmallestDist",
+    "Morph_RadiusSphereNorm_MaxIntensityCoor_PerimeterCoor_2DAxialSmallestDist",
+    "GLSZM_SmallZoneEmphasis",
+    "GLSZM_LargeZoneHighGreyLevelEmphasis",
+    "GLSZM_LargeZoneEmphasis",
+    "GLCM_ClusterTendency"
+  ],
+  "features_sanitized": [
+    "IH_IntensityHistogramMedian_Intensity",
+    "Morph_Sphericity",
+    "Morph_Compactness2",
+    "Morph_SurfaceToVolumeRatio_cm",
+    "Morph_SphericalDisproportion",
+    "Morph_RadiusSphereNorm_MaxIntensityCoor_PerimeterCoor_2DSagittalSmallestDist",
+    "Morph_RadiusSphereNorm_MaxIntensityCoor_PerimeterCoor_2DAxialSmallestDist",
+    "GLSZM_SmallZoneEmphasis",
+    "GLSZM_LargeZoneHighGreyLevelEmphasis",
+    "GLSZM_LargeZoneEmphasis",
+    "GLCM_ClusterTendency"
+  ],
+  "notes": [
+    "Final refit on the full cohort is used only for SHAP interpretation.",
+    "Reported performance values are OOF/nested-CV metrics.",
+    "SHAP explanations use positive-class probability when predict_proba is available.",
+    "Stable features are selected by recurrence across outer folds, not by using all numeric features."
+  ],
+  "saved_files": {
+    "model_artifact": "nested_cv_outputs_single_dataset_batch_smote_compare/ADC_M1/fs_method_comparison/mrmr_then_elasticnet_no_corr_auto_k_no_smote/SHAP_Plots/Best_Model_LogisticRegression_XAI_Artifact.joblib",
+    "feature_stability": "nested_cv_outputs_single_dataset_batch_smote_compare/ADC_M1/fs_method_comparison/mrmr_then_elasticnet_no_corr_auto_k_no_smote/SHAP_Plots/xai_feature_stability.csv",
+    "shap_importance": "nested_cv_outputs_single_dataset_batch_smote_compare/ADC_M1/fs_method_comparison/mrmr_then_elasticnet_no_corr_auto_k_no_smote/SHAP_Plots/shap_feature_importance.csv",
+    "summary_dot_png": "nested_cv_outputs_single_dataset_batch_smote_compare/ADC_M1/fs_method_comparison/mrmr_then_elasticnet_no_corr_auto_k_no_smote/SHAP_Plots/shap_summary_dot_stable.png",
+    "summary_dot_pdf": "nested_cv_outputs_single_dataset_batch_smote_compare/ADC_M1/fs_method_comparison/mrmr_then_elasticnet_no_corr_auto_k_no_smote/SHAP_Plots/shap_summary_dot_stable.pdf",
+    "summary_bar_png": "nested_cv_outputs_single_dataset_batch_smote_compare/ADC_M1/fs_method_comparison/mrmr_then_elasticnet_no_corr_auto_k_no_smote/SHAP_Plots/shap_summary_bar_stable.png",
+    "summary_bar_pdf": "nested_cv_outputs_single_dataset_batch_smote_compare/ADC_M1/fs_method_comparison/mrmr_then_elasticnet_no_corr_auto_k_no_smote/SHAP_Plots/shap_summary_bar_stable.pdf"
+  }
+}

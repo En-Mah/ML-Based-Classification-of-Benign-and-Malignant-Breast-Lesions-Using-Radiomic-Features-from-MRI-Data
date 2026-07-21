@@ -1,0 +1,77 @@
+{
+  "best_model_name": "ExtraTrees",
+  "selection_criterion": "Highest nested-CV Mean_AUC from df_summary",
+  "oof_metrics": {
+    "oof_auc": 0.7107936507936508,
+    "oof_pr_auc": 0.7924662191385508,
+    "oof_accuracy": 0.6814159292035398,
+    "oof_balanced_accuracy": 0.6895238095238095,
+    "oof_precision": 0.7647058823529411,
+    "oof_recall": 0.6190476190476191,
+    "oof_f1": 0.6842105263157895,
+    "oof_specificity": 0.76,
+    "oof_kappa": 0.36988847583643125
+  },
+  "kappa_interpretation": "Fair agreement / low",
+  "n_total_samples": 113,
+  "n_selected_features_for_xai": 16,
+  "stability_threshold_min_folds": 2,
+  "n_feature_selection_folds": 5,
+  "best_params_aggregated": {
+    "max_depth": 2,
+    "max_features": "log2",
+    "min_samples_leaf": 5,
+    "n_estimators": 100
+  },
+  "features_original": [
+    "Post2_IH_IntensityHistogramMode_Intensity",
+    "Post2_GLCM_Autocorrelation",
+    "Post1_Morph_Compactness1",
+    "ADC_IH_IntensityHistogramMedian_Intensity",
+    "Pre_Morph_Compactness2",
+    "Pre_Morph_Compactness1",
+    "Pre_GLSZM_HighGrayLevelZoneEmphasis",
+    "Pre_GLCM_ClusterProminence",
+    "Post1_Morph_Sphericity",
+    "Post1_Morph_Compactness2",
+    "Post1_IH_MinimumHistogramGradientGreyLevel_Intensity",
+    "ADC_Morph_RadiusSphereNorm_MaxIntensityCoor_PerimeterCoor_2DSagittalSmallestDist",
+    "ADC_IB_RootMeanSquareIntensity",
+    "ADC_IB_MedianIntensity",
+    "ADC_IB_IntensityVariance",
+    "ADC_IB_AreaUnderCurveCIVH"
+  ],
+  "features_sanitized": [
+    "Post2_IH_IntensityHistogramMode_Intensity",
+    "Post2_GLCM_Autocorrelation",
+    "Post1_Morph_Compactness1",
+    "ADC_IH_IntensityHistogramMedian_Intensity",
+    "Pre_Morph_Compactness2",
+    "Pre_Morph_Compactness1",
+    "Pre_GLSZM_HighGrayLevelZoneEmphasis",
+    "Pre_GLCM_ClusterProminence",
+    "Post1_Morph_Sphericity",
+    "Post1_Morph_Compactness2",
+    "Post1_IH_MinimumHistogramGradientGreyLevel_Intensity",
+    "ADC_Morph_RadiusSphereNorm_MaxIntensityCoor_PerimeterCoor_2DSagittalSmallestDist",
+    "ADC_IB_RootMeanSquareIntensity",
+    "ADC_IB_MedianIntensity",
+    "ADC_IB_IntensityVariance",
+    "ADC_IB_AreaUnderCurveCIVH"
+  ],
+  "notes": [
+    "Final refit on the full cohort is used only for SHAP interpretation.",
+    "Reported performance values are OOF/nested-CV metrics.",
+    "SHAP explanations use positive-class probability when predict_proba is available.",
+    "Stable features are selected by recurrence across outer folds, not by using all numeric features."
+  ],
+  "saved_files": {
+    "model_artifact": "nested_cv_outputs_all5_concat_batch_smote_compare/Pre_Post1_Post2_ADC_T2/fs_method_comparison/elasticnet_then_mrmr_auto_k_no_smote/SHAP_Plots/Best_Model_ExtraTrees_XAI_Artifact.joblib",
+    "feature_stability": "nested_cv_outputs_all5_concat_batch_smote_compare/Pre_Post1_Post2_ADC_T2/fs_method_comparison/elasticnet_then_mrmr_auto_k_no_smote/SHAP_Plots/xai_feature_stability.csv",
+    "shap_importance": "nested_cv_outputs_all5_concat_batch_smote_compare/Pre_Post1_Post2_ADC_T2/fs_method_comparison/elasticnet_then_mrmr_auto_k_no_smote/SHAP_Plots/shap_feature_importance.csv",
+    "summary_dot_png": "nested_cv_outputs_all5_concat_batch_smote_compare/Pre_Post1_Post2_ADC_T2/fs_method_comparison/elasticnet_then_mrmr_auto_k_no_smote/SHAP_Plots/shap_summary_dot_stable.png",
+    "summary_dot_pdf": "nested_cv_outputs_all5_concat_batch_smote_compare/Pre_Post1_Post2_ADC_T2/fs_method_comparison/elasticnet_then_mrmr_auto_k_no_smote/SHAP_Plots/shap_summary_dot_stable.pdf",
+    "summary_bar_png": "nested_cv_outputs_all5_concat_batch_smote_compare/Pre_Post1_Post2_ADC_T2/fs_method_comparison/elasticnet_then_mrmr_auto_k_no_smote/SHAP_Plots/shap_summary_bar_stable.png",
+    "summary_bar_pdf": "nested_cv_outputs_all5_concat_batch_smote_compare/Pre_Post1_Post2_ADC_T2/fs_method_comparison/elasticnet_then_mrmr_auto_k_no_smote/SHAP_Plots/shap_summary_bar_stable.pdf"
+  }
+}
