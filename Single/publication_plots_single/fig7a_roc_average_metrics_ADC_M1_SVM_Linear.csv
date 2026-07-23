@@ -1,0 +1,2 @@
+Dataset,Run_Name,Model,Evaluation_Unit,ROC_Scheme,Positive_Class_AUC,Positive_Class_AUC_CI95_Low,Positive_Class_AUC_CI95_High,Macro_Average_AUC_OvR,Micro_Average_AUC_OvR,Class_0_AUC_OvR,Class_1_AUC_OvR,N_ROIs,N_Class_0,N_Class_1
+ADC_M1,mrmr_then_elasticnet_no_corr_auto_k_smote,SVM_Linear,ROI,Binary One-vs-Rest,0.6912499999999999,0.5915486324540651,0.786165262102762,0.6912499999999999,0.6867497691597414,0.69125,0.6912499999999999,114,50,64
