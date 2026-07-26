@@ -1,5 +1,5 @@
 {
-  "VOLUME_COL": "Pre_Morph_Volume_cm3",
+  "VOLUME_COL": "ADC_Morph_Volume_cm3",
   "LABEL_COL": "Label",
   "GROUP_COL": "PatientID",
   "PRINT_PATIENT_BREAKDOWN": false,
@@ -47,6 +47,7 @@
   "OUTLIER_Q_LOW": 0.01,
   "OUTLIER_Q_HIGH": 0.99,
   "VERBOSE_FS": false,
+  "N_METRIC_BOOTSTRAPS": 2000,
   "CATEGORY_PATTERNS": {
     "MORPHOLOGY": [
       "shape",
@@ -71,11 +72,11 @@
       "ngtdm"
     ]
   },
-  "INPUT_FILE": "output/all_5_concat_datasets/Pre_Post1_Post2_ADC_T2_M1_all5.csv",
+  "INPUT_FILE": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/All/output/all_5_concat_datasets/Pre_Post1_Post2_ADC_T2_M1_all5.csv",
   "DATASET_TAG": "Pre_Post1_Post2_ADC_T2",
-  "BATCH_ROOT": "./nested_cv_outputs_all_5_concat_batch_smote_compare",
-  "OUTPUT_DIR": "output/cleaned_all5/Pre_Post1_Post2_ADC_T2",
-  "CLEANED_DATASET_PATH": "output/cleaned_all5/Pre_Post1_Post2_ADC_T2/Pre_Post1_Post2_ADC_T2_M1_all5_Cleaned.csv",
+  "BATCH_ROOT": "nested_cv_outputs_all_5_concat_batch_smote_compare",
+  "OUTPUT_DIR": "output/cleaned_all5_smote_compare/Pre_Post1_Post2_ADC_T2",
+  "CLEANED_DATASET_PATH": "output/cleaned_all5_smote_compare/Pre_Post1_Post2_ADC_T2/Pre_Post1_Post2_ADC_T2_M1_all5_Cleaned.csv",
   "DATASET_OUTPUT_ROOT": "nested_cv_outputs_all_5_concat_batch_smote_compare/Pre_Post1_Post2_ADC_T2",
   "RUN_NAME": "elasticnet_then_mrmr_auto_k_smote",
   "SAVE_DIR": "nested_cv_outputs_all_5_concat_batch_smote_compare/Pre_Post1_Post2_ADC_T2/fs_method_comparison/elasticnet_then_mrmr_auto_k_smote",

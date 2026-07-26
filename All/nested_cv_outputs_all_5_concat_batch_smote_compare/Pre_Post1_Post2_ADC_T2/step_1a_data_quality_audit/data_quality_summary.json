@@ -1,6 +1,6 @@
 {
     "n_samples": 113,
-    "n_features": 725,
+    "n_features": 724,
     "n_patients": 48,
     "class_counts": {
         "0": 50,
@@ -16,5 +16,5 @@
     "duplicate_roi_names": 0,
     "duplicate_patient_roi_pairs": 0,
     "mixed_label_patients": 4,
-    "features_with_outlier_flags": 507
+    "features_with_outlier_flags": 506
 }

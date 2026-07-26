@@ -434,7 +434,6 @@ Post2_GLSZM_ZonePercentage,0,0,0.022401045473448598,False,False
 Post2_GLSZM_GreyLevelVariance,0,0,2143.7952721566135,False,False
 Post2_GLSZM_ZoneSizeVariance,0,0,35149681.771067314,False,False
 Post2_GLSZM_ZoneSizeEntropy,0,0,0.8655918781746542,False,False
-ADC_FEATURE_RESULTS,0,0,233.955158240456,False,False
 ADC_Morph_Volume_cm3,0,0,234.26425553841335,False,False
 ADC_Morph_ApproximateVolume_cm3,0,0,234264255.53841335,False,False
 ADC_Morph_voxelsCounting_vx,0,0,549.9982841074934,False,False

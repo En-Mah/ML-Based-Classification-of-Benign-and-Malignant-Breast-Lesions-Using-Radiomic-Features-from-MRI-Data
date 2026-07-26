@@ -10,9 +10,9 @@
     "N_OPTUNA_TRIALS": 10,
     "RANDOM_STATE": 100,
     "N_SAMPLES": 113,
-    "N_FEATURES": 725,
+    "N_FEATURES": 724,
     "N_PATIENTS": 48,
     "DATASET_TAG": "Pre_Post1_Post2_ADC_T2",
-    "INPUT_FILE": "output/all_5_concat_datasets/Pre_Post1_Post2_ADC_T2_M1_all5.csv",
-    "CLEANED_DATASET_PATH": "output/cleaned_all5/Pre_Post1_Post2_ADC_T2/Pre_Post1_Post2_ADC_T2_M1_all5_Cleaned.csv"
+    "INPUT_FILE": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/All/output/all_5_concat_datasets/Pre_Post1_Post2_ADC_T2_M1_all5.csv",
+    "CLEANED_DATASET_PATH": "output/cleaned_all5_smote_compare/Pre_Post1_Post2_ADC_T2/Pre_Post1_Post2_ADC_T2_M1_all5_Cleaned.csv"
 }
