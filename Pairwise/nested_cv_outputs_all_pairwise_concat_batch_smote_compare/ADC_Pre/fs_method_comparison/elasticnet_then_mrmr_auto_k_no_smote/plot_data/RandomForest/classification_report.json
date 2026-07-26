@@ -24,7 +24,7 @@
     "f1-score": 0.6762704820303185,
     "support": 114.0
   },
-  "roc_auc": 0.670625,
-  "average_precision": 0.6785230026857085,
+  "roc_auc": 0.695625,
+  "average_precision": 0.708199350842381,
   "balanced_accuracy": 0.6737500000000001
 }

@@ -10,7 +10,7 @@
     "N_OPTUNA_TRIALS": 10,
     "RANDOM_STATE": 100,
     "N_SAMPLES": 114,
-    "N_FEATURES": 145,
+    "N_FEATURES": 144,
     "N_PATIENTS": 48,
     "DATASET_TAG": "ADC",
     "INPUT_FILE": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Single/output/all_single_datasets_standardized/ADC_single_standardized.csv",

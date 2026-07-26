@@ -2,7 +2,6 @@ file_name,old_column_name,cleaned_column_name,final_column_name
 ADC_Pre_M1_pairwise.csv,PatientID,PatientID,PatientID
 ADC_Pre_M1_pairwise.csv,INFO_NameOfRoi,INFO_NameOfRoi,INFO_NameOfRoi
 ADC_Pre_M1_pairwise.csv,INFO_PatientName,INFO_PatientName,INFO_PatientName
-ADC_Pre_M1_pairwise.csv,ADC__FEATURE RESULTS,ADC_FEATURE_RESULTS,ADC_FEATURE_RESULTS
 ADC_Pre_M1_pairwise.csv,ADC__MORPHOLOGICAL_Volume(IBSI:RNU0)[cm3],ADC_Morph_Volume_cm3,ADC_Morph_Volume_cm3
 ADC_Pre_M1_pairwise.csv,ADC__MORPHOLOGICAL_ApproximateVolume(IBSI:YEKZ)[cm3],ADC_Morph_ApproximateVolume_cm3,ADC_Morph_ApproximateVolume_cm3
 ADC_Pre_M1_pairwise.csv,ADC__MORPHOLOGICAL_voxelsCounting(IBSI:No)[#vx],ADC_Morph_voxelsCounting_vx,ADC_Morph_voxelsCounting_vx

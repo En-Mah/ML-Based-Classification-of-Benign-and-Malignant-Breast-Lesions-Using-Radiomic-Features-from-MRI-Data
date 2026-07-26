@@ -1,0 +1,219 @@
+
+Executing:   0%|          | 0/91 [00:00<?, ?cell/s]
+Executing:   1%|          | 1/91 [00:00<01:11,  1.26cell/s]
+Executing:   4%|▍         | 4/91 [00:01<00:37,  2.35cell/s]
+Executing:   8%|▊         | 7/91 [00:02<00:25,  3.24cell/s]
+Executing:  13%|█▎        | 12/91 [00:02<00:11,  6.78cell/s]
+Executing:  19%|█▊        | 17/91 [00:02<00:06, 10.94cell/s]
+Executing:  22%|██▏       | 20/91 [00:05<00:21,  3.35cell/s]
+Executing:  26%|██▋       | 24/91 [00:05<00:13,  4.87cell/s]
+Executing:  31%|███       | 28/91 [00:05<00:09,  6.78cell/s]
+Executing:  35%|███▌      | 32/91 [00:05<00:06,  8.88cell/s]
+Executing:  38%|███▊      | 35/91 [00:05<00:05, 10.76cell/s]
+Executing:  38%|███▊      | 35/91 [00:20<00:05, 10.76cell/s]
+Executing:  40%|███▉      | 36/91 [01:21<07:39,  8.35s/cell]
+Executing:  41%|████      | 37/91 [10:21<1:11:43, 79.70s/cell]
+Executing:  42%|████▏     | 38/91 [10:22<59:06, 66.91s/cell]  
+Executing:  45%|████▌     | 41/91 [10:22<33:03, 39.68s/cell]
+Executing:  47%|████▋     | 43/91 [10:23<22:53, 28.62s/cell]
+Executing:  49%|████▉     | 45/91 [10:23<15:42, 20.50s/cell]
+Executing:  52%|█████▏    | 47/91 [10:23<10:42, 14.60s/cell]
+Executing:  53%|█████▎    | 48/91 [10:35<10:06, 14.10s/cell]
+Executing:  54%|█████▍    | 49/91 [10:35<07:56, 11.35s/cell]
+Executing:  55%|█████▍    | 50/91 [10:35<06:04,  8.89s/cell]
+Executing:  56%|█████▌    | 51/91 [10:35<04:32,  6.81s/cell]
+Executing:  57%|█████▋    | 52/91 [10:37<03:32,  5.45s/cell]
+Executing:  58%|█████▊    | 53/91 [10:37<02:33,  4.04s/cell]
+Executing:  59%|█████▉    | 54/91 [10:37<01:49,  2.97s/cell]
+Executing:  60%|██████    | 55/91 [10:41<01:59,  3.33s/cell]
+Executing:  62%|██████▏   | 56/91 [10:42<01:24,  2.42s/cell]
+Executing:  63%|██████▎   | 57/91 [10:42<00:59,  1.76s/cell]
+Executing:  64%|██████▎   | 58/91 [10:42<00:42,  1.29s/cell]
+Executing:  65%|██████▍   | 59/91 [10:42<00:30,  1.05cell/s]
+Executing:  66%|██████▌   | 60/91 [10:42<00:22,  1.40cell/s]
+Executing:  67%|██████▋   | 61/91 [10:42<00:16,  1.84cell/s]
+Executing:  68%|██████▊   | 62/91 [10:42<00:12,  2.36cell/s]
+Executing:  69%|██████▉   | 63/91 [10:43<00:09,  2.88cell/s]
+Executing:  70%|███████   | 64/91 [10:44<00:16,  1.67cell/s]
+Executing:  71%|███████▏  | 65/91 [10:45<00:21,  1.22cell/s]
+Executing:  73%|███████▎  | 66/91 [10:46<00:24,  1.01cell/s]
+Executing:  74%|███████▎  | 67/91 [10:47<00:18,  1.29cell/s]
+Executing:  75%|███████▍  | 68/91 [10:47<00:13,  1.67cell/s]
+ExactExplainer explainer:  36%|███▌      | 42/116 [00:00<?, ?it/s]
+
+ExactExplainer explainer:  38%|███▊      | 44/116 [00:10<00:08,  8.97it/s]
+
+ExactExplainer explainer:  39%|███▉      | 45/116 [00:10<00:10,  6.57it/s]
+
+ExactExplainer explainer:  40%|███▉      | 46/116 [00:10<00:12,  5.75it/s]
+
+ExactExplainer explainer:  41%|████      | 47/116 [00:10<00:12,  5.40it/s]
+
+ExactExplainer explainer:  41%|████▏     | 48/116 [00:11<00:13,  5.22it/s]
+
+ExactExplainer explainer:  42%|████▏     | 49/116 [00:11<00:13,  5.14it/s]
+
+ExactExplainer explainer:  43%|████▎     | 50/116 [00:11<00:13,  5.05it/s]
+
+ExactExplainer explainer:  44%|████▍     | 51/116 [00:11<00:13,  4.96it/s]
+
+ExactExplainer explainer:  45%|████▍     | 52/116 [00:11<00:13,  4.92it/s]
+
+ExactExplainer explainer:  46%|████▌     | 53/116 [00:12<00:12,  4.99it/s]
+
+ExactExplainer explainer:  47%|████▋     | 54/116 [00:12<00:12,  5.09it/s]
+
+ExactExplainer explainer:  47%|████▋     | 55/116 [00:12<00:12,  5.08it/s]
+
+ExactExplainer explainer:  48%|████▊     | 56/116 [00:12<00:11,  5.07it/s]
+
+ExactExplainer explainer:  49%|████▉     | 57/116 [00:12<00:11,  5.01it/s]
+
+ExactExplainer explainer:  50%|█████     | 58/116 [00:13<00:11,  4.99it/s]
+
+ExactExplainer explainer:  51%|█████     | 59/116 [00:13<00:11,  4.86it/s]
+
+ExactExplainer explainer:  52%|█████▏    | 60/116 [00:13<00:11,  4.85it/s]
+
+ExactExplainer explainer:  53%|█████▎    | 61/116 [00:13<00:11,  4.98it/s]
+
+ExactExplainer explainer:  53%|█████▎    | 62/116 [00:13<00:10,  5.09it/s]
+
+ExactExplainer explainer:  54%|█████▍    | 63/116 [00:14<00:10,  5.16it/s]
+
+ExactExplainer explainer:  55%|█████▌    | 64/116 [00:14<00:10,  5.19it/s]
+
+ExactExplainer explainer:  56%|█████▌    | 65/116 [00:14<00:09,  5.14it/s]
+
+ExactExplainer explainer:  57%|█████▋    | 66/116 [00:14<00:09,  5.10it/s]
+
+ExactExplainer explainer:  58%|█████▊    | 67/116 [00:14<00:09,  5.14it/s]
+
+ExactExplainer explainer:  59%|█████▊    | 68/116 [00:15<00:09,  5.05it/s]
+
+ExactExplainer explainer:  59%|█████▉    | 69/116 [00:15<00:09,  5.08it/s]
+
+ExactExplainer explainer:  60%|██████    | 70/116 [00:15<00:08,  5.18it/s]
+
+ExactExplainer explainer:  61%|██████    | 71/116 [00:15<00:08,  5.09it/s]
+
+ExactExplainer explainer:  62%|██████▏   | 72/116 [00:15<00:08,  5.04it/s]
+
+ExactExplainer explainer:  63%|██████▎   | 73/116 [00:16<00:08,  5.09it/s]
+
+ExactExplainer explainer:  64%|██████▍   | 74/116 [00:16<00:08,  5.09it/s]
+
+ExactExplainer explainer:  65%|██████▍   | 75/116 [00:16<00:07,  5.13it/s]
+
+ExactExplainer explainer:  66%|██████▌   | 76/116 [00:16<00:07,  5.10it/s]
+
+ExactExplainer explainer:  66%|██████▋   | 77/116 [00:16<00:07,  5.11it/s]
+
+ExactExplainer explainer:  67%|██████▋   | 78/116 [00:17<00:07,  5.09it/s]
+
+ExactExplainer explainer:  68%|██████▊   | 79/116 [00:17<00:07,  5.08it/s]
+
+ExactExplainer explainer:  69%|██████▉   | 80/116 [00:17<00:07,  4.94it/s]
+
+ExactExplainer explainer:  70%|██████▉   | 81/116 [00:17<00:07,  4.89it/s]
+
+ExactExplainer explainer:  71%|███████   | 82/116 [00:17<00:06,  4.89it/s]
+
+ExactExplainer explainer:  72%|███████▏  | 83/116 [00:18<00:06,  4.95it/s]
+
+ExactExplainer explainer:  72%|███████▏  | 84/116 [00:18<00:06,  4.91it/s]
+
+ExactExplainer explainer:  73%|███████▎  | 85/116 [00:18<00:06,  4.94it/s]
+
+ExactExplainer explainer:  74%|███████▍  | 86/116 [00:18<00:06,  4.99it/s]
+
+ExactExplainer explainer:  75%|███████▌  | 87/116 [00:18<00:05,  4.93it/s]
+
+ExactExplainer explainer:  76%|███████▌  | 88/116 [00:19<00:05,  5.00it/s]
+
+ExactExplainer explainer:  77%|███████▋  | 89/116 [00:19<00:05,  5.11it/s]
+
+ExactExplainer explainer:  78%|███████▊  | 90/116 [00:19<00:05,  5.06it/s]
+
+ExactExplainer explainer:  78%|███████▊  | 91/116 [00:19<00:04,  5.08it/s]
+
+ExactExplainer explainer:  79%|███████▉  | 92/116 [00:19<00:04,  5.19it/s]
+
+ExactExplainer explainer:  80%|████████  | 93/116 [00:20<00:04,  5.18it/s]
+
+ExactExplainer explainer:  81%|████████  | 94/116 [00:20<00:04,  5.19it/s]
+
+ExactExplainer explainer:  82%|████████▏ | 95/116 [00:20<00:04,  5.16it/s]
+
+ExactExplainer explainer:  83%|████████▎ | 96/116 [00:20<00:03,  5.20it/s]
+
+ExactExplainer explainer:  84%|████████▎ | 97/116 [00:20<00:03,  5.16it/s]
+
+ExactExplainer explainer:  84%|████████▍ | 98/116 [00:21<00:03,  5.18it/s]
+
+ExactExplainer explainer:  85%|████████▌ | 99/116 [00:21<00:03,  5.16it/s]
+
+ExactExplainer explainer:  86%|████████▌ | 100/116 [00:21<00:03,  5.17it/s]
+
+ExactExplainer explainer:  87%|████████▋ | 101/116 [00:21<00:02,  5.27it/s]
+
+ExactExplainer explainer:  88%|████████▊ | 102/116 [00:21<00:02,  5.13it/s]
+
+ExactExplainer explainer:  89%|████████▉ | 103/116 [00:22<00:02,  5.12it/s]
+
+ExactExplainer explainer:  90%|████████▉ | 104/116 [00:22<00:02,  5.09it/s]
+
+ExactExplainer explainer:  91%|█████████ | 105/116 [00:22<00:02,  5.14it/s]
+
+ExactExplainer explainer:  91%|█████████▏| 106/116 [00:22<00:01,  5.09it/s]
+
+ExactExplainer explainer:  92%|█████████▏| 107/116 [00:22<00:01,  5.06it/s]
+
+ExactExplainer explainer:  93%|█████████▎| 108/116 [00:23<00:01,  5.09it/s]
+
+ExactExplainer explainer:  94%|█████████▍| 109/116 [00:23<00:01,  5.09it/s]
+
+ExactExplainer explainer:  95%|█████████▍| 110/116 [00:23<00:01,  5.14it/s]
+
+ExactExplainer explainer:  96%|█████████▌| 111/116 [00:23<00:00,  5.08it/s]
+
+ExactExplainer explainer:  97%|█████████▋| 112/116 [00:23<00:00,  4.98it/s]
+
+ExactExplainer explainer:  97%|█████████▋| 113/116 [00:24<00:00,  5.00it/s]
+
+ExactExplainer explainer:  98%|█████████▊| 114/116 [00:24<00:00,  5.04it/s]
+
+ExactExplainer explainer:  99%|█████████▉| 115/116 [00:24<00:00,  5.04it/s]
+
+ExactExplainer explainer: 100%|██████████| 116/116 [00:24<00:00,  5.04it/s]
+
+ExactExplainer explainer: 117it [00:24,  5.01it/s]                         
+
+ExactExplainer explainer: 117it [00:24,  3.02it/s]
+
+
+
+Executing:  76%|███████▌  | 69/91 [11:14<03:07,  8.53s/cell]
+Executing:  77%|███████▋  | 70/91 [11:14<02:06,  6.02s/cell]
+Executing:  78%|███████▊  | 71/91 [11:15<01:27,  4.35s/cell]
+Executing:  79%|███████▉  | 72/91 [11:15<00:58,  3.09s/cell]
+Executing:  80%|████████  | 73/91 [11:15<00:39,  2.21s/cell]
+Executing:  81%|████████▏ | 74/91 [11:15<00:27,  1.60s/cell]
+Executing:  82%|████████▏ | 75/91 [11:15<00:18,  1.17s/cell]
+Executing:  84%|████████▎ | 76/91 [11:15<00:12,  1.15cell/s]
+Executing:  85%|████████▍ | 77/91 [11:16<00:09,  1.53cell/s]
+Executing:  86%|████████▌ | 78/91 [11:16<00:06,  1.98cell/s]
+Executing:  87%|████████▋ | 79/91 [11:16<00:04,  2.48cell/s]
+Executing:  88%|████████▊ | 80/91 [11:16<00:03,  2.94cell/s]
+Executing:  89%|████████▉ | 81/91 [11:16<00:02,  3.44cell/s]
+Executing:  90%|█████████ | 82/91 [11:16<00:02,  3.88cell/s]
+Executing:  91%|█████████ | 83/91 [11:17<00:01,  4.26cell/s]
+Executing:  92%|█████████▏| 84/91 [11:17<00:01,  4.55cell/s]
+Executing:  93%|█████████▎| 85/91 [11:17<00:01,  4.79cell/s]
+Executing:  95%|█████████▍| 86/91 [11:17<00:00,  5.08cell/s]
+Executing:  96%|█████████▌| 87/91 [11:17<00:00,  5.13cell/s]
+Executing:  97%|█████████▋| 88/91 [11:17<00:00,  5.36cell/s]
+Executing:  98%|█████████▊| 89/91 [11:18<00:00,  5.60cell/s]
+Executing:  99%|█████████▉| 90/91 [11:18<00:00,  5.43cell/s]
+Executing: 100%|██████████| 91/91 [11:18<00:00,  5.55cell/s]
+Executing: 100%|██████████| 91/91 [11:21<00:00,  7.49s/cell]

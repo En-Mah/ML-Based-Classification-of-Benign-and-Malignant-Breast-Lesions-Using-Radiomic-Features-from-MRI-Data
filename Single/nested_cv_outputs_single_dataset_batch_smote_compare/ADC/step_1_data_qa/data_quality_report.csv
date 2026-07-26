@@ -1,5 +1,4 @@
 feature,nan_count,inf_count,variance,is_constant,is_near_zero_variance
-FEATURE_RESULTS,0,0,231.9601186782886,False,False
 Morph_Volume_cm3,0,0,232.26670655378584,False,False
 Morph_ApproximateVolume_cm3,0,0,232266706.55378577,False,False
 Morph_voxelsCounting_vx,0,0,545.5082549771757,False,False

@@ -1,0 +1,56 @@
+{
+  "best_model_name": "SVM_Linear",
+  "selection_criterion": "Highest nested-CV Mean_AUC from df_summary",
+  "oof_metrics": {
+    "oof_auc": 0.6865625,
+    "oof_pr_auc": 0.7826902951133206,
+    "oof_accuracy": 0.6578947368421053,
+    "oof_balanced_accuracy": 0.67125,
+    "oof_precision": 0.7659574468085106,
+    "oof_recall": 0.5625,
+    "oof_f1": 0.6486486486486487,
+    "oof_specificity": 0.78,
+    "oof_kappa": 0.33021994576679725
+  },
+  "kappa_interpretation": "Fair agreement / low",
+  "n_total_samples": 114,
+  "n_selected_features_for_xai": 7,
+  "stability_threshold_min_folds": 2,
+  "n_feature_selection_folds": 5,
+  "best_params_aggregated": {
+    "C": 0.01996978171423993
+  },
+  "features_original": [
+    "Post2_IH_IntensityHistogramMode_Intensity",
+    "ADC_IH_IntensityHistogramMedian_Intensity",
+    "Post2_GLCM_Correlation",
+    "Post2_Morph_RadiusRoiNorm_MaxIntensityCoor_RoiCentroidCoor_Dist",
+    "Post2_Morph_Compacity",
+    "Post2_IB_MaximumIntensity",
+    "ADC_Morph_SurfaceToVolumeRatio_cm"
+  ],
+  "features_sanitized": [
+    "Post2_IH_IntensityHistogramMode_Intensity",
+    "ADC_IH_IntensityHistogramMedian_Intensity",
+    "Post2_GLCM_Correlation",
+    "Post2_Morph_RadiusRoiNorm_MaxIntensityCoor_RoiCentroidCoor_Dist",
+    "Post2_Morph_Compacity",
+    "Post2_IB_MaximumIntensity",
+    "ADC_Morph_SurfaceToVolumeRatio_cm"
+  ],
+  "notes": [
+    "Final refit on the full cohort is used only for SHAP interpretation.",
+    "Reported performance values are OOF/nested-CV metrics.",
+    "SHAP explanations use positive-class probability when predict_proba is available.",
+    "Stable features are selected by recurrence across outer folds, not by using all numeric features."
+  ],
+  "saved_files": {
+    "model_artifact": "nested_cv_outputs_all_pairwise_concat_batch_smote_compare/ADC_Post2/fs_method_comparison/mrmr_then_elasticnet_no_corr_auto_k_smote/SHAP_Plots/Best_Model_SVM_Linear_XAI_Artifact.joblib",
+    "feature_stability": "nested_cv_outputs_all_pairwise_concat_batch_smote_compare/ADC_Post2/fs_method_comparison/mrmr_then_elasticnet_no_corr_auto_k_smote/SHAP_Plots/xai_feature_stability.csv",
+    "shap_importance": "nested_cv_outputs_all_pairwise_concat_batch_smote_compare/ADC_Post2/fs_method_comparison/mrmr_then_elasticnet_no_corr_auto_k_smote/SHAP_Plots/shap_feature_importance.csv",
+    "summary_dot_png": "nested_cv_outputs_all_pairwise_concat_batch_smote_compare/ADC_Post2/fs_method_comparison/mrmr_then_elasticnet_no_corr_auto_k_smote/SHAP_Plots/shap_summary_dot_stable.png",
+    "summary_dot_pdf": "nested_cv_outputs_all_pairwise_concat_batch_smote_compare/ADC_Post2/fs_method_comparison/mrmr_then_elasticnet_no_corr_auto_k_smote/SHAP_Plots/shap_summary_dot_stable.pdf",
+    "summary_bar_png": "nested_cv_outputs_all_pairwise_concat_batch_smote_compare/ADC_Post2/fs_method_comparison/mrmr_then_elasticnet_no_corr_auto_k_smote/SHAP_Plots/shap_summary_bar_stable.png",
+    "summary_bar_pdf": "nested_cv_outputs_all_pairwise_concat_batch_smote_compare/ADC_Post2/fs_method_comparison/mrmr_then_elasticnet_no_corr_auto_k_smote/SHAP_Plots/shap_summary_bar_stable.pdf"
+  }
+}

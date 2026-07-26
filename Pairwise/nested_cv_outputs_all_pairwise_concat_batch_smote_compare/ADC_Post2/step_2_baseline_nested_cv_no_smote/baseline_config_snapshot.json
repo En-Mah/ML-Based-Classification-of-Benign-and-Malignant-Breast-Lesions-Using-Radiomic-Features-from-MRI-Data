@@ -10,7 +10,7 @@
     "N_OPTUNA_TRIALS": 10,
     "RANDOM_STATE": 100,
     "N_SAMPLES": 114,
-    "N_FEATURES": 290,
+    "N_FEATURES": 289,
     "N_PATIENTS": 48,
     "DATASET_TAG": "ADC_Post2",
     "INPUT_FILE": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Pairwise/output/all_10_pairwise_concat_datasets/ADC_Post2_M1_pairwise.csv",

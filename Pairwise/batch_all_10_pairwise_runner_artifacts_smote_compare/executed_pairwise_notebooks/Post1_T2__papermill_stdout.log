@@ -1,0 +1,114 @@
+
+Executing:   0%|          | 0/91 [00:00<?, ?cell/s]
+Executing:   1%|          | 1/91 [00:00<01:10,  1.27cell/s]
+Executing:   4%|▍         | 4/91 [00:01<00:38,  2.27cell/s]
+Executing:   8%|▊         | 7/91 [00:02<00:26,  3.16cell/s]
+Executing:  13%|█▎        | 12/91 [00:02<00:11,  6.60cell/s]
+Executing:  19%|█▊        | 17/91 [00:02<00:06, 10.63cell/s]
+Executing:  22%|██▏       | 20/91 [00:05<00:21,  3.30cell/s]
+Executing:  26%|██▋       | 24/91 [00:05<00:13,  4.82cell/s]
+Executing:  31%|███       | 28/91 [00:05<00:09,  6.57cell/s]
+Executing:  36%|███▋      | 33/91 [00:05<00:06,  9.56cell/s]
+Executing:  38%|███▊      | 35/91 [00:20<00:05,  9.56cell/s]
+Executing:  40%|███▉      | 36/91 [01:20<05:36,  6.11s/cell]Autosave too slow: 142.51 sec, over 25% limit. Backing off to 60 sec
+
+Executing:  41%|████      | 37/91 [7:54:27<43:56:19, 2929.24s/cell]
+Executing:  42%|████▏     | 38/91 [7:54:27<37:35:39, 2553.57s/cell]
+Executing:  45%|████▌     | 41/91 [7:54:28<22:53:14, 1647.89s/cell]
+Executing:  47%|████▋     | 43/91 [7:54:29<16:25:29, 1231.87s/cell]
+Executing:  49%|████▉     | 45/91 [7:54:30<11:34:08, 905.39s/cell] 
+Executing:  51%|█████     | 46/91 [7:54:30<9:30:58, 761.29s/cell] 
+Executing:  52%|█████▏    | 47/91 [7:54:30<7:34:52, 620.29s/cell]
+Executing:  53%|█████▎    | 48/91 [7:54:46<5:53:50, 493.73s/cell]
+Executing:  54%|█████▍    | 49/91 [7:54:46<4:26:05, 380.14s/cell]
+Executing:  55%|█████▍    | 50/91 [7:54:47<3:15:31, 286.14s/cell]
+Executing:  56%|█████▌    | 51/91 [7:54:47<2:20:59, 211.48s/cell]
+Executing:  57%|█████▋    | 52/91 [7:54:49<1:40:29, 154.60s/cell]
+Executing:  58%|█████▊    | 53/91 [7:54:49<1:10:35, 111.46s/cell]
+Executing:  59%|█████▉    | 54/91 [7:54:50<49:09, 79.72s/cell]   
+Executing:  60%|██████    | 55/91 [7:54:55<34:53, 58.15s/cell]
+Executing:  62%|██████▏   | 56/91 [7:54:55<24:01, 41.20s/cell]
+Executing:  63%|██████▎   | 57/91 [8:08:32<2:33:01, 270.04s/cell]
+Executing:  64%|██████▎   | 58/91 [8:08:33<1:44:32, 190.07s/cell]
+Executing:  65%|██████▍   | 59/91 [8:08:33<1:11:15, 133.60s/cell]
+Executing:  66%|██████▌   | 60/91 [8:08:33<48:28, 93.82s/cell]   
+Executing:  67%|██████▋   | 61/91 [8:08:33<32:55, 65.85s/cell]
+Executing:  68%|██████▊   | 62/91 [8:08:34<22:20, 46.23s/cell]
+Executing:  69%|██████▉   | 63/91 [8:08:34<15:08, 32.45s/cell]
+Executing:  70%|███████   | 64/91 [8:08:35<10:23, 23.08s/cell]
+Executing:  71%|███████▏  | 65/91 [8:08:36<07:10, 16.57s/cell]
+Executing:  73%|███████▎  | 66/91 [8:08:40<05:16, 12.65s/cell]
+Executing:  74%|███████▎  | 67/91 [8:08:41<03:38,  9.09s/cell]
+Executing:  75%|███████▍  | 68/91 [8:08:41<02:29,  6.52s/cell]
+PermutationExplainer explainer:  64%|██████▍   | 74/116 [00:00<?, ?it/s]
+
+PermutationExplainer explainer:  66%|██████▋   | 77/116 [00:10<00:02, 17.80it/s]
+
+PermutationExplainer explainer:  68%|██████▊   | 79/116 [00:10<00:02, 14.66it/s]
+
+PermutationExplainer explainer:  70%|██████▉   | 81/116 [00:10<00:02, 15.19it/s]
+
+PermutationExplainer explainer:  72%|███████▏  | 83/116 [00:10<00:02, 15.17it/s]
+
+PermutationExplainer explainer:  73%|███████▎  | 85/116 [00:10<00:02, 14.98it/s]
+
+PermutationExplainer explainer:  75%|███████▌  | 87/116 [00:10<00:02, 14.45it/s]
+
+PermutationExplainer explainer:  77%|███████▋  | 89/116 [00:11<00:01, 13.95it/s]
+
+PermutationExplainer explainer:  78%|███████▊  | 91/116 [00:11<00:01, 12.99it/s]
+
+PermutationExplainer explainer:  80%|████████  | 93/116 [00:11<00:01, 12.51it/s]
+
+PermutationExplainer explainer:  82%|████████▏ | 95/116 [00:11<00:01, 12.63it/s]
+
+PermutationExplainer explainer:  84%|████████▎ | 97/116 [00:11<00:01, 12.70it/s]
+
+PermutationExplainer explainer:  85%|████████▌ | 99/116 [00:11<00:01, 12.86it/s]
+
+PermutationExplainer explainer:  87%|████████▋ | 101/116 [00:12<00:01, 13.12it/s]
+
+PermutationExplainer explainer:  89%|████████▉ | 103/116 [00:12<00:00, 13.09it/s]
+
+PermutationExplainer explainer:  91%|█████████ | 105/116 [00:12<00:00, 13.13it/s]
+
+PermutationExplainer explainer:  92%|█████████▏| 107/116 [00:12<00:00, 13.00it/s]
+
+PermutationExplainer explainer:  94%|█████████▍| 109/116 [00:12<00:00, 13.33it/s]
+
+PermutationExplainer explainer:  96%|█████████▌| 111/116 [00:12<00:00, 13.71it/s]
+
+PermutationExplainer explainer:  97%|█████████▋| 113/116 [00:12<00:00, 14.37it/s]
+
+PermutationExplainer explainer:  99%|█████████▉| 115/116 [00:13<00:00, 14.81it/s]
+
+PermutationExplainer explainer: 117it [00:13, 15.34it/s]                         
+
+PermutationExplainer explainer: 117it [00:13,  3.27it/s]
+
+
+
+Executing:  76%|███████▌  | 69/91 [8:09:00<03:43, 10.16s/cell]
+Executing:  77%|███████▋  | 70/91 [8:09:00<02:31,  7.23s/cell]
+Executing:  78%|███████▊  | 71/91 [8:09:01<01:47,  5.37s/cell]
+Executing:  79%|███████▉  | 72/91 [8:09:02<01:13,  3.89s/cell]
+Executing:  80%|████████  | 73/91 [8:09:02<00:51,  2.84s/cell]
+Executing:  81%|████████▏ | 74/91 [8:09:02<00:35,  2.11s/cell]
+Executing:  82%|████████▏ | 75/91 [8:09:03<00:25,  1.59s/cell]
+Executing:  84%|████████▎ | 76/91 [8:09:03<00:18,  1.23s/cell]
+Executing:  85%|████████▍ | 77/91 [8:09:04<00:13,  1.03cell/s]
+Executing:  86%|████████▌ | 78/91 [8:09:04<00:10,  1.24cell/s]
+Executing:  87%|████████▋ | 79/91 [8:09:04<00:08,  1.46cell/s]
+Executing:  88%|████████▊ | 80/91 [8:09:05<00:06,  1.69cell/s]
+Executing:  89%|████████▉ | 81/91 [8:09:05<00:05,  1.93cell/s]
+Executing:  90%|█████████ | 82/91 [8:09:05<00:04,  2.09cell/s]
+Executing:  91%|█████████ | 83/91 [8:09:06<00:03,  2.21cell/s]
+Executing:  92%|█████████▏| 84/91 [8:09:06<00:03,  2.28cell/s]
+Executing:  93%|█████████▎| 85/91 [8:09:07<00:02,  2.40cell/s]
+Executing:  95%|█████████▍| 86/91 [8:09:07<00:01,  2.57cell/s]
+Executing:  96%|█████████▌| 87/91 [8:09:07<00:01,  2.67cell/s]
+Executing:  97%|█████████▋| 88/91 [8:09:08<00:01,  2.84cell/s]
+Executing:  98%|█████████▊| 89/91 [8:09:08<00:00,  2.98cell/s]
+Executing:  99%|█████████▉| 90/91 [8:09:08<00:00,  3.15cell/s]
+Executing: 100%|██████████| 91/91 [8:09:08<00:00,  3.29cell/s]
+Executing: 100%|██████████| 91/91 [8:09:11<00:00, 322.54s/cell]

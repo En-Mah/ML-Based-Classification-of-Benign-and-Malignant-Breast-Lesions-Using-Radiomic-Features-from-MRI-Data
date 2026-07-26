@@ -1,17 +1,17 @@
 {
     "n_samples": 114,
-    "n_features": 145,
+    "n_features": 144,
     "n_label_0": 50,
     "n_label_1": 64,
     "class_balance_binomial_p_value": 0.22323036245554517,
     "n_normal_features_raw_p_ge_0_05": 6,
-    "n_non_normal_features_raw_p_lt_0_05": 139,
+    "n_non_normal_features_raw_p_lt_0_05": 138,
     "n_normal_features_fdr_q_ge_0_05": 6,
-    "n_non_normal_features_fdr_q_lt_0_05": 139,
+    "n_non_normal_features_fdr_q_lt_0_05": 138,
     "n_features_with_fdr_significant_class_difference": 8,
     "n_features_with_fdr_significant_correlation": 8,
-    "pca_pc1_explained_variance_ratio": 0.3276378397944467,
-    "pca_pc2_explained_variance_ratio": 0.1845408136150985,
+    "pca_pc1_explained_variance_ratio": 0.3297859228279381,
+    "pca_pc2_explained_variance_ratio": 0.1852279311859773,
     "eda_dir": "nested_cv_outputs_single_dataset_batch_smote_compare/ADC/step_1b_statistical_eda",
     "plot_dir": "nested_cv_outputs_single_dataset_batch_smote_compare/ADC/step_1b_statistical_eda/plots_publication_style"
 }

@@ -47,6 +47,7 @@
   "OUTLIER_Q_LOW": 0.01,
   "OUTLIER_Q_HIGH": 0.99,
   "VERBOSE_FS": false,
+  "N_METRIC_BOOTSTRAPS": 2000,
   "CATEGORY_PATTERNS": {
     "MORPHOLOGY": [
       "shape",

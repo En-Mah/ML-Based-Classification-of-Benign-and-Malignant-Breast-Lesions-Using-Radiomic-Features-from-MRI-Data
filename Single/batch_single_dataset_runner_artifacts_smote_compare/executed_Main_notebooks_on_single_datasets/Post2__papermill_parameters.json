@@ -1,0 +1,20 @@
+{
+  "INPUT_FILE": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Single/output/all_single_datasets_standardized/Post2_single_standardized.csv",
+  "DATASET_TAG": "Post2",
+  "BATCH_ROOT": "nested_cv_outputs_single_dataset_batch_smote_compare",
+  "OUTPUT_DIR": "output/cleaned_single_datasets_smote_compare/Post2",
+  "TARGET_COLUMN": "Label",
+  "DATASET_OUTPUT_ROOT": "nested_cv_outputs_single_dataset_batch_smote_compare/Post2",
+  "CLEANED_DATASET_PATH": "output/cleaned_single_datasets_smote_compare/Post2/Post2_single_standardized_Cleaned.csv",
+  "OVERWRITE_FS_RUNS": true,
+  "COMPARE_SMOTE_OPTIONS": true,
+  "TARGET_ABLATION": null,
+  "RUN_SMOTE_ABLATION": false,
+  "RUN_SMOTE_VS_BASELINE_COMPARISON": false,
+  "IS_BATCH_RUN": true,
+  "PAPERMILL_BATCH_RUN": true,
+  "BATCH_MODE": true,
+  "RUN_PUBLICATION_PLOTS": false,
+  "RUN_DESCRIPTIVE_PLOTS": false,
+  "MASK1_SOURCE_DIR": null
+}

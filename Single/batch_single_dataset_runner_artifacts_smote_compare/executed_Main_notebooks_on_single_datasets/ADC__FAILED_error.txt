@@ -1,0 +1,64 @@
+Traceback (most recent call last):
+  File "/var/folders/rf/x4s3m6qd51gcvc25nv1bpdl40000gn/T/ipykernel_68414/483414098.py", line 183, in <module>
+    pm.execute_notebook(
+    ~~~~~~~~~~~~~~~~~~~^
+        input_path=str(Main_EXEC_NOTEBOOK_PATH),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        execution_timeout=NOTEBOOK_TIMEOUT_SECONDS,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/miniconda3/lib/python3.13/site-packages/papermill/execute.py", line 131, in execute_notebook
+    raise_for_execution_errors(nb, output_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/papermill/execute.py", line 251, in raise_for_execution_errors
+    raise error
+papermill.exceptions.PapermillExecutionError: 
+---------------------------------------------------------------------------
+Exception encountered at "In [84]":
+---------------------------------------------------------------------------
+FileNotFoundError                         Traceback (most recent call last)
+Cell In[84], line 296
+    284     checked_text = "\n".join(
+    285         str(directory)
+    286         for directory in unique_candidates
+    287     )
+    289     raise FileNotFoundError(
+    290         "Could not find a directory containing Mask-1 CSV files.\n\n"
+    291         f"Current input file:\n{input_path}\n\n"
+    292         f"Checked directories:\n{checked_text}"
+    293     )
+--> 296 MASK1_DATA_DIR = resolve_mask1_directory(
+    297     current_input_path
+    298 )
+    300 print(
+    301     "Resolved Mask-1 directory:",
+    302     MASK1_DATA_DIR
+    303 )
+    306 # =============================================================================
+    307 # =============================================================================
+
+Cell In[84], line 289, in resolve_mask1_directory(input_path)
+    282         return directory
+    284 checked_text = "\n".join(
+    285     str(directory)
+    286     for directory in unique_candidates
+    287 )
+--> 289 raise FileNotFoundError(
+    290     "Could not find a directory containing Mask-1 CSV files.\n\n"
+    291     f"Current input file:\n{input_path}\n\n"
+    292     f"Checked directories:\n{checked_text}"
+    293 )
+
+FileNotFoundError: Could not find a directory containing Mask-1 CSV files.
+
+Current input file:
+/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Single/output/all_single_datasets_standardized/ADC_single_standardized.csv
+
+Checked directories:
+/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Single/output/all_single_datasets_standardized
+/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Single/output/all_single_datasets_standardized/Mask1
+/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Single/output/Mask1
+/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Single/output
+

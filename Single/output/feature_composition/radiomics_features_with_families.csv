@@ -84,6 +84,7 @@ IH_RootMeanSquare_Intensity,HI
 IH_MaximumHistogramGradient_Intensity,HI
 IH_MaximumHistogramGradientGreyLevel_Intensity,HI
 IH_MinimumHistogramGradient_Intensity,HI
+IH_MinimumHistogramGradientGreyLevel_Intensity,HI
 GLCM_JointMaximum,GLCM
 GLCM_JointAverage,GLCM
 GLCM_JointVariance,GLCM
@@ -142,3 +143,4 @@ GLSZM_NormalisedZoneSizeNonUniformity,GLSZM
 GLSZM_ZonePercentage,GLSZM
 GLSZM_GreyLevelVariance,GLSZM
 GLSZM_ZoneSizeVariance,GLSZM
+GLSZM_ZoneSizeEntropy,GLSZM
