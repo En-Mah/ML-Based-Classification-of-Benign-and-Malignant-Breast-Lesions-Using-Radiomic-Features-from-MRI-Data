@@ -14,5 +14,5 @@
     "N_PATIENTS": 48,
     "DATASET_TAG": "Post1_Post2_Pre_T2",
     "INPUT_FILE": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Quad/output/all_5_quad_concat_datasets/Post1_Post2_Pre_T2_M1_quad.csv",
-    "CLEANED_DATASET_PATH": "output/cleaned_quad_all_5_smote_compare/Post1_Post2_Pre_T2/Post1_Post2_Pre_T2_M1_quad_Cleaned.csv"
+    "CLEANED_DATASET_PATH": "output/cleaned_quad_all_10_smote_compare/Post1_Post2_Pre_T2/Post1_Post2_Pre_T2_M1_quad_Cleaned.csv"
 }

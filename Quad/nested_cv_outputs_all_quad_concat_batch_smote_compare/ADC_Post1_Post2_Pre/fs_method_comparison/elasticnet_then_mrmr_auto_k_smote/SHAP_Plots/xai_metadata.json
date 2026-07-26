@@ -2,19 +2,19 @@
   "best_model_name": "SVM_RBF",
   "selection_criterion": "Highest nested-CV Mean_AUC from df_summary",
   "oof_metrics": {
-    "oof_auc": 0.7806349206349207,
-    "oof_pr_auc": 0.8077187212172838,
-    "oof_accuracy": 0.7345132743362832,
-    "oof_balanced_accuracy": 0.7309523809523809,
-    "oof_precision": 0.7619047619047619,
-    "oof_recall": 0.7619047619047619,
-    "oof_f1": 0.7619047619047619,
-    "oof_specificity": 0.7,
-    "oof_kappa": 0.46190476190476193
+    "oof_auc": 0.7650793650793651,
+    "oof_pr_auc": 0.7948672459253328,
+    "oof_accuracy": 0.7256637168141593,
+    "oof_balanced_accuracy": 0.7188888888888889,
+    "oof_precision": 0.7424242424242424,
+    "oof_recall": 0.7777777777777778,
+    "oof_f1": 0.7596899224806202,
+    "oof_specificity": 0.66,
+    "oof_kappa": 0.440504711707395
   },
   "kappa_interpretation": "Moderate agreement",
   "n_total_samples": 113,
-  "n_selected_features_for_xai": 9,
+  "n_selected_features_for_xai": 8,
   "stability_threshold_min_folds": 2,
   "n_feature_selection_folds": 5,
   "best_params_aggregated": {
@@ -22,25 +22,23 @@
     "gamma": 0.0300302028157839
   },
   "features_original": [
-    "ADC_IH_IntensityHistogramMedian_Intensity",
     "Post2_IH_IntensityHistogramMode_Intensity",
     "Post2_GLCM_InverseVariance",
     "Post2_GLCM_Correlation",
     "Post1_Morph_Sphericity",
+    "ADC_IH_IntensityHistogramMedian_Intensity",
     "Post1_Morph_Compactness1",
     "ADC_IB_MedianIntensity",
-    "Post1_GLSZM_LargeZoneEmphasis",
     "ADC_GLSZM_GreyLevelVariance"
   ],
   "features_sanitized": [
-    "ADC_IH_IntensityHistogramMedian_Intensity",
     "Post2_IH_IntensityHistogramMode_Intensity",
     "Post2_GLCM_InverseVariance",
     "Post2_GLCM_Correlation",
     "Post1_Morph_Sphericity",
+    "ADC_IH_IntensityHistogramMedian_Intensity",
     "Post1_Morph_Compactness1",
     "ADC_IB_MedianIntensity",
-    "Post1_GLSZM_LargeZoneEmphasis",
     "ADC_GLSZM_GreyLevelVariance"
   ],
   "notes": [
