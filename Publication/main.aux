@@ -1,0 +1,246 @@
+\relax 
+\providecommand \babel@aux [2]{\global \let \babel@toc \@gobbletwo }
+\@nameuse{bbl@beforestart}
+\abx@aux@refcontext{none/global//global/global/global}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\babel@aux{english}{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:introduction}{{1}{1}{Introduction}{section.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Materials and Methods}{2}{section.2}\protected@file@percent }
+\newlabel{sec:materials_methods}{{2}{2}{Materials and Methods}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Computational Study Design}{2}{subsection.2.1}\protected@file@percent }
+\newlabel{subsec:computational_design}{{2.1}{2}{Computational Study Design}{subsection.2.1}{}}
+\newlabel{eq:number_of_dataset_combinations}{{1}{2}{Computational Study Design}{equation.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {Overview of the computational machine-learning workflow.} (a) Five pre-extracted radiomic feature sources were used as model inputs: ADC, Pre, Post1, Post2, and T2. (b) The sources were evaluated as five single-source, ten pairwise, ten triple-source, five quadruple-source, and one complete five-source configuration. (c) Patients were separated using five-fold outer and three-fold inner patient-aware nested cross-validation. (d) Median imputation, variance filtering, feature selection, automatic feature-count selection, standardisation, optional SMOTE, and hyperparameter optimisation were restricted to the relevant training partitions. (e) The fitted models were evaluated on outer-test patients, and out-of-fold predictions were collected for performance assessment. ADC, apparent diffusion coefficient; ROI, region of interest; SMOTE, Synthetic Minority Over-sampling Technique.}}{3}{figure.caption.2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:computational_workflow}{{1}{3}{\textbf {Overview of the computational machine-learning workflow.} (a) Five pre-extracted radiomic feature sources were used as model inputs: ADC, Pre, Post1, Post2, and T2. (b) The sources were evaluated as five single-source, ten pairwise, ten triple-source, five quadruple-source, and one complete five-source configuration. (c) Patients were separated using five-fold outer and three-fold inner patient-aware nested cross-validation. (d) Median imputation, variance filtering, feature selection, automatic feature-count selection, standardisation, optional SMOTE, and hyperparameter optimisation were restricted to the relevant training partitions. (e) The fitted models were evaluated on outer-test patients, and out-of-fold predictions were collected for performance assessment. ADC, apparent diffusion coefficient; ROI, region of interest; SMOTE, Synthetic Minority Over-sampling Technique}{figure.caption.2}{}}
+\newlabel{eq:pipelines_per_dataset}{{2}{3}{Computational Study Design}{equation.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Input Datasets and Prediction Task}{3}{subsection.2.2}\protected@file@percent }
+\newlabel{subsec:input_datasets}{{2.2}{3}{Input Datasets and Prediction Task}{subsection.2.2}{}}
+\newlabel{eq:class_encoding}{{3}{4}{Input Datasets and Prediction Task}{equation.3}{}}
+\newlabel{eq:data_representation}{{4}{4}{Input Datasets and Prediction Task}{equation.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Construction of Multi-Source Datasets}{4}{subsection.2.3}\protected@file@percent }
+\newlabel{subsec:multisource_construction}{{2.3}{4}{Construction of Multi-Source Datasets}{subsection.2.3}{}}
+\newlabel{eq:multisource_concatenation}{{6}{4}{Construction of Multi-Source Datasets}{equation.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Characteristics of the five single-source datasets used in the machine-learning analysis. Class 0 represents benign regions of interest, and class 1 represents malignant regions of interest. Metadata and non-predictive identifier columns were not included in the reported feature counts.}}}{5}{table.caption.3}\protected@file@percent }
+\newlabel{tab:single_source_dataset_characteristics}{{1}{5}{\textbf {Characteristics of the five single-source datasets used in the machine-learning analysis. Class 0 represents benign regions of interest, and class 1 represents malignant regions of interest. Metadata and non-predictive identifier columns were not included in the reported feature counts.}}{table.caption.3}{}}
+\newlabel{eq:multisource_consistency}{{7}{5}{Construction of Multi-Source Datasets}{equation.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Data Preparation and Quality Control}{6}{subsection.2.4}\protected@file@percent }
+\newlabel{subsec:data_quality_control}{{2.4}{6}{Data Preparation and Quality Control}{subsection.2.4}{}}
+\newlabel{eq:modified_z_score}{{8}{6}{Data Preparation and Quality Control}{equation.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Patient-Aware Nested Cross-Validation}{7}{subsection.2.5}\protected@file@percent }
+\newlabel{subsec:nested_cv}{{2.5}{7}{Patient-Aware Nested Cross-Validation}{subsection.2.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.1}Patient-aware data splitting}{7}{subsubsection.2.5.1}\protected@file@percent }
+\newlabel{subsubsec:patient_aware_splitting}{{2.5.1}{7}{Patient-aware data splitting}{subsubsection.2.5.1}{}}
+\newlabel{eq:patient_group_separation}{{10}{7}{Patient-aware data splitting}{equation.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.2}Outer cross-validation loop}{7}{subsubsection.2.5.2}\protected@file@percent }
+\newlabel{subsubsec:outer_cv}{{2.5.2}{7}{Outer cross-validation loop}{subsubsection.2.5.2}{}}
+\newlabel{eq:outer_folds}{{11}{7}{Outer cross-validation loop}{equation.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.3}Training-only preprocessing}{8}{subsubsection.2.5.3}\protected@file@percent }
+\newlabel{subsubsec:training_preprocessing}{{2.5.3}{8}{Training-only preprocessing}{subsubsection.2.5.3}{}}
+\newlabel{eq:training_median}{{12}{8}{Training-only preprocessing}{equation.12}{}}
+\newlabel{eq:training_standardisation}{{13}{8}{Training-only preprocessing}{equation.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.4}Inner cross-validation loop}{8}{subsubsection.2.5.4}\protected@file@percent }
+\newlabel{subsubsec:inner_cv}{{2.5.4}{8}{Inner cross-validation loop}{subsubsection.2.5.4}{}}
+\newlabel{eq:inner_folds}{{14}{8}{Inner cross-validation loop}{equation.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.5}Final outer-fold evaluation and out-of-fold predictions}{8}{subsubsection.2.5.5}\protected@file@percent }
+\newlabel{subsubsec:oof_predictions}{{2.5.5}{8}{Final outer-fold evaluation and out-of-fold predictions}{subsubsection.2.5.5}{}}
+\newlabel{eq:oof_predictions}{{15}{9}{Final outer-fold evaluation and out-of-fold predictions}{equation.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Feature-Selection Strategies}{9}{subsection.2.6}\protected@file@percent }
+\newlabel{subsec:feature_selection}{{2.6}{9}{Feature-Selection Strategies}{subsection.2.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.1}Correlation Filtering}{9}{subsubsection.2.6.1}\protected@file@percent }
+\newlabel{subsubsec:correlation_filtering}{{2.6.1}{9}{Correlation Filtering}{subsubsection.2.6.1}{}}
+\newlabel{eq:correlation_threshold}{{16}{9}{Correlation Filtering}{equation.16}{}}
+\newlabel{eq:direction_independent_auc}{{17}{9}{Correlation Filtering}{equation.17}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.2}Minimum Redundancy Maximum Relevance}{10}{subsubsection.2.6.2}\protected@file@percent }
+\newlabel{subsubsec:mrmr}{{2.6.2}{10}{Minimum Redundancy Maximum Relevance}{subsubsection.2.6.2}{}}
+\newlabel{eq:mrmr_relevance}{{18}{10}{Minimum Redundancy Maximum Relevance}{equation.18}{}}
+\newlabel{eq:mi_neighbours}{{19}{10}{Minimum Redundancy Maximum Relevance}{equation.19}{}}
+\newlabel{eq:mrmr_redundancy}{{20}{10}{Minimum Redundancy Maximum Relevance}{equation.20}{}}
+\newlabel{eq:mrmr_score}{{21}{10}{Minimum Redundancy Maximum Relevance}{equation.21}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.3}Elastic-Net Feature Selection}{10}{subsubsection.2.6.3}\protected@file@percent }
+\newlabel{subsubsec:elasticnet_selection}{{2.6.3}{10}{Elastic-Net Feature Selection}{subsubsection.2.6.3}{}}
+\newlabel{eq:elasticnet_objective}{{22}{10}{Elastic-Net Feature Selection}{equation.22}{}}
+\newlabel{eq:elasticnet_feature_weight}{{23}{10}{Elastic-Net Feature Selection}{equation.23}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.6.4}Sequential Feature-Selection Pipelines}{11}{subsubsection.2.6.4}\protected@file@percent }
+\newlabel{subsubsec:sequential_fs_pipelines}{{2.6.4}{11}{Sequential Feature-Selection Pipelines}{subsubsection.2.6.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Correlation filtering followed by mRMR.}{11}{section*.4}\protected@file@percent }
+\newlabel{eq:corr_mrmr_pipeline}{{24}{11}{Correlation filtering followed by mRMR}{equation.24}{}}
+\@writefile{toc}{\contentsline {paragraph}{Elastic Net followed by mRMR.}{11}{section*.5}\protected@file@percent }
+\newlabel{eq:elasticnet_mrmr_pipeline}{{25}{11}{Elastic Net followed by mRMR}{equation.25}{}}
+\@writefile{toc}{\contentsline {paragraph}{mRMR followed by Elastic Net.}{11}{section*.6}\protected@file@percent }
+\newlabel{eq:mrmr_elasticnet_pipeline}{{26}{11}{mRMR followed by Elastic Net}{equation.26}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}Automatic Selection of the Feature-Set Size}{11}{subsection.2.7}\protected@file@percent }
+\newlabel{subsec:auto_k}{{2.7}{11}{Automatic Selection of the Feature-Set Size}{subsection.2.7}{}}
+\newlabel{eq:auto_k_candidates}{{27}{12}{Automatic Selection of the Feature-Set Size}{equation.27}{}}
+\newlabel{eq:auto_k_mean_score}{{28}{12}{Automatic Selection of the Feature-Set Size}{equation.28}{}}
+\newlabel{eq:auto_k_selection}{{29}{12}{Automatic Selection of the Feature-Set Size}{equation.29}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.8}Class-Imbalance Handling Using SMOTE}{12}{subsection.2.8}\protected@file@percent }
+\newlabel{subsec:smote}{{2.8}{12}{Class-Imbalance Handling Using SMOTE}{subsection.2.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.1}Position Within the Modelling Pipeline}{13}{subsubsection.2.8.1}\protected@file@percent }
+\newlabel{subsubsec:smote_pipeline_position}{{2.8.1}{13}{Position Within the Modelling Pipeline}{subsubsection.2.8.1}{}}
+\newlabel{eq:smote_pipeline_order}{{30}{13}{Position Within the Modelling Pipeline}{equation.30}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.2}Training-Only Application}{13}{subsubsection.2.8.2}\protected@file@percent }
+\newlabel{subsubsec:smote_training_only}{{2.8.2}{13}{Training-Only Application}{subsubsection.2.8.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.3}Adaptive Neighbour Selection}{13}{subsubsection.2.8.3}\protected@file@percent }
+\newlabel{subsubsec:adaptive_smote}{{2.8.3}{13}{Adaptive Neighbour Selection}{subsubsection.2.8.3}{}}
+\newlabel{eq:adaptive_smote_neighbours}{{31}{13}{Adaptive Neighbour Selection}{equation.31}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.8.4}Experimental Comparison}{13}{subsubsection.2.8.4}\protected@file@percent }
+\newlabel{subsubsec:smote_comparison_design}{{2.8.4}{13}{Experimental Comparison}{subsubsection.2.8.4}{}}
+\newlabel{eq:smote_experimental_grid}{{32}{14}{Experimental Comparison}{equation.32}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.9}Machine-Learning Classifiers}{14}{subsection.2.9}\protected@file@percent }
+\newlabel{subsec:classifiers}{{2.9}{14}{Machine-Learning Classifiers}{subsection.2.9}{}}
+\newlabel{eq:classifier_output}{{33}{14}{Machine-Learning Classifiers}{equation.33}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.9.1}Linear and Kernel-Based Classifiers}{14}{subsubsection.2.9.1}\protected@file@percent }
+\newlabel{subsubsec:linear_kernel_classifiers}{{2.9.1}{14}{Linear and Kernel-Based Classifiers}{subsubsection.2.9.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.9.2}Tree-Based Ensemble Classifiers}{14}{subsubsection.2.9.2}\protected@file@percent }
+\newlabel{subsubsec:tree_classifiers}{{2.9.2}{14}{Tree-Based Ensemble Classifiers}{subsubsection.2.9.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.9.3}Distance-Based and Probabilistic Classifiers}{15}{subsubsection.2.9.3}\protected@file@percent }
+\newlabel{subsubsec:distance_probabilistic_classifiers}{{2.9.3}{15}{Distance-Based and Probabilistic Classifiers}{subsubsection.2.9.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.10}Hyperparameter Optimisation Using Optuna}{15}{subsection.2.10}\protected@file@percent }
+\newlabel{subsec:hyperparameter_optimisation}{{2.10}{15}{Hyperparameter Optimisation Using Optuna}{subsection.2.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Machine-learning classifiers evaluated in the computational framework.} Hyperparameters were selected independently within each outer fold using patient-aware inner cross-validation.}}{16}{table.caption.7}\protected@file@percent }
+\newlabel{tab:classifiers}{{2}{16}{\textbf {Machine-learning classifiers evaluated in the computational framework.} Hyperparameters were selected independently within each outer fold using patient-aware inner cross-validation}{table.caption.7}{}}
+\newlabel{eq:optuna_trials}{{34}{17}{Hyperparameter Optimisation Using Optuna}{equation.34}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.10.1}Inner-Loop Evaluation of Candidate Parameters}{17}{subsubsection.2.10.1}\protected@file@percent }
+\newlabel{subsubsec:optuna_inner_evaluation}{{2.10.1}{17}{Inner-Loop Evaluation of Candidate Parameters}{subsubsection.2.10.1}{}}
+\newlabel{eq:actual_inner_folds}{{35}{17}{Inner-Loop Evaluation of Candidate Parameters}{equation.35}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.10.2}Optimisation Objective}{17}{subsubsection.2.10.2}\protected@file@percent }
+\newlabel{subsubsec:optuna_objective}{{2.10.2}{17}{Optimisation Objective}{subsubsection.2.10.2}{}}
+\newlabel{eq:median_inner_auc}{{36}{17}{Optimisation Objective}{equation.36}{}}
+\newlabel{eq:optuna_objective}{{37}{18}{Optimisation Objective}{equation.37}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.10.3}Hyperparameter Search Spaces}{18}{subsubsection.2.10.3}\protected@file@percent }
+\newlabel{subsubsec:hyperparameter_search_spaces}{{2.10.3}{18}{Hyperparameter Search Spaces}{subsubsection.2.10.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.10.4}Selection and Final Outer-Fold Fitting}{18}{subsubsection.2.10.4}\protected@file@percent }
+\newlabel{subsubsec:final_hyperparameter_selection}{{2.10.4}{18}{Selection and Final Outer-Fold Fitting}{subsubsection.2.10.4}{}}
+\newlabel{eq:best_hyperparameters}{{38}{18}{Selection and Final Outer-Fold Fitting}{equation.38}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.11}Model Performance Evaluation and Uncertainty}{18}{subsection.2.11}\protected@file@percent }
+\newlabel{subsec:model_evaluation}{{2.11}{18}{Model Performance Evaluation and Uncertainty}{subsection.2.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.11.1}Primary Performance Measure}{18}{subsubsection.2.11.1}\protected@file@percent }
+\newlabel{subsubsec:primary_performance_measure}{{2.11.1}{18}{Primary Performance Measure}{subsubsection.2.11.1}{}}
+\newlabel{eq:mean_outer_auc}{{39}{18}{Primary Performance Measure}{equation.39}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Classifier-specific hyperparameter search spaces used during Optuna optimisation.} Log indicates logarithmic sampling. Categorical parameters were selected from the listed alternatives.}}{19}{table.caption.8}\protected@file@percent }
+\newlabel{tab:hyperparameter_search_spaces}{{3}{19}{\textbf {Classifier-specific hyperparameter search spaces used during Optuna optimisation.} Log indicates logarithmic sampling. Categorical parameters were selected from the listed alternatives}{table.caption.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.11.2}Pooled Out-of-Fold Performance}{20}{subsubsection.2.11.2}\protected@file@percent }
+\newlabel{subsubsec:pooled_performance}{{2.11.2}{20}{Pooled Out-of-Fold Performance}{subsubsection.2.11.2}{}}
+\newlabel{eq:pooled_auc}{{40}{20}{Pooled Out-of-Fold Performance}{equation.40}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.11.3}Threshold-Dependent Classification Measures}{20}{subsubsection.2.11.3}\protected@file@percent }
+\newlabel{subsubsec:threshold_metrics}{{2.11.3}{20}{Threshold-Dependent Classification Measures}{subsubsection.2.11.3}{}}
+\newlabel{eq:classification_threshold}{{41}{20}{Threshold-Dependent Classification Measures}{equation.41}{}}
+\newlabel{eq:accuracy}{{42}{20}{Threshold-Dependent Classification Measures}{equation.42}{}}
+\newlabel{eq:sensitivity}{{43}{20}{Threshold-Dependent Classification Measures}{equation.43}{}}
+\newlabel{eq:specificity}{{44}{20}{Threshold-Dependent Classification Measures}{equation.44}{}}
+\newlabel{eq:precision}{{45}{20}{Threshold-Dependent Classification Measures}{equation.45}{}}
+\newlabel{eq:balanced_accuracy}{{46}{20}{Threshold-Dependent Classification Measures}{equation.46}{}}
+\newlabel{eq:f1_score}{{47}{20}{Threshold-Dependent Classification Measures}{equation.47}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.11.4}Fold-Level and Pooled Metric Summaries}{21}{subsubsection.2.11.4}\protected@file@percent }
+\newlabel{subsubsec:fold_pooled_metrics}{{2.11.4}{21}{Fold-Level and Pooled Metric Summaries}{subsubsection.2.11.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.11.5}Probability Calibration}{21}{subsubsection.2.11.5}\protected@file@percent }
+\newlabel{subsubsec:probability_calibration}{{2.11.5}{21}{Probability Calibration}{subsubsection.2.11.5}{}}
+\newlabel{eq:brier_score}{{48}{21}{Probability Calibration}{equation.48}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.11.6}Patient-Clustered Confidence Intervals}{21}{subsubsection.2.11.6}\protected@file@percent }
+\newlabel{subsubsec:clustered_confidence_intervals}{{2.11.6}{21}{Patient-Clustered Confidence Intervals}{subsubsection.2.11.6}{}}
+\newlabel{eq:number_of_bootstraps}{{49}{21}{Patient-Clustered Confidence Intervals}{equation.49}{}}
+\newlabel{eq:bootstrap_percentile_ci}{{50}{21}{Patient-Clustered Confidence Intervals}{equation.50}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.11.7}Model Ranking and Detailed Evaluation}{21}{subsubsection.2.11.7}\protected@file@percent }
+\newlabel{subsubsec:model_ranking}{{2.11.7}{21}{Model Ranking and Detailed Evaluation}{subsubsection.2.11.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.12}Feature-Selection Stability and Model Interpretation}{22}{subsection.2.12}\protected@file@percent }
+\newlabel{subsec:stability_interpretation}{{2.12}{22}{Feature-Selection Stability and Model Interpretation}{subsection.2.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.12.1}Feature-Selection Stability}{22}{subsubsection.2.12.1}\protected@file@percent }
+\newlabel{subsubsec:feature_selection_stability}{{2.12.1}{22}{Feature-Selection Stability}{subsubsection.2.12.1}{}}
+\newlabel{eq:feature_selection_frequency}{{51}{22}{Feature-Selection Stability}{equation.51}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.12.2}Selection of Recurrent Features for Interpretation}{22}{subsubsection.2.12.2}\protected@file@percent }
+\newlabel{subsubsec:stable_features_for_interpretation}{{2.12.2}{22}{Selection of Recurrent Features for Interpretation}{subsubsection.2.12.2}{}}
+\newlabel{eq:stable_feature_threshold}{{52}{22}{Selection of Recurrent Features for Interpretation}{equation.52}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.12.3}Selection and Refit of the Interpretation Model}{22}{subsubsection.2.12.3}\protected@file@percent }
+\newlabel{subsubsec:interpretation_model}{{2.12.3}{22}{Selection and Refit of the Interpretation Model}{subsubsection.2.12.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {Performance measures used to evaluate the machine-learning classifiers.} Threshold-dependent measures were calculated using a malignant-class probability threshold of 0.5.}}{23}{table.caption.9}\protected@file@percent }
+\newlabel{tab:evaluation_metrics}{{4}{23}{\textbf {Performance measures used to evaluate the machine-learning classifiers.} Threshold-dependent measures were calculated using a malignant-class probability threshold of 0.5}{table.caption.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.12.4}SHAP Analysis}{23}{subsubsection.2.12.4}\protected@file@percent }
+\newlabel{subsubsec:shap_analysis}{{2.12.4}{23}{SHAP Analysis}{subsubsection.2.12.4}{}}
+\newlabel{eq:shap_additive_representation}{{53}{23}{SHAP Analysis}{equation.53}{}}
+\newlabel{eq:mean_absolute_shap}{{54}{23}{SHAP Analysis}{equation.54}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.12.5}Interpretation Outputs}{24}{subsubsection.2.12.5}\protected@file@percent }
+\newlabel{subsubsec:interpretation_outputs}{{2.12.5}{24}{Interpretation Outputs}{subsubsection.2.12.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.13}Software Implementation and Reproducibility}{24}{subsection.2.13}\protected@file@percent }
+\newlabel{subsec:software_reproducibility}{{2.13}{24}{Software Implementation and Reproducibility}{subsection.2.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.13.1}Parameterised Notebook Execution}{24}{subsubsection.2.13.1}\protected@file@percent }
+\newlabel{subsubsec:parameterised_execution}{{2.13.1}{24}{Parameterised Notebook Execution}{subsubsection.2.13.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.13.2}Batch-Safe Execution}{25}{subsubsection.2.13.2}\protected@file@percent }
+\newlabel{subsubsec:batch_safe_execution}{{2.13.2}{25}{Batch-Safe Execution}{subsubsection.2.13.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.13.3}Output Management and Traceability}{25}{subsubsection.2.13.3}\protected@file@percent }
+\newlabel{subsubsec:output_management}{{2.13.3}{25}{Output Management and Traceability}{subsubsection.2.13.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Results}{26}{section.3}\protected@file@percent }
+\newlabel{sec:results}{{3}{26}{Results}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Dataset Characteristics and Quality-Control Results}{26}{subsection.3.1}\protected@file@percent }
+\newlabel{subsec:results_dataset_characteristics}{{3.1}{26}{Dataset Characteristics and Quality-Control Results}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Overall Performance Across the 31 Dataset Configurations}{26}{subsection.3.2}\protected@file@percent }
+\newlabel{subsec:overall_31_configurations}{{3.2}{26}{Overall Performance Across the 31 Dataset Configurations}{subsection.3.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Dataset dimensions across the five feature-source integration levels.} Multi-source datasets retained only ROIs available in every source included in the corresponding configuration. Feature concatenation increased the number of predictor columns but did not create additional observations.}}{27}{table.caption.10}\protected@file@percent }
+\newlabel{tab:fusion_dataset_characteristics}{{5}{27}{\textbf {Dataset dimensions across the five feature-source integration levels.} Multi-source datasets retained only ROIs available in every source included in the corresponding configuration. Feature concatenation increased the number of predictor columns but did not create additional observations}{table.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Classification performance across the 31 radiomic source configurations.} For each source configuration, the displayed result corresponds to the pipeline with the highest mean ROC-AUC across the five patient-aware outer cross-validation folds. Error bars represent the standard deviation across the five outer folds. (a) Five single-source datasets. (b) Ten pairwise source combinations. (c) Ten triple-source combinations. (d) Five quadruple-source combinations. (e) Highest-ranked configuration at each of the five feature-fusion levels. Configurations within panels (a)--(d) are ordered from the highest to the lowest mean ROC-AUC. The dashed reference line indicates chance-level discrimination at ROC-AUC \(=0.50\).}}{27}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:overall_31_configurations}{{2}{27}{\textbf {Classification performance across the 31 radiomic source configurations.} For each source configuration, the displayed result corresponds to the pipeline with the highest mean ROC-AUC across the five patient-aware outer cross-validation folds. Error bars represent the standard deviation across the five outer folds. (a) Five single-source datasets. (b) Ten pairwise source combinations. (c) Ten triple-source combinations. (d) Five quadruple-source combinations. (e) Highest-ranked configuration at each of the five feature-fusion levels. Configurations within panels (a)--(d) are ordered from the highest to the lowest mean ROC-AUC. The dashed reference line indicates chance-level discrimination at ROC-AUC \(=0.50\)}{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Single-Source Classification Results}{28}{subsection.3.3}\protected@file@percent }
+\newlabel{subsec:single_source_results}{{3.3}{28}{Single-Source Classification Results}{subsection.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Pairwise Classification Results}{28}{subsection.3.4}\protected@file@percent }
+\newlabel{subsec:pairwise_results}{{3.4}{28}{Pairwise Classification Results}{subsection.3.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Highest-ranked configuration at each feature-fusion level.} Configurations were selected according to mean ROC-AUC across the five patient-aware outer folds. Pooled ROC-AUC was calculated from the combined out-of-fold predictions. EN, Elastic Net; mRMR, minimum redundancy maximum relevance; SVM, support vector machine; SD, standard deviation.}}{29}{table.caption.12}\protected@file@percent }
+\newlabel{tab:best_by_fusion_level}{{6}{29}{\textbf {Highest-ranked configuration at each feature-fusion level.} Configurations were selected according to mean ROC-AUC across the five patient-aware outer folds. Pooled ROC-AUC was calculated from the combined out-of-fold predictions. EN, Elastic Net; mRMR, minimum redundancy maximum relevance; SVM, support vector machine; SD, standard deviation}{table.caption.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces \textbf  {Highest-ranked machine-learning pipeline for each single-source dataset.} Pipelines were selected according to mean ROC-AUC across the five patient-aware outer folds. PR-AUC was calculated using average precision. EN, Elastic Net; mRMR, minimum redundancy maximum relevance; SVM, support vector machine; KNN, K-Nearest Neighbours; Bal. Acc., balanced accuracy; SD, standard deviation.}}{29}{table.caption.13}\protected@file@percent }
+\newlabel{tab:single_source_results}{{7}{29}{\textbf {Highest-ranked machine-learning pipeline for each single-source dataset.} Pipelines were selected according to mean ROC-AUC across the five patient-aware outer folds. PR-AUC was calculated using average precision. EN, Elastic Net; mRMR, minimum redundancy maximum relevance; SVM, support vector machine; KNN, K-Nearest Neighbours; Bal. Acc., balanced accuracy; SD, standard deviation}{table.caption.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Triple-Source Classification Results}{30}{subsection.3.5}\protected@file@percent }
+\newlabel{subsec:triple_source_results}{{3.5}{30}{Triple-Source Classification Results}{subsection.3.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces \textbf  {Highest-ranked machine-learning pipeline for each pairwise source configuration.} Pipelines were ranked according to mean ROC-AUC across the five patient-aware outer folds. EN, Elastic Net; mRMR, minimum redundancy maximum relevance; SVM, support vector machine; KNN, K-Nearest Neighbours; NB, Gaussian Naive Bayes; SD, standard deviation.}}{31}{table.caption.14}\protected@file@percent }
+\newlabel{tab:pairwise_results}{{8}{31}{\textbf {Highest-ranked machine-learning pipeline for each pairwise source configuration.} Pipelines were ranked according to mean ROC-AUC across the five patient-aware outer folds. EN, Elastic Net; mRMR, minimum redundancy maximum relevance; SVM, support vector machine; KNN, K-Nearest Neighbours; NB, Gaussian Naive Bayes; SD, standard deviation}{table.caption.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces \textbf  {Highest-ranked machine-learning pipeline for each triple-source configuration.} Pipelines were ranked according to mean ROC-AUC across the five patient-aware outer folds. EN, Elastic Net; mRMR, minimum redundancy maximum relevance; SVM, support vector machine; NB, Gaussian Naive Bayes; SD, standard deviation.}}{31}{table.caption.15}\protected@file@percent }
+\newlabel{tab:triple_source_results}{{9}{31}{\textbf {Highest-ranked machine-learning pipeline for each triple-source configuration.} Pipelines were ranked according to mean ROC-AUC across the five patient-aware outer folds. EN, Elastic Net; mRMR, minimum redundancy maximum relevance; SVM, support vector machine; NB, Gaussian Naive Bayes; SD, standard deviation}{table.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Quadruple-Source Classification Results}{32}{subsection.3.6}\protected@file@percent }
+\newlabel{subsec:quadruple_source_results}{{3.6}{32}{Quadruple-Source Classification Results}{subsection.3.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Complete Five-Source Classification Result}{32}{subsection.3.7}\protected@file@percent }
+\newlabel{subsec:five_source_results}{{3.7}{32}{Complete Five-Source Classification Result}{subsection.3.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces \textbf  {Highest-ranked machine-learning pipeline for each quadruple-source configuration.} Pipelines were ranked according to mean ROC-AUC across the five patient-aware outer folds. EN, Elastic Net; mRMR, minimum redundancy maximum relevance; SVM, support vector machine; SD, standard deviation.}}{33}{table.caption.16}\protected@file@percent }
+\newlabel{tab:quadruple_source_results}{{10}{33}{\textbf {Highest-ranked machine-learning pipeline for each quadruple-source configuration.} Pipelines were ranked according to mean ROC-AUC across the five patient-aware outer folds. EN, Elastic Net; mRMR, minimum redundancy maximum relevance; SVM, support vector machine; SD, standard deviation}{table.caption.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8}Comparison of Feature-Selection Strategies}{33}{subsection.3.8}\protected@file@percent }
+\newlabel{subsec:feature_selection_results}{{3.8}{33}{Comparison of Feature-Selection Strategies}{subsection.3.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Comparison of the three sequential feature-selection strategies across the 31 source configurations.} For each source configuration and feature-selection strategy, the displayed value represents the higher mean outer-fold ROC-AUC obtained after comparison of the SMOTE and no-SMOTE conditions and selection of the highest-performing classifier. (a) Distribution of the 31 method-specific mean outer-fold ROC-AUC values for each feature-selection strategy. Individual points represent source configurations, horizontal lines inside the boxes represent medians, boxes represent interquartile ranges, whiskers represent the remaining non-outlying range, and white diamond markers represent means. (b) Number of source configurations for which each strategy achieved the highest method-specific mean outer-fold ROC-AUC. Stacked bar segments indicate the contributions of single, pairwise, triple-source, quadruple-source, and complete five-source configurations. Numbers above the bars indicate the total number of configuration-level wins. EN, Elastic Net; mRMR, minimum redundancy maximum relevance.}}{34}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:feature_selection_comparison}{{3}{34}{\textbf {Comparison of the three sequential feature-selection strategies across the 31 source configurations.} For each source configuration and feature-selection strategy, the displayed value represents the higher mean outer-fold ROC-AUC obtained after comparison of the SMOTE and no-SMOTE conditions and selection of the highest-performing classifier. (a) Distribution of the 31 method-specific mean outer-fold ROC-AUC values for each feature-selection strategy. Individual points represent source configurations, horizontal lines inside the boxes represent medians, boxes represent interquartile ranges, whiskers represent the remaining non-outlying range, and white diamond markers represent means. (b) Number of source configurations for which each strategy achieved the highest method-specific mean outer-fold ROC-AUC. Stacked bar segments indicate the contributions of single, pairwise, triple-source, quadruple-source, and complete five-source configurations. Numbers above the bars indicate the total number of configuration-level wins. EN, Elastic Net; mRMR, minimum redundancy maximum relevance}{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.9}Effect of SMOTE on Classification Performance}{35}{subsection.3.9}\protected@file@percent }
+\newlabel{subsec:smote_results}{{3.9}{35}{Effect of SMOTE on Classification Performance}{subsection.3.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Effect of SMOTE on classification performance across the 31 source configurations.} For each source configuration and balancing condition, the displayed result corresponds to the pipeline with the highest mean ROC-AUC after comparison of the three feature-selection strategies and ten classifiers. (a) Configuration-level difference in mean outer-fold ROC-AUC, calculated as the best SMOTE result minus the best no-SMOTE result. Dots represent individual source configurations, and horizontal stems extend from zero to the corresponding difference. Positive values indicate higher performance with SMOTE, whereas negative values indicate higher performance without SMOTE. Configurations are grouped according to feature-fusion level, and alternating background shading separates these groups. (b) Number of source configurations for which SMOTE or no-SMOTE produced the higher mean outer-fold ROC-AUC at each feature-fusion level. Numbers above individual bars indicate configuration-level wins, and annotations above each pair indicate the total number of configurations evaluated at that fusion level.}}{36}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:smote_effect_comparison}{{4}{36}{\textbf {Effect of SMOTE on classification performance across the 31 source configurations.} For each source configuration and balancing condition, the displayed result corresponds to the pipeline with the highest mean ROC-AUC after comparison of the three feature-selection strategies and ten classifiers. (a) Configuration-level difference in mean outer-fold ROC-AUC, calculated as the best SMOTE result minus the best no-SMOTE result. Dots represent individual source configurations, and horizontal stems extend from zero to the corresponding difference. Positive values indicate higher performance with SMOTE, whereas negative values indicate higher performance without SMOTE. Configurations are grouped according to feature-fusion level, and alternating background shading separates these groups. (b) Number of source configurations for which SMOTE or no-SMOTE produced the higher mean outer-fold ROC-AUC at each feature-fusion level. Numbers above individual bars indicate configuration-level wins, and annotations above each pair indicate the total number of configurations evaluated at that fusion level}{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.10}Comparison of Machine-Learning Classifiers}{37}{subsection.3.10}\protected@file@percent }
+\newlabel{subsec:classifier_results}{{3.10}{37}{Comparison of Machine-Learning Classifiers}{subsection.3.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.11}Detailed Performance of the Highest-Ranked Model}{37}{subsection.3.11}\protected@file@percent }
+\newlabel{subsec:best_model_results}{{3.11}{37}{Detailed Performance of the Highest-Ranked Model}{subsection.3.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Frequency of classifier selection among the highest-ranked pipelines across the 31 source configurations.} For each source configuration, the classifier belonging to the pipeline with the highest mean outer-fold ROC-AUC was counted after comparison of the three feature-selection strategies and the SMOTE and no-SMOTE conditions. Horizontal stacked bars show the numbers of configuration-level selections contributed by single-source, pairwise, triple-source, quadruple-source, and complete five-source analyses. Numbers within coloured segments indicate selections at the corresponding fusion level, whereas numbers at the ends of the bars indicate total selections across all fusion levels. Classifiers with no configuration-level selections are retained to show all ten models evaluated in the computational framework. KNN, K-Nearest Neighbours; SVM, support vector machine.}}{38}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:classifier_win_counts}{{5}{38}{\textbf {Frequency of classifier selection among the highest-ranked pipelines across the 31 source configurations.} For each source configuration, the classifier belonging to the pipeline with the highest mean outer-fold ROC-AUC was counted after comparison of the three feature-selection strategies and the SMOTE and no-SMOTE conditions. Horizontal stacked bars show the numbers of configuration-level selections contributed by single-source, pairwise, triple-source, quadruple-source, and complete five-source analyses. Numbers within coloured segments indicate selections at the corresponding fusion level, whereas numbers at the ends of the bars indicate total selections across all fusion levels. Classifiers with no configuration-level selections are retained to show all ten models evaluated in the computational framework. KNN, K-Nearest Neighbours; SVM, support vector machine}{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Detailed out-of-fold performance of the highest-ranked machine-learning pipeline.} The selected pipeline combined the ADC, Post1, and Pre feature sources, Elastic Net followed by mRMR, automatic feature-count selection, no SMOTE, and a linear SVM. All panels were generated from pooled predictions for the five patient-aware outer-test folds. (a) Pooled receiver operating characteristic curve. The diagonal reference line represents chance-level discrimination. (b) Pooled precision--recall curve. The horizontal reference line represents the malignant-class prevalence of 0.558. (c) Pooled confusion matrix at the predefined malignant-class probability threshold of 0.5. Percentages are calculated relative to all 113 out-of-fold observations. (d) Pooled probability-calibration curve. The diagonal reference line represents perfect calibration. AUC, area under the curve; mRMR, minimum redundancy maximum relevance; SVM, support vector machine.}}{39}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:best_model_oof_performance}{{6}{39}{\textbf {Detailed out-of-fold performance of the highest-ranked machine-learning pipeline.} The selected pipeline combined the ADC, Post1, and Pre feature sources, Elastic Net followed by mRMR, automatic feature-count selection, no SMOTE, and a linear SVM. All panels were generated from pooled predictions for the five patient-aware outer-test folds. (a) Pooled receiver operating characteristic curve. The diagonal reference line represents chance-level discrimination. (b) Pooled precision--recall curve. The horizontal reference line represents the malignant-class prevalence of 0.558. (c) Pooled confusion matrix at the predefined malignant-class probability threshold of 0.5. Percentages are calculated relative to all 113 out-of-fold observations. (d) Pooled probability-calibration curve. The diagonal reference line represents perfect calibration. AUC, area under the curve; mRMR, minimum redundancy maximum relevance; SVM, support vector machine}{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.12}Feature-Selection Stability and Model Interpretation}{40}{subsection.3.12}\protected@file@percent }
+\newlabel{subsec:interpretability_results}{{3.12}{40}{Feature-Selection Stability and Model Interpretation}{subsection.3.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \textbf  {Feature-selection stability and SHAP interpretation of the highest-ranked ADC--Post1--Pre pipeline.} The selected pipeline combined Elastic Net followed by mRMR, automatic feature-count selection, no SMOTE, and a linear SVM. (a) Outer-fold recurrence of features selected in at least two of the five patient-aware outer folds. Bar lengths represent the proportion of outer folds in which each feature was retained, and labels indicate the corresponding selection count. (b) Global importance of the recurrent features in the full-cohort interpretation model, quantified using the mean absolute SHAP value. (c) SHAP summary plot showing feature contributions across individual ROIs. Horizontal position represents the SHAP value for the malignant-class probability, while colour represents the standardised feature value from low to high. Positive SHAP values increase the fitted model output toward the malignant class, whereas negative values decrease it. Feature names were shortened in the figure for readability. P1, Post1; IH, intensity histogram; IB, intensity based; Comp., compactness; GL, grey level; ZS, zone size; ZSNU, zone-size non-uniformity; LZ, large zone; mRMR, minimum redundancy maximum relevance; SHAP, Shapley Additive Explanations; SVM, support vector machine. The full-cohort refit was used for interpretation only; all predictive-performance estimates reported in this study were obtained from patient-aware out-of-fold predictions.}}{41}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:best_model_stability_shap}{{7}{41}{\textbf {Feature-selection stability and SHAP interpretation of the highest-ranked ADC--Post1--Pre pipeline.} The selected pipeline combined Elastic Net followed by mRMR, automatic feature-count selection, no SMOTE, and a linear SVM. (a) Outer-fold recurrence of features selected in at least two of the five patient-aware outer folds. Bar lengths represent the proportion of outer folds in which each feature was retained, and labels indicate the corresponding selection count. (b) Global importance of the recurrent features in the full-cohort interpretation model, quantified using the mean absolute SHAP value. (c) SHAP summary plot showing feature contributions across individual ROIs. Horizontal position represents the SHAP value for the malignant-class probability, while colour represents the standardised feature value from low to high. Positive SHAP values increase the fitted model output toward the malignant class, whereas negative values decrease it. Feature names were shortened in the figure for readability. P1, Post1; IH, intensity histogram; IB, intensity based; Comp., compactness; GL, grey level; ZS, zone size; ZSNU, zone-size non-uniformity; LZ, large zone; mRMR, minimum redundancy maximum relevance; SHAP, Shapley Additive Explanations; SVM, support vector machine. The full-cohort refit was used for interpretation only; all predictive-performance estimates reported in this study were obtained from patient-aware out-of-fold predictions}{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Discussion}{42}{section.4}\protected@file@percent }
+\newlabel{sec:discussion}{{4}{42}{Discussion}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Principal Findings}{42}{subsection.4.1}\protected@file@percent }
+\newlabel{subsec:discussion_principal_findings}{{4.1}{42}{Principal Findings}{subsection.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Effect of Multi-Source Feature Integration}{43}{subsection.4.2}\protected@file@percent }
+\newlabel{subsec:discussion_feature_integration}{{4.2}{43}{Effect of Multi-Source Feature Integration}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Influence of Feature-Selection Strategy}{44}{subsection.4.3}\protected@file@percent }
+\newlabel{subsec:discussion_feature_selection}{{4.3}{44}{Influence of Feature-Selection Strategy}{subsection.4.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Effect of SMOTE and Class Imbalance}{45}{subsection.4.4}\protected@file@percent }
+\newlabel{subsec:discussion_smote}{{4.4}{45}{Effect of SMOTE and Class Imbalance}{subsection.4.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Classifier Performance and Model Complexity}{46}{subsection.4.5}\protected@file@percent }
+\newlabel{subsec:discussion_classifiers}{{4.5}{46}{Classifier Performance and Model Complexity}{subsection.4.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Feature Stability and Model Interpretation}{48}{subsection.4.6}\protected@file@percent }
+\newlabel{subsec:discussion_interpretability}{{4.6}{48}{Feature Stability and Model Interpretation}{subsection.4.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}Strengths and Limitations}{49}{subsection.4.7}\protected@file@percent }
+\newlabel{subsec:discussion_strengths_limitations}{{4.7}{49}{Strengths and Limitations}{subsection.4.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.8}Future Work and Generalisability}{50}{subsection.4.8}\protected@file@percent }
+\newlabel{subsec:discussion_future_work}{{4.8}{50}{Future Work and Generalisability}{subsection.4.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{52}{section.5}\protected@file@percent }
+\newlabel{sec:conclusion}{{5}{52}{Conclusion}{section.5}{}}
+\abx@aux@read@bbl@mdfivesum{nobblfile}
+\gdef \@abspage@last{52}

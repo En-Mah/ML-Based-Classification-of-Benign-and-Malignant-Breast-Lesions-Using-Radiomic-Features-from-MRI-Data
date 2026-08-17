@@ -1,0 +1,32 @@
+Fusion_Level,Configuration,Mean_AUC_No_SMOTE,Mean_AUC_SMOTE,Best_FS_No_SMOTE,Best_FS_SMOTE,Best_Model_No_SMOTE,Best_Model_SMOTE,Delta_Mean_AUC,Winner
+Single,ADC,0.7615227462595884,0.7641100685598292,mrmr_then_elasticnet_no_corr,mrmr_then_elasticnet_no_corr,LogisticRegression,SVM_Linear,0.002587322300240835,SMOTE higher
+Single,Post1,0.743167211328976,0.7672478991596638,elasticnet_then_mrmr,elasticnet_then_mrmr,KNN,KNN,0.02408068783068784,SMOTE higher
+Single,Post2,0.7897615039281706,0.7873092031425365,elasticnet_then_mrmr,elasticnet_then_mrmr,SVM_RBF,SVM_RBF,-0.002452300785634076,No-SMOTE higher
+Single,Pre,0.6781537598204265,0.6981748035914702,mrmr_then_elasticnet_no_corr,mrmr_then_elasticnet_no_corr,SVM_RBF,LogisticRegression,0.020021043771043745,SMOTE higher
+Single,T2,0.6701529180695848,0.6744991582491583,elasticnet_then_mrmr,elasticnet_then_mrmr,KNN,SVM_RBF,0.004346240179573524,SMOTE higher
+Pairwise,ADC + Post1,0.7902777777777777,0.7894047619047619,elasticnet_then_mrmr,mrmr_then_elasticnet_no_corr,SVM_Linear,KNN,-0.0008730158730158033,No-SMOTE higher
+Pairwise,ADC + Post2,0.7728631035808069,0.7770315596152917,mrmr_then_elasticnet_no_corr,mrmr_then_elasticnet_no_corr,SVM_Linear,SVM_Linear,0.004168456034484791,SMOTE higher
+Pairwise,ADC + Pre,0.7923832308042834,0.7862328341514944,elasticnet_then_mrmr,elasticnet_then_mrmr,LogisticRegression,SVM_RBF,-0.0061503966527890475,No-SMOTE higher
+Pairwise,ADC + T2,0.7992573605731501,0.7921997371758138,elasticnet_then_mrmr,mrmr_then_elasticnet_no_corr,SVM_RBF,SVM_RBF,-0.007057623397336288,No-SMOTE higher
+Pairwise,Post1 + Post2,0.761338313103019,0.7632990974167445,mrmr_then_elasticnet_no_corr,mrmr_then_elasticnet_no_corr,SVM_RBF,SVM_RBF,0.0019607843137254832,SMOTE higher
+Pairwise,Post1 + Pre,0.6872580143168379,0.6935862122626829,mrmr_then_elasticnet_no_corr,elasticnet_then_mrmr,LogisticRegression,LogisticRegression,0.006328197945845049,SMOTE higher
+Pairwise,Post1 + T2,0.74036453470277,0.7469413320883909,mrmr_then_elasticnet_no_corr,mrmr_then_elasticnet_no_corr,SVM_RBF,SVM_RBF,0.006576797385620892,SMOTE higher
+Pairwise,Post2 + Pre,0.7582210998877665,0.7561840628507295,elasticnet_then_mrmr,elasticnet_then_mrmr,SVM_RBF,SVM_RBF,-0.0020370370370370594,No-SMOTE higher
+Pairwise,Post2 + T2,0.7623569023569023,0.7710086980920313,mrmr_then_elasticnet_no_corr,mrmr_then_elasticnet_no_corr,XGBoost,XGBoost,0.008651795735128975,SMOTE higher
+Pairwise,Pre + T2,0.6651262626262626,0.6583052749719417,elasticnet_then_mrmr,elasticnet_then_mrmr,NaiveBayes,NaiveBayes,-0.006820987654320931,No-SMOTE higher
+Triple,ADC + Post1 + Post2,0.7951587301587301,0.7971031746031746,elasticnet_then_mrmr,elasticnet_then_mrmr,SVM_Linear,LogisticRegression,0.0019444444444445264,SMOTE higher
+Triple,ADC + Post1 + Pre,0.8364682539682541,0.8234920634920634,elasticnet_then_mrmr,elasticnet_then_mrmr,SVM_Linear,SVM_Linear,-0.012976190476190697,No-SMOTE higher
+Triple,ADC + Post1 + T2,0.7602579365079365,0.753968253968254,elasticnet_then_mrmr,elasticnet_then_mrmr,KNN,LogisticRegression,-0.0062896825396825395,No-SMOTE higher
+Triple,ADC + Post2 + Pre,0.7896945646945647,0.7928289387380296,mrmr_then_elasticnet_no_corr,mrmr_then_elasticnet_no_corr,LogisticRegression,LogisticRegression,0.003134374043464949,SMOTE higher
+Triple,ADC + Post2 + T2,0.8337354750512646,0.8315906271647899,elasticnet_then_mrmr,elasticnet_then_mrmr,SVM_Linear,SVM_RBF,-0.002144847886474621,No-SMOTE higher
+Triple,ADC + Pre + T2,0.7624075454936698,0.7671242500189869,elasticnet_then_mrmr,elasticnet_then_mrmr,XGBoost,LightGBM,0.004716704525317028,SMOTE higher
+Triple,Post1 + Post2 + Pre,0.7278384687208217,0.7531372549019608,mrmr_then_elasticnet_no_corr,mrmr_then_elasticnet_no_corr,SVM_Linear,SVM_Linear,0.02529878618113912,SMOTE higher
+Triple,Post1 + Post2 + T2,0.7353104575163397,0.7291433239962651,mrmr_then_elasticnet_no_corr,mrmr_then_elasticnet_no_corr,NaiveBayes,NaiveBayes,-0.006167133520074586,No-SMOTE higher
+Triple,Post1 + Pre + T2,0.682120292561469,0.6762278244631185,mrmr_then_elasticnet_no_corr,mrmr_then_elasticnet_no_corr,NaiveBayes,NaiveBayes,-0.005892468098350534,No-SMOTE higher
+Triple,Post2 + Pre + T2,0.7353759820426488,0.7428591470258137,elasticnet_then_mrmr,elasticnet_then_mrmr,SVM_RBF,SVM_RBF,0.007483164983164925,SMOTE higher
+Quadruple,ADC + Post1 + Post2 + Pre,0.7875,0.7904761904761906,elasticnet_then_mrmr,elasticnet_then_mrmr,SVM_RBF,SVM_RBF,0.0029761904761905766,SMOTE higher
+Quadruple,ADC + Post1 + Post2 + T2,0.7807936507936508,0.7879365079365079,elasticnet_then_mrmr,elasticnet_then_mrmr,SVM_RBF,LogisticRegression,0.0071428571428571175,SMOTE higher
+Quadruple,ADC + Post1 + Pre + T2,0.7830952380952381,0.7869047619047619,mrmr_then_elasticnet_no_corr,mrmr_then_elasticnet_no_corr,LogisticRegression,LogisticRegression,0.003809523809523818,SMOTE higher
+Quadruple,ADC + Post2 + Pre + T2,0.7912903240654436,0.802000283076838,elasticnet_then_mrmr,elasticnet_then_mrmr,SVM_Linear,SVM_RBF,0.010709959011394377,SMOTE higher
+Quadruple,Post1 + Post2 + Pre + T2,0.7523062558356676,0.7559943977591036,elasticnet_then_mrmr,elasticnet_then_mrmr,SVM_RBF,SVM_RBF,0.003688141923436028,SMOTE higher
+All-five,Pre + Post1 + Post2 + ADC + T2,0.7469047619047618,0.741547619047619,elasticnet_then_mrmr,elasticnet_then_mrmr,SVM_RBF,RandomForest,-0.005357142857142838,No-SMOTE higher

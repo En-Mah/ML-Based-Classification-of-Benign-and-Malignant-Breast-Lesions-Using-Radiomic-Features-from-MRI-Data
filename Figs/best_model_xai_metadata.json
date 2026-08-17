@@ -1,0 +1,52 @@
+{
+  "pipeline": {
+    "source_configuration": "ADC--Post1--Pre",
+    "feature_selection": "Elastic Net -> mRMR",
+    "feature_count": "Auto-k in nested CV",
+    "smote": false,
+    "classifier": "Linear SVM"
+  },
+  "nested_cv_oof_metrics": {
+    "mean_auc": 0.8364682539682541,
+    "std_auc": 0.0983353030280455,
+    "pooled_auc": 0.7987301587301587,
+    "pooled_pr_auc": 0.8316093387127443,
+    "pooled_balanced_accuracy": 0.7130158730158731,
+    "pooled_f1": 0.746031746031746
+  },
+  "stability": {
+    "n_outer_folds": 5,
+    "average_features_per_fold": 9.6,
+    "n_unique_features_across_folds": 28,
+    "max_selection_count": 4,
+    "min_recurrent_folds_for_xai": 2,
+    "n_recurrent_features": 13
+  },
+  "interpretation_model": {
+    "fit_scope": "full cohort, interpretation only",
+    "feature_space": "features selected in at least 2 of 5 outer folds",
+    "imputation": "full-cohort median",
+    "standardization": "full-cohort StandardScaler",
+    "hyperparameter_aggregation": "median across outer-fold best_params_per_fold",
+    "aggregated_params": {
+      "C": 0.04819437348329681
+    },
+    "smote": false,
+    "shap_explained_output": "Linear SVM class-1 predict_proba",
+    "shap_sign_interpretation": "positive values move model output toward class 1/malignant",
+    "performance_note": "Full-cohort refit performance is not used or reported as validation performance."
+  },
+  "input": {
+    "dataset": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Triple/output/all_10_triple_concat_datasets/ADC_Post1_Pre_M1_triple.csv",
+    "run_dir": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Triple/nested_cv_outputs_all_triple_concat_batch_smote_compare/ADC_Post1_Pre/fs_method_comparison/elasticnet_then_mrmr_auto_k_no_smote"
+  },
+  "outputs": {
+    "figure": {
+      "pdf": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Figs/best_model_feature_stability_and_shap.pdf",
+      "png": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Figs/best_model_feature_stability_and_shap.png",
+      "svg": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Figs/best_model_feature_stability_and_shap.svg"
+    },
+    "feature_table": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Figs/best_model_recurrent_feature_stability_and_shap.csv",
+    "shap_values_long": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Figs/best_model_shap_values_long.csv"
+  }
+}

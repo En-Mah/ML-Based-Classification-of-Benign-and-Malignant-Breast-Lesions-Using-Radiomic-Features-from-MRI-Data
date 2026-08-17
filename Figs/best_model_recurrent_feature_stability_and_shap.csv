@@ -1,0 +1,14 @@
+Feature_Name,Dataset_Column,Selection_Count,Selection_Frequency,Source,Feature_Family,MeanAbsSHAP,Spearman_rho_standardized_value_vs_SHAP,Spearman_p_value,SHAP_Direction
+ADC_IH_IntensityHistogramMedian_Intensity,ADC_IH_IntensityHistogramMedian_Intensity,4,0.8,ADC,Intensity histogram,0.056063402058503874,0.8951913598642208,9.273005966121746e-41,higher values -> malignant
+ADC_IB_MedianIntensity,ADC_IB_MedianIntensity,3,0.6,ADC,Intensity,0.05578444178080931,0.893983264302098,1.6930392255390699e-40,higher values -> malignant
+Post1_IH_MinimumHistogramGradientGreyLevel_Intensity,Post1_IH_MinimumHistogramGradientGreyLevel_Intensity,3,0.6,Post1,Intensity histogram,0.05481927842794484,0.9906916529867958,5.6161478414722304e-98,higher values -> malignant
+Post1_IH_IntensityHistogramMode_Intensity,Post1_IH_IntensityHistogramMode_Intensity,3,0.6,Post1,Intensity histogram,0.04873330487140648,0.9947998694633168,5.8040074554206e-112,higher values -> malignant
+Post1_Morph_Compactness1,Post1_Morph_Compactness1,3,0.6,Post1,Morphology,0.04095148866656489,-0.9921734646350391,3.867399213317858e-102,higher values -> benign
+Post1_Morph_Sphericity,Post1_Morph_Sphericity,2,0.4,Post1,Morphology,0.04041466241423941,-0.9916411604231818,1.469599467643538e-100,higher values -> benign
+Post1_Morph_Compactness2,Post1_Morph_Compactness2,2,0.4,Post1,Morphology,0.03903093244367299,-0.9932796593253046,8.461168316018965e-106,higher values -> benign
+Post1_GLSZM_GreyLevelVariance,Post1_GLSZM_GreyLevelVariance,2,0.4,Post1,GLSZM,0.03669275100838521,0.9903519861600906,4.06769883281324e-97,higher values -> malignant
+Post1_GLSZM_NormalisedZoneSizeNonUniformity,Post1_GLSZM_NormalisedZoneSizeNonUniformity,3,0.6,Post1,GLSZM,0.0252252910399251,-0.9929053829263426,1.6959205138932815e-104,higher values -> benign
+Post1_GLSZM_ZoneSizeVariance,Post1_GLSZM_ZoneSizeVariance,2,0.4,Post1,GLSZM,0.01954167094283343,-0.3826768248053763,2.876202823021599e-05,higher values -> benign
+ADC_GLSZM_GreyLevelVariance,ADC_GLSZM_GreyLevelVariance,2,0.4,ADC,GLSZM,0.009557526404997508,-0.5038228255026725,1.2812243754918173e-08,higher values -> benign
+Post1_GLSZM_GreyLevelNonUniformity,Post1_GLSZM_GreyLevelNonUniformity,2,0.4,Post1,GLSZM,0.0055343301233351195,0.882686977443391,3.390875966419362e-38,higher values -> malignant
+Post1_GLSZM_LargeZoneLowGreyLevelEmphasis,Post1_GLSZM_LargeZoneLowGreyLevelEmphasis,2,0.4,Post1,GLSZM,0.002098229764937966,0.2884257102934327,0.0019480857819942508,higher values -> malignant
