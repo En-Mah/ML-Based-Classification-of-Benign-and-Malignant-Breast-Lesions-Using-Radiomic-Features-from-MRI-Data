@@ -42,9 +42,9 @@
   },
   "outputs": {
     "figure": {
-      "pdf": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Figs/best_model_feature_stability_and_shap.pdf",
-      "png": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Figs/best_model_feature_stability_and_shap.png",
-      "svg": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Figs/best_model_feature_stability_and_shap.svg"
+      "feature_selection_recurrence_pdf": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Figs/best_model_feature_selection_recurrence.pdf",
+      "global_shap_importance_pdf": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Figs/best_model_global_shap_importance.pdf",
+      "shap_summary_pdf": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Figs/best_model_shap_summary.pdf"
     },
     "feature_table": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Figs/best_model_recurrent_feature_stability_and_shap.csv",
     "shap_values_long": "/Users/mahla/MyDrive/Research/SBU/Dr. Kheradpisheh/ML-Based-Classification-of-Benign-and-Malignant-Breast-Lesions-Using-Radiomic-Features-from-MRI-Data/Figs/best_model_shap_values_long.csv"

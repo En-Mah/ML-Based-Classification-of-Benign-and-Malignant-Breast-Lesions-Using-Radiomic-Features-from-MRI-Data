@@ -1,0 +1,700 @@
+.
+├── All
+│   ├── AllFive.ipynb
+│   ├── batch_all_5_concat_runner_artifacts_smote_compare
+│   │   ├── executed_all5_notebooks
+│   │   ├── label_group_mismatch_reports
+│   │   └── summary_tables
+│   ├── Batch_Run_All_5.ipynb
+│   ├── joblib_tmp
+│   ├── nested_cv_outputs_all_5_concat_batch_smote_compare
+│   │   └── Pre_Post1_Post2_ADC_T2
+│   ├── nested_cv_outputs_all5_concat_batch_smote_compare
+│   │   └── Pre_Post1_Post2_ADC_T2
+│   ├── output
+│   │   ├── all_5_concat_datasets
+│   │   ├── cleaned_all5
+│   │   ├── cleaned_all5_smote_compare
+│   │   └── feature_composition
+│   ├── publication_plots_all5
+│   │   ├── fig1_performance_stability_pareto.pdf
+│   │   ├── fig1_performance_stability_pareto.png
+│   │   ├── fig2_smote_effect_matrix.pdf
+│   │   ├── fig2_smote_effect_matrix.png
+│   │   ├── fig3_dataset_method_auc_landscape.pdf
+│   │   ├── fig3_dataset_method_auc_landscape.png
+│   │   ├── fig4_multi_objective_configuration_score.pdf
+│   │   ├── fig4_multi_objective_configuration_score.png
+│   │   ├── fig5_fold_level_failure_heatmap_Pre_Post1_Post2_ADC_T2.pdf
+│   │   ├── fig5_fold_level_failure_heatmap_Pre_Post1_Post2_ADC_T2.png
+│   │   ├── fig6_feature_selection_stability_Pre_Post1_Post2_ADC_T2.pdf
+│   │   ├── fig6_feature_selection_stability_Pre_Post1_Post2_ADC_T2.png
+│   │   ├── fig6b_feature_family_contribution_Pre_Post1_Post2_ADC_T2.pdf
+│   │   ├── fig6b_feature_family_contribution_Pre_Post1_Post2_ADC_T2.png
+│   │   ├── fig6c_cumulative_feature_selection_concentration_Pre_Post1_Post2_ADC_T2.pdf
+│   │   ├── fig6c_cumulative_feature_selection_concentration_Pre_Post1_Post2_ADC_T2.png
+│   │   ├── fig7a_pooled_roc_Pre_Post1_Post2_ADC_T2_LogisticRegression.pdf
+│   │   ├── fig7a_pooled_roc_Pre_Post1_Post2_ADC_T2_LogisticRegression.png
+│   │   ├── fig7b_precision_recall_Pre_Post1_Post2_ADC_T2_LogisticRegression.pdf
+│   │   ├── fig7b_precision_recall_Pre_Post1_Post2_ADC_T2_LogisticRegression.png
+│   │   ├── fig7c_calibration_Pre_Post1_Post2_ADC_T2_LogisticRegression.pdf
+│   │   ├── fig7c_calibration_Pre_Post1_Post2_ADC_T2_LogisticRegression.png
+│   │   ├── fig7d_decision_curve_Pre_Post1_Post2_ADC_T2_LogisticRegression.pdf
+│   │   ├── fig7d_decision_curve_Pre_Post1_Post2_ADC_T2_LogisticRegression.png
+│   │   ├── fig8_threshold_diagnostic_Pre_Post1_Post2_ADC_T2_LogisticRegression.pdf
+│   │   ├── fig8_threshold_diagnostic_Pre_Post1_Post2_ADC_T2_LogisticRegression.png
+│   │   ├── fig8b_confusion_count_dynamics_Pre_Post1_Post2_ADC_T2_LogisticRegression.pdf
+│   │   ├── fig8b_confusion_count_dynamics_Pre_Post1_Post2_ADC_T2_LogisticRegression.png
+│   │   ├── prepared_feature_stability_Pre_Post1_Post2_ADC_T2.csv
+│   │   ├── prepared_fold_level_auc_Pre_Post1_Post2_ADC_T2.csv
+│   │   ├── prepared_oof_predictions_Pre_Post1_Post2_ADC_T2_LogisticRegression.csv
+│   │   ├── prepared_smote_delta_table_for_plot.csv
+│   │   ├── prepared_threshold_diagnostic_Pre_Post1_Post2_ADC_T2_LogisticRegression.csv
+│   │   ├── supplementary_model_selection_table.csv
+│   │   └── supplementary_model_selection_table.xlsx
+│   └── publication_plots_single
+│       ├── fig1_performance_stability_pareto.pdf
+│       ├── fig1_performance_stability_pareto.png
+│       ├── fig2_smote_effect_matrix.pdf
+│       ├── fig2_smote_effect_matrix.png
+│       ├── fig3_dataset_method_auc_landscape.pdf
+│       ├── fig3_dataset_method_auc_landscape.png
+│       ├── fig4_multi_objective_configuration_score.pdf
+│       ├── fig4_multi_objective_configuration_score.png
+│       ├── fig5_fold_level_failure_heatmap_Pre_Post1_Post2_ADC_T2.pdf
+│       ├── fig5_fold_level_failure_heatmap_Pre_Post1_Post2_ADC_T2.png
+│       ├── fig6_feature_selection_stability_Pre_Post1_Post2_ADC_T2.pdf
+│       ├── fig6_feature_selection_stability_Pre_Post1_Post2_ADC_T2.png
+│       ├── fig6b_feature_family_contribution_Pre_Post1_Post2_ADC_T2.pdf
+│       ├── fig6b_feature_family_contribution_Pre_Post1_Post2_ADC_T2.png
+│       ├── fig6c_cumulative_feature_selection_concentration_Pre_Post1_Post2_ADC_T2.pdf
+│       ├── fig6c_cumulative_feature_selection_concentration_Pre_Post1_Post2_ADC_T2.png
+│       ├── fig7a_pooled_roc_Pre_Post1_Post2_ADC_T2_SVM_RBF.pdf
+│       ├── fig7a_pooled_roc_Pre_Post1_Post2_ADC_T2_SVM_RBF.png
+│       ├── fig7a_roc_average_metrics_Pre_Post1_Post2_ADC_T2_SVM_RBF.csv
+│       ├── fig7a_roc_curve_data_Pre_Post1_Post2_ADC_T2_SVM_RBF.csv
+│       ├── fig7b_precision_recall_Pre_Post1_Post2_ADC_T2_SVM_RBF.pdf
+│       ├── fig7b_precision_recall_Pre_Post1_Post2_ADC_T2_SVM_RBF.png
+│       ├── fig7c_calibration_Pre_Post1_Post2_ADC_T2_SVM_RBF.pdf
+│       ├── fig7c_calibration_Pre_Post1_Post2_ADC_T2_SVM_RBF.png
+│       ├── fig7d_decision_curve_Pre_Post1_Post2_ADC_T2_SVM_RBF.pdf
+│       ├── fig7d_decision_curve_Pre_Post1_Post2_ADC_T2_SVM_RBF.png
+│       ├── fig8_threshold_diagnostic_Pre_Post1_Post2_ADC_T2_SVM_RBF.pdf
+│       ├── fig8_threshold_diagnostic_Pre_Post1_Post2_ADC_T2_SVM_RBF.png
+│       ├── fig8b_confusion_count_dynamics_Pre_Post1_Post2_ADC_T2_SVM_RBF.pdf
+│       ├── fig8b_confusion_count_dynamics_Pre_Post1_Post2_ADC_T2_SVM_RBF.png
+│       ├── prepared_feature_stability_Pre_Post1_Post2_ADC_T2.csv
+│       ├── prepared_fold_level_auc_Pre_Post1_Post2_ADC_T2.csv
+│       ├── prepared_oof_predictions_Pre_Post1_Post2_ADC_T2_SVM_RBF.csv
+│       ├── prepared_smote_delta_table_for_plot.csv
+│       ├── prepared_threshold_diagnostic_Pre_Post1_Post2_ADC_T2_SVM_RBF.csv
+│       ├── supplementary_model_selection_table.csv
+│       └── supplementary_model_selection_table.xlsx
+├── Article Parameters.xlsx
+├── build_best_model_feature_stability_and_shap_pub.py
+├── build_best_model_feature_stability_and_shap_separate_panels.py
+├── build_best_model_feature_stability_and_shap.py
+├── build_best_overall_model_oof_performance.py
+├── build_classifier_win_counts.py
+├── build_computational_workflow.py
+├── build_feature_selection_strategy_comparison.py
+├── build_overall_31_configuration_performance.py
+├── build_smote_average_effect_by_fusion_level.py
+├── build_smote_effect_across_31_configurations.py
+├── catboost_info
+│   ├── catboost_training.json
+│   ├── learn
+│   │   └── events.out.tfevents
+│   ├── learn_error.tsv
+│   ├── time_left.tsv
+│   └── tmp
+├── CT_PET1_AfterComet.csv
+├── Dataset
+│   ├── Breast-Data
+│   │   ├── Mask1
+│   │   └── Mask2
+│   └── edited
+│       ├── ADC_M1.csv
+│       ├── ADC-M2.csv
+│       ├── Post1_M1.csv
+│       ├── Post1_M2.csv
+│       ├── Post2_M1.csv
+│       ├── Post2_M2.csv
+│       ├── Pre_M1.csv
+│       ├── Pre_M2.csv
+│       ├── T2_M1.csv
+│       └── T2_M2.csv
+├── Figs
+│   ├── best_model_feature_selection_recurrence.pdf
+│   ├── best_model_feature_stability_and_shap.pdf
+│   ├── best_model_feature_stability_and_shap.png
+│   ├── best_model_feature_stability_and_shap.svg
+│   ├── best_model_global_shap_importance.pdf
+│   ├── best_model_recurrent_feature_stability_and_shap.csv
+│   ├── best_model_shap_summary.pdf
+│   ├── best_model_shap_values_long.csv
+│   ├── best_model_xai_metadata.json
+│   ├── best_overall_model_oof_metrics.csv
+│   ├── best_overall_model_oof_metrics.json
+│   ├── best_overall_model_oof_performance.pdf
+│   ├── best_overall_model_oof_performance.png
+│   ├── classifier_win_counts_across_31_configurations.pdf
+│   ├── classifier_win_counts_across_31_configurations.png
+│   ├── classifier_win_counts_across_31_configurations.svg
+│   ├── classifier_win_counts_audit.csv
+│   ├── classifier_win_counts_table.csv
+│   ├── overall_31_configuration_performance.pdf
+│   ├── overall_31_configuration_performance.png
+│   ├── overall_31_configuration_performance.svg
+│   ├── smote_average_effect_by_fusion_level.pdf
+│   ├── smote_average_effect_by_fusion_level.png
+│   ├── smote_effect_across_31_configurations_source_data.csv
+│   ├── smote_effect_across_31_configurations.pdf
+│   ├── smote_effect_across_31_configurations.png
+│   └── smote_effect_across_31_configurations.svg
+├── figures
+│   ├── computational_workflow.pdf
+│   ├── computational_workflow.png
+│   ├── computational_workflow.svg
+│   ├── feature_selection_strategy_comparison.pdf
+│   └── feature_selection_strategy_comparison.png
+├── Init-2.ipynb
+├── Init.ipynb
+├── Models
+│   └── Main.ipynb
+├── output
+│   └── manuscript_summary_tables
+│       ├── feature_selection_input_186_rows.csv
+│       ├── feature_selection_method_specific_93_rows.csv
+│       ├── feature_selection_summary_statistics.csv
+│       ├── feature_selection_win_counts_by_fusion_level.csv
+│       └── supplementary_feature_selection_performance_all_31_configurations.csv
+├── Pairwise
+│   ├── batch_all_10_pairwise_runner_artifacts_smote_compare
+│   │   ├── executed_pairwise_notebooks
+│   │   ├── label_mismatch_reports
+│   │   └── summary_tables
+│   ├── Batch_Run_All_10_Pairwise.ipynb
+│   ├── joblib_tmp
+│   ├── nested_cv_outputs_all_pairwise_concat_batch_smote_compare
+│   │   ├── ADC_Post1
+│   │   ├── ADC_Post2
+│   │   ├── ADC_Pre
+│   │   ├── ADC_T2
+│   │   ├── Post1_Post2
+│   │   ├── Post1_Pre
+│   │   ├── Post1_T2
+│   │   ├── Post2_ADC
+│   │   ├── Post2_Pre
+│   │   ├── Post2_T2
+│   │   ├── Pre_Post1
+│   │   └── Pre_T2
+│   ├── output
+│   │   ├── all_10_pairwise_concat_datasets
+│   │   ├── cleaned_pairwise
+│   │   ├── cleaned_pairwise_all_10
+│   │   ├── cleaned_pairwise_all_10_smote
+│   │   ├── cleaned_pairwise_all_10_smote_compare
+│   │   ├── feature_composition
+│   │   └── pairwise_datasets_report_only
+│   ├── Pairwise.ipynb
+│   ├── publication_plots_pairwise
+│   │   ├── fig1_performance_stability_pareto.pdf
+│   │   ├── fig1_performance_stability_pareto.png
+│   │   ├── fig2_smote_effect_matrix.pdf
+│   │   ├── fig2_smote_effect_matrix.png
+│   │   ├── fig3_dataset_method_auc_landscape.pdf
+│   │   ├── fig3_dataset_method_auc_landscape.png
+│   │   ├── fig4_multi_objective_configuration_score.pdf
+│   │   ├── fig4_multi_objective_configuration_score.png
+│   │   ├── fig5_fold_level_failure_heatmap_Post2_ADC.pdf
+│   │   ├── fig5_fold_level_failure_heatmap_Post2_ADC.png
+│   │   ├── fig6_feature_selection_stability_Post2_ADC.pdf
+│   │   ├── fig6_feature_selection_stability_Post2_ADC.png
+│   │   ├── fig6b_feature_family_contribution_Post2_ADC.pdf
+│   │   ├── fig6b_feature_family_contribution_Post2_ADC.png
+│   │   ├── fig6c_cumulative_feature_selection_concentration_Post2_ADC.pdf
+│   │   ├── fig6c_cumulative_feature_selection_concentration_Post2_ADC.png
+│   │   ├── fig7a_pooled_roc_Post2_ADC_LogisticRegression.pdf
+│   │   ├── fig7a_pooled_roc_Post2_ADC_LogisticRegression.png
+│   │   ├── fig7b_precision_recall_Post2_ADC_LogisticRegression.pdf
+│   │   ├── fig7b_precision_recall_Post2_ADC_LogisticRegression.png
+│   │   ├── fig7c_calibration_Post2_ADC_LogisticRegression.pdf
+│   │   ├── fig7c_calibration_Post2_ADC_LogisticRegression.png
+│   │   ├── fig7d_decision_curve_Post2_ADC_LogisticRegression.pdf
+│   │   ├── fig7d_decision_curve_Post2_ADC_LogisticRegression.png
+│   │   ├── fig8_threshold_diagnostic_Post2_ADC_LogisticRegression.pdf
+│   │   ├── fig8_threshold_diagnostic_Post2_ADC_LogisticRegression.png
+│   │   ├── fig8b_confusion_count_dynamics_Post2_ADC_LogisticRegression.pdf
+│   │   ├── fig8b_confusion_count_dynamics_Post2_ADC_LogisticRegression.png
+│   │   ├── prepared_feature_stability_Post2_ADC.csv
+│   │   ├── prepared_fold_level_auc_Post2_ADC.csv
+│   │   ├── prepared_oof_predictions_Post2_ADC_LogisticRegression.csv
+│   │   ├── prepared_smote_delta_table_for_plot.csv
+│   │   ├── prepared_threshold_diagnostic_Post2_ADC_LogisticRegression.csv
+│   │   ├── supplementary_model_selection_table.csv
+│   │   └── supplementary_model_selection_table.xlsx
+│   └── publication_plots_single
+│       ├── fig1_performance_stability_pareto.pdf
+│       ├── fig1_performance_stability_pareto.png
+│       ├── fig2_smote_effect_matrix.pdf
+│       ├── fig2_smote_effect_matrix.png
+│       ├── fig3_dataset_method_auc_landscape.pdf
+│       ├── fig3_dataset_method_auc_landscape.png
+│       ├── fig4_multi_objective_configuration_score.pdf
+│       ├── fig4_multi_objective_configuration_score.png
+│       ├── fig5_fold_level_failure_heatmap_Post2_ADC.pdf
+│       ├── fig5_fold_level_failure_heatmap_Post2_ADC.png
+│       ├── fig6_feature_selection_stability_Post2_ADC.pdf
+│       ├── fig6_feature_selection_stability_Post2_ADC.png
+│       ├── fig6b_feature_family_contribution_Post2_ADC.pdf
+│       ├── fig6b_feature_family_contribution_Post2_ADC.png
+│       ├── fig6c_cumulative_feature_selection_concentration_Post2_ADC.pdf
+│       ├── fig6c_cumulative_feature_selection_concentration_Post2_ADC.png
+│       ├── fig7a_pooled_roc_Post2_ADC_LogisticRegression.pdf
+│       ├── fig7a_pooled_roc_Post2_ADC_LogisticRegression.png
+│       ├── fig7a_roc_average_metrics_Post2_ADC_LogisticRegression.csv
+│       ├── fig7a_roc_curve_data_Post2_ADC_LogisticRegression.csv
+│       ├── fig7b_precision_recall_Post2_ADC_LogisticRegression.pdf
+│       ├── fig7b_precision_recall_Post2_ADC_LogisticRegression.png
+│       ├── fig7c_calibration_Post2_ADC_LogisticRegression.pdf
+│       ├── fig7c_calibration_Post2_ADC_LogisticRegression.png
+│       ├── fig7d_decision_curve_Post2_ADC_LogisticRegression.pdf
+│       ├── fig7d_decision_curve_Post2_ADC_LogisticRegression.png
+│       ├── fig8_threshold_diagnostic_Post2_ADC_LogisticRegression.pdf
+│       ├── fig8_threshold_diagnostic_Post2_ADC_LogisticRegression.png
+│       ├── fig8b_confusion_count_dynamics_Post2_ADC_LogisticRegression.pdf
+│       ├── fig8b_confusion_count_dynamics_Post2_ADC_LogisticRegression.png
+│       ├── prepared_feature_stability_Post2_ADC.csv
+│       ├── prepared_fold_level_auc_Post2_ADC.csv
+│       ├── prepared_oof_predictions_Post2_ADC_LogisticRegression.csv
+│       ├── prepared_smote_delta_table_for_plot.csv
+│       ├── prepared_threshold_diagnostic_Post2_ADC_LogisticRegression.csv
+│       ├── supplementary_model_selection_table.csv
+│       └── supplementary_model_selection_table.xlsx
+├── Papers
+│   ├── 1-Research
+│   │   ├── Breast Lesion Classification with Multiparametric Breast MRI Using Radiomics and Machine Learning A Comparison with Radiologists Performance.pdf
+│   │   ├── Implementation of machine learning into clinical breast MRI Potential for objective and accurate decision-making in suspicious breast masses.pdf
+│   │   ├── MRI Radiomics and Machine Learning for the Prediction of Oncotype Dx Recurrence Score in Invasive Breast Cancer.pdf
+│   │   ├── MRI-based radiomic and machine learning for prediction of lymphovascular invasion status in breast cancer.pdf
+│   │   └── Radiomics and Machine Learning with Multiparametric Breast MRI for Improved Diagnostic Accuracy in Breast Cancer Diagnosis.pdf
+│   ├── 3-Research
+│   │   ├── Classification of malignant and benign liver tumors using a radiomics approach.pdf
+│   │   ├── Combining Radiomics and Autoencoders to Distinguish Benign and Malignant Breast Tumors on US Images.pdf
+│   │   ├── Diagnosis of Benign and Malignant Breast Lesions on DCE-MRI by Using Radiomics and Deep Learning with Consideration of Peri-Tumor Tissue.pdf
+│   │   ├── Impact of Machine Learning with Multiparametric Magnetic Resonance Imaging of the Breast for Early Prediction of Response to Neoadjuvant Chemotherapy and Survival Outcomes in Breast Cancer Patients.pdf
+│   │   └── Machine learning‑based radiomics model to predict benign and malignant PI‑RADS v2.1 category 3 lesions a retrospective multi‑center study.pdf
+│   ├── 4-Research
+│   │   ├── Adaptive Machine Learning Approach for Importance Evaluation of Multimodal Breast Cancer Radiomic Features.pdf
+│   │   ├── Diagnostic accuracy of a machine learning model using radiomics features from breast synthetic MRI.pdf
+│   │   ├── Diagnostic value of radiomics and machine learning with dynamic contrast‑enhanced magnetic resonance imaging for patients with atypical ductal hyperplasia in predicting malignant upgrade.pdf
+│   │   ├── MRI-based radiomic and machine learning for prediction of lymphovascular invasion status in breast cancer.pdf
+│   │   └── Multivariate machine learning models for prediction of pathologic response to neoadjuvant therapy in breast cancer using MRI features a study using an independent validation set.pdf
+│   ├── 5-Research
+│   │   ├── A machine learning model that classifies breast cancer pathologic complete response on MRI post-neoadjuvant chemotherapy.pdf
+│   │   ├── Independent validation of machine learning in diagnosing breast Cancer on magnetic resonance imaging within a single institution.pdf
+│   │   └── Radiomics‑based machine learning analysis and characterization of breast lesions with multiparametric diffusion‑weighted MR.pdf
+│   ├── 6-Research
+│   │   ├── A machine learning approach for differentiating malignant from benign enhancing foci on breast MRI.pdf
+│   │   ├── A machine learning approach to radiogenomics of breast cancer a study of 922 subjects and 529 DCE-MRI features.pdf
+│   │   ├── Integrated radiomic framework for breast cancer and tumor biology using advanced machine learning and multiparametric MRI.pdf
+│   │   └── Radiologic-Radiomic Machine Learning Models for Differentiation of Benign and Malignant Solid Renal Masses Comparison With Expert-Level Radiologists.pdf
+│   ├── Comparative Analysis of Cross-Validation Techniques.pdf
+│   ├── On the cross-validation bias due to unsupervised preprocessing.pdf
+│   ├── Radiomics and Machine Learning Approaches for the.pdf
+│   ├── Radiomics-based Machine Learning Models for Classifying Breast Cancer on.pdf
+│   ├── The stratified K-folds cross-validation and class-balancing methods with.pdf
+│   └── Writing
+│       ├── 2025-Yazdani-MP.pdf
+│       ├── ElmiraYazdani-Red-2025.pdf
+│       └── Manuscript.pdf
+├── Proposal-Breast-classification (2).pdf
+├── Publication
+│   ├── Figs
+│   │   ├── all_10_pairwise_mean_auc_barplot.png
+│   │   ├── all_10_triple_mean_auc_barplot.png
+│   │   ├── all_5_quad_mean_auc_barplot.png
+│   │   ├── all_five_shap_summary_bar.png
+│   │   ├── all_five_shap_summary_dot.png
+│   │   ├── Average Effect Of SMOTE By Feature-Fusion Level.png
+│   │   ├── Best Model Performance Across Feature-Fusion Levels.png
+│   │   ├── best_model_feature_stability_and_shap.pdf
+│   │   ├── best_overall_model_oof_performance.pdf
+│   │   ├── classifier_win_counts_across_31_configurations.pdf
+│   │   ├── classifier_win_counts_across_31_configurations.png
+│   │   ├── computational_workflow.png
+│   │   ├── feature_selection_strategy_comparison.pdf
+│   │   ├── overall_31_configuration_performance.pdf
+│   │   ├── sample.bib
+│   │   ├── shap_summary_bar_stable.pdf
+│   │   ├── shap_summary_dot_stable.pdf
+│   │   ├── single_dataset_mean_auc_barplot.png
+│   │   └── smote_effect_across_31_configurations.pdf
+│   ├── main.aux
+│   ├── main.bcf
+│   ├── main.fdb_latexmk
+│   ├── main.fls
+│   ├── main.log
+│   ├── main.out
+│   ├── main.pdf
+│   ├── main.run.xml
+│   ├── main.synctex.gz
+│   ├── main.tex
+│   └── main.xdv
+├── Quad
+│   ├── batch_all_5_quad_runner_artifacts_smote_compare
+│   │   ├── executed_quad_notebooks
+│   │   ├── label_group_mismatch_reports
+│   │   └── summary_tables
+│   ├── Batch_Run_All_5_Quad.ipynb
+│   ├── joblib_tmp
+│   ├── nested_cv_outputs_all_quad_concat_batch
+│   │   ├── ADC_Post1_Post2_Pre
+│   │   ├── ADC_Post1_Post2_T2
+│   │   ├── ADC_Post1_Pre_T2
+│   │   ├── ADC_Post2_Pre_T2
+│   │   └── Post1_Post2_Pre_T2
+│   ├── nested_cv_outputs_all_quad_concat_batch_smote_compare
+│   │   ├── ADC_Post1_Post2_Pre
+│   │   ├── ADC_Post1_Post2_T2
+│   │   ├── ADC_Post1_Pre_T2
+│   │   ├── ADC_Post2_Pre_T2
+│   │   ├── Post1_Post2_Pre_T2
+│   │   └── Pre_Post1_ADC_T2
+│   ├── output
+│   │   ├── all_5_quad_concat_datasets
+│   │   ├── cleaned_quad
+│   │   ├── cleaned_quad_all_10_smote_compare
+│   │   ├── cleaned_quad_all_5
+│   │   ├── cleaned_quad_all_5_smote_compare
+│   │   └── feature_composition
+│   ├── publication_plots_quad
+│   │   ├── fig1_performance_stability_pareto.pdf
+│   │   ├── fig1_performance_stability_pareto.png
+│   │   ├── fig2_smote_effect_matrix.pdf
+│   │   ├── fig2_smote_effect_matrix.png
+│   │   ├── fig3_dataset_method_auc_landscape.pdf
+│   │   ├── fig3_dataset_method_auc_landscape.png
+│   │   ├── fig4_multi_objective_configuration_score.pdf
+│   │   ├── fig4_multi_objective_configuration_score.png
+│   │   ├── fig5_fold_level_failure_heatmap_ADC_Post1_Post2_Pre.pdf
+│   │   ├── fig5_fold_level_failure_heatmap_ADC_Post1_Post2_Pre.png
+│   │   ├── fig6_feature_selection_stability_ADC_Post1_Post2_Pre.pdf
+│   │   ├── fig6_feature_selection_stability_ADC_Post1_Post2_Pre.png
+│   │   ├── fig6b_feature_family_contribution_ADC_Post1_Post2_Pre.pdf
+│   │   ├── fig6b_feature_family_contribution_ADC_Post1_Post2_Pre.png
+│   │   ├── fig6c_cumulative_feature_selection_concentration_ADC_Post1_Post2_Pre.pdf
+│   │   ├── fig6c_cumulative_feature_selection_concentration_ADC_Post1_Post2_Pre.png
+│   │   ├── fig7a_pooled_roc_ADC_Post1_Post2_Pre_SVM_RBF.pdf
+│   │   ├── fig7a_pooled_roc_ADC_Post1_Post2_Pre_SVM_RBF.png
+│   │   ├── fig7b_precision_recall_ADC_Post1_Post2_Pre_SVM_RBF.pdf
+│   │   ├── fig7b_precision_recall_ADC_Post1_Post2_Pre_SVM_RBF.png
+│   │   ├── fig7c_calibration_ADC_Post1_Post2_Pre_SVM_RBF.pdf
+│   │   ├── fig7c_calibration_ADC_Post1_Post2_Pre_SVM_RBF.png
+│   │   ├── fig7d_decision_curve_ADC_Post1_Post2_Pre_SVM_RBF.pdf
+│   │   ├── fig7d_decision_curve_ADC_Post1_Post2_Pre_SVM_RBF.png
+│   │   ├── fig8_threshold_diagnostic_ADC_Post1_Post2_Pre_SVM_RBF.pdf
+│   │   ├── fig8_threshold_diagnostic_ADC_Post1_Post2_Pre_SVM_RBF.png
+│   │   ├── fig8b_confusion_count_dynamics_ADC_Post1_Post2_Pre_SVM_RBF.pdf
+│   │   ├── fig8b_confusion_count_dynamics_ADC_Post1_Post2_Pre_SVM_RBF.png
+│   │   ├── prepared_feature_stability_ADC_Post1_Post2_Pre.csv
+│   │   ├── prepared_fold_level_auc_ADC_Post1_Post2_Pre.csv
+│   │   ├── prepared_oof_predictions_ADC_Post1_Post2_Pre_SVM_RBF.csv
+│   │   ├── prepared_smote_delta_table_for_plot.csv
+│   │   ├── prepared_threshold_diagnostic_ADC_Post1_Post2_Pre_SVM_RBF.csv
+│   │   ├── supplementary_model_selection_table.csv
+│   │   └── supplementary_model_selection_table.xlsx
+│   ├── publication_plots_single
+│   │   ├── fig1_performance_stability_pareto.pdf
+│   │   ├── fig1_performance_stability_pareto.png
+│   │   ├── fig2_smote_effect_matrix.pdf
+│   │   ├── fig2_smote_effect_matrix.png
+│   │   ├── fig3_dataset_method_auc_landscape.pdf
+│   │   ├── fig3_dataset_method_auc_landscape.png
+│   │   ├── fig4_multi_objective_configuration_score.pdf
+│   │   ├── fig4_multi_objective_configuration_score.png
+│   │   ├── fig5_fold_level_failure_heatmap_ADC_Post1_Post2_Pre.pdf
+│   │   ├── fig5_fold_level_failure_heatmap_ADC_Post1_Post2_Pre.png
+│   │   ├── fig6_feature_selection_stability_ADC_Post1_Post2_Pre.pdf
+│   │   ├── fig6_feature_selection_stability_ADC_Post1_Post2_Pre.png
+│   │   ├── fig6b_feature_family_contribution_ADC_Post1_Post2_Pre.pdf
+│   │   ├── fig6b_feature_family_contribution_ADC_Post1_Post2_Pre.png
+│   │   ├── fig6c_cumulative_feature_selection_concentration_ADC_Post1_Post2_Pre.pdf
+│   │   ├── fig6c_cumulative_feature_selection_concentration_ADC_Post1_Post2_Pre.png
+│   │   ├── fig7a_pooled_roc_ADC_Post1_Post2_Pre_SVM_RBF.pdf
+│   │   ├── fig7a_pooled_roc_ADC_Post1_Post2_Pre_SVM_RBF.png
+│   │   ├── fig7a_roc_average_metrics_ADC_Post1_Post2_Pre_SVM_RBF.csv
+│   │   ├── fig7a_roc_curve_data_ADC_Post1_Post2_Pre_SVM_RBF.csv
+│   │   ├── fig7b_precision_recall_ADC_Post1_Post2_Pre_SVM_RBF.pdf
+│   │   ├── fig7b_precision_recall_ADC_Post1_Post2_Pre_SVM_RBF.png
+│   │   ├── fig7c_calibration_ADC_Post1_Post2_Pre_SVM_RBF.pdf
+│   │   ├── fig7c_calibration_ADC_Post1_Post2_Pre_SVM_RBF.png
+│   │   ├── fig7d_decision_curve_ADC_Post1_Post2_Pre_SVM_RBF.pdf
+│   │   ├── fig7d_decision_curve_ADC_Post1_Post2_Pre_SVM_RBF.png
+│   │   ├── fig8_threshold_diagnostic_ADC_Post1_Post2_Pre_SVM_RBF.pdf
+│   │   ├── fig8_threshold_diagnostic_ADC_Post1_Post2_Pre_SVM_RBF.png
+│   │   ├── fig8b_confusion_count_dynamics_ADC_Post1_Post2_Pre_SVM_RBF.pdf
+│   │   ├── fig8b_confusion_count_dynamics_ADC_Post1_Post2_Pre_SVM_RBF.png
+│   │   ├── prepared_feature_stability_ADC_Post1_Post2_Pre.csv
+│   │   ├── prepared_fold_level_auc_ADC_Post1_Post2_Pre.csv
+│   │   ├── prepared_oof_predictions_ADC_Post1_Post2_Pre_SVM_RBF.csv
+│   │   ├── prepared_smote_delta_table_for_plot.csv
+│   │   ├── prepared_threshold_diagnostic_ADC_Post1_Post2_Pre_SVM_RBF.csv
+│   │   ├── supplementary_model_selection_table.csv
+│   │   └── supplementary_model_selection_table.xlsx
+│   └── Quad.ipynb
+├── Read
+│   ├── feature-selection-with-rrelieff-regression.ipynb
+│   ├── Radiomics_classification
+│   │   ├── CT_PET1_AfterComet.csv
+│   │   ├── final1_results_archive.zip
+│   │   ├── nested_cv_outputs
+│   │   ├── plot_data
+│   │   ├── radiomics (4).ipynb
+│   │   ├── Read
+│   │   └── test.csv
+│   └── tutorial-eda-feature-selection-regression.ipynb
+├── README.md
+├── Report
+│   ├── figures
+│   │   ├── best_model_LogisticRegression_folds_report.png
+│   │   ├── best_model_SVM_Linear_folds_report.png
+│   │   ├── best_model_SVM_RBF_folds_report.png
+│   │   ├── fig01_baseline_model_auc_ranking.png
+│   │   ├── fig02_baseline_roc_curves_top_models.png
+│   │   ├── fig03_baseline_best_model_confusion_matrix.png
+│   │   ├── fig03_feature_variance_distribution.png
+│   │   ├── fig04_baseline_best_model_calibration_curve.png
+│   │   ├── fig05_baseline_best_model_metric_profile.png
+│   │   ├── fig05_top_fdr_ranked_features.png
+│   │   ├── fig06_baseline_feature_selection_stability.png
+│   │   ├── fig07_top12_feature_correlation_heatmap.png
+│   │   ├── fig08_pca_projection.png
+│   │   ├── fig6_feature_selection_stability_ADC_M1.png
+│   │   ├── fig6b_feature_family_contribution_ADC_M1.png
+│   │   ├── shap_summary_bar_stable.png
+│   │   └── shap_summary_dot_stable.png
+│   ├── Report-1.aux
+│   ├── Report-1.log
+│   ├── Report-1.out
+│   ├── Report-1.pdf
+│   ├── Report-1.synctex.gz
+│   ├── Report-1.tex
+│   └── Report-1.toc
+├── repository_structure.txt
+├── Simpler
+│   ├── Figs
+│   │   ├── all_10_pairwise_mean_auc_barplot.png
+│   │   ├── all_10_triple_mean_auc_barplot.png
+│   │   ├── all_5_quad_mean_auc_barplot.png
+│   │   ├── all_five_shap_summary_bar.png
+│   │   ├── all_five_shap_summary_dot.png
+│   │   ├── Average Effect Of SMOTE By Feature-Fusion Level.png
+│   │   ├── Best Model Performance Across Feature-Fusion Levels.png
+│   │   ├── best_model_feature_stability_and_shap.pdf
+│   │   ├── best_overall_model_oof_performance.pdf
+│   │   ├── classifier_win_counts_across_31_configurations.pdf
+│   │   ├── classifier_win_counts_across_31_configurations.png
+│   │   ├── computational_workflow.png
+│   │   ├── feature_selection_strategy_comparison.pdf
+│   │   ├── overall_31_configuration_performance.pdf
+│   │   ├── sample.bib
+│   │   ├── shap_summary_bar_stable.pdf
+│   │   ├── shap_summary_dot_stable.pdf
+│   │   ├── single_dataset_mean_auc_barplot.png
+│   │   └── smote_effect_across_31_configurations.pdf
+│   ├── Simpler.aux
+│   ├── Simpler.bcf
+│   ├── Simpler.log
+│   ├── Simpler.out
+│   ├── Simpler.pdf
+│   ├── Simpler.run.xml
+│   ├── Simpler.synctex.gz
+│   └── Simpler.tex
+├── Simpler.zip
+├── Single
+│   ├── Batch_Run_On_Single_batch.ipynb
+│   ├── batch_single_dataset_runner_artifacts_smote_compare
+│   │   ├── executed_Main_notebooks_on_single_datasets
+│   │   └── summary_tables
+│   ├── joblib_tmp
+│   ├── nested_cv_outputs_single_dataset_batch_smote_compare
+│   │   ├── ADC
+│   │   ├── ADC_M1
+│   │   ├── Post1
+│   │   ├── Post2
+│   │   ├── Pre
+│   │   └── T2
+│   ├── output
+│   │   ├── all_single_datasets_standardized
+│   │   ├── cleaned_single
+│   │   ├── cleaned_single_datasets_smote_compare
+│   │   └── feature_composition
+│   ├── publication_plots_single
+│   │   ├── feature_composition
+│   │   ├── fig1_performance_stability_pareto.pdf
+│   │   ├── fig1_performance_stability_pareto.png
+│   │   ├── fig2_smote_effect_matrix.pdf
+│   │   ├── fig2_smote_effect_matrix.png
+│   │   ├── fig3_dataset_method_auc_landscape.pdf
+│   │   ├── fig3_dataset_method_auc_landscape.png
+│   │   ├── fig4_multi_objective_configuration_score.pdf
+│   │   ├── fig4_multi_objective_configuration_score.png
+│   │   ├── fig5_fold_level_failure_heatmap_ADC_M1.pdf
+│   │   ├── fig5_fold_level_failure_heatmap_ADC_M1.png
+│   │   ├── fig5_fold_level_failure_heatmap_Pre_M1.pdf
+│   │   ├── fig5_fold_level_failure_heatmap_Pre_M1.png
+│   │   ├── fig6_feature_selection_stability_ADC_M1.pdf
+│   │   ├── fig6_feature_selection_stability_ADC_M1.png
+│   │   ├── fig6_feature_selection_stability_Pre_M1.pdf
+│   │   ├── fig6_feature_selection_stability_Pre_M1.png
+│   │   ├── fig6b_feature_family_contribution_ADC_M1.pdf
+│   │   ├── fig6b_feature_family_contribution_ADC_M1.png
+│   │   ├── fig6b_feature_family_contribution_Pre_M1.pdf
+│   │   ├── fig6b_feature_family_contribution_Pre_M1.png
+│   │   ├── fig6c_cumulative_feature_selection_concentration_ADC_M1.pdf
+│   │   ├── fig6c_cumulative_feature_selection_concentration_ADC_M1.png
+│   │   ├── fig6c_cumulative_feature_selection_concentration_Pre_M1.pdf
+│   │   ├── fig6c_cumulative_feature_selection_concentration_Pre_M1.png
+│   │   ├── fig7a_pooled_roc_ADC_M1_LogisticRegression.pdf
+│   │   ├── fig7a_pooled_roc_ADC_M1_LogisticRegression.png
+│   │   ├── fig7a_pooled_roc_ADC_M1_SVM_Linear.pdf
+│   │   ├── fig7a_pooled_roc_ADC_M1_SVM_Linear.png
+│   │   ├── fig7a_pooled_roc_Pre_M1_LogisticRegression.pdf
+│   │   ├── fig7a_pooled_roc_Pre_M1_LogisticRegression.png
+│   │   ├── fig7a_roc_average_metrics_ADC_M1_SVM_Linear.csv
+│   │   ├── fig7a_roc_curve_data_ADC_M1_SVM_Linear.csv
+│   │   ├── fig7b_precision_recall_ADC_M1_LogisticRegression.pdf
+│   │   ├── fig7b_precision_recall_ADC_M1_LogisticRegression.png
+│   │   ├── fig7b_precision_recall_ADC_M1_SVM_Linear.pdf
+│   │   ├── fig7b_precision_recall_ADC_M1_SVM_Linear.png
+│   │   ├── fig7b_precision_recall_Pre_M1_LogisticRegression.pdf
+│   │   ├── fig7b_precision_recall_Pre_M1_LogisticRegression.png
+│   │   ├── fig7c_calibration_ADC_M1_LogisticRegression.pdf
+│   │   ├── fig7c_calibration_ADC_M1_LogisticRegression.png
+│   │   ├── fig7c_calibration_ADC_M1_SVM_Linear.pdf
+│   │   ├── fig7c_calibration_ADC_M1_SVM_Linear.png
+│   │   ├── fig7c_calibration_Pre_M1_LogisticRegression.pdf
+│   │   ├── fig7c_calibration_Pre_M1_LogisticRegression.png
+│   │   ├── fig7d_decision_curve_ADC_M1_LogisticRegression.pdf
+│   │   ├── fig7d_decision_curve_ADC_M1_LogisticRegression.png
+│   │   ├── fig7d_decision_curve_ADC_M1_SVM_Linear.pdf
+│   │   ├── fig7d_decision_curve_ADC_M1_SVM_Linear.png
+│   │   ├── fig7d_decision_curve_Pre_M1_LogisticRegression.pdf
+│   │   ├── fig7d_decision_curve_Pre_M1_LogisticRegression.png
+│   │   ├── fig8_threshold_diagnostic_ADC_M1_LogisticRegression.pdf
+│   │   ├── fig8_threshold_diagnostic_ADC_M1_LogisticRegression.png
+│   │   ├── fig8_threshold_diagnostic_ADC_M1_SVM_Linear.pdf
+│   │   ├── fig8_threshold_diagnostic_ADC_M1_SVM_Linear.png
+│   │   ├── fig8_threshold_diagnostic_Pre_M1_LogisticRegression.pdf
+│   │   ├── fig8_threshold_diagnostic_Pre_M1_LogisticRegression.png
+│   │   ├── fig8b_confusion_count_dynamics_ADC_M1_LogisticRegression.pdf
+│   │   ├── fig8b_confusion_count_dynamics_ADC_M1_LogisticRegression.png
+│   │   ├── fig8b_confusion_count_dynamics_ADC_M1_SVM_Linear.pdf
+│   │   ├── fig8b_confusion_count_dynamics_ADC_M1_SVM_Linear.png
+│   │   ├── fig8b_confusion_count_dynamics_Pre_M1_LogisticRegression.pdf
+│   │   ├── fig8b_confusion_count_dynamics_Pre_M1_LogisticRegression.png
+│   │   ├── morphological_description
+│   │   ├── prepared_feature_stability_ADC_M1.csv
+│   │   ├── prepared_feature_stability_Pre_M1.csv
+│   │   ├── prepared_fold_level_auc_ADC_M1.csv
+│   │   ├── prepared_fold_level_auc_Pre_M1.csv
+│   │   ├── prepared_oof_predictions_ADC_M1_LogisticRegression.csv
+│   │   ├── prepared_oof_predictions_ADC_M1_SVM_Linear.csv
+│   │   ├── prepared_oof_predictions_Pre_M1_LogisticRegression.csv
+│   │   ├── prepared_smote_delta_table_for_plot.csv
+│   │   ├── prepared_threshold_diagnostic_ADC_M1_LogisticRegression.csv
+│   │   ├── prepared_threshold_diagnostic_ADC_M1_SVM_Linear.csv
+│   │   ├── prepared_threshold_diagnostic_Pre_M1_LogisticRegression.csv
+│   │   ├── supplementary_model_selection_table.csv
+│   │   └── supplementary_model_selection_table.xlsx
+│   └── Single.ipynb
+├── Tasks.ipynb
+└── Triple
+    ├── batch_all_10_triple_runner_artifacts_smote_compare
+    │   ├── executed_triple_notebooks
+    │   ├── label_group_mismatch_reports
+    │   └── summary_tables
+    ├── Batch_Run_All_10_Triple.ipynb
+    ├── joblib_tmp
+    ├── nested_cv_outputs_all_triple_concat_batch_smote_compare
+    │   ├── ADC_Post1_Post2
+    │   ├── ADC_Post1_Pre
+    │   ├── ADC_Post1_T2
+    │   ├── ADC_Post2_Pre
+    │   ├── ADC_Post2_T2
+    │   ├── ADC_Pre_T2
+    │   ├── Post1_Post2_Pre
+    │   ├── Post1_Post2_T2
+    │   ├── Post1_Pre_T2
+    │   ├── Post2_Pre_T2
+    │   ├── Pre_ADC_T2
+    │   └── Pre_Post1_ADC
+    ├── output
+    │   ├── all_10_triple_concat_datasets
+    │   ├── cleaned_triple
+    │   └── cleaned_triple_all_10_smote_compare
+    ├── publication_plots_triple
+    │   ├── fig1_performance_stability_pareto.pdf
+    │   ├── fig1_performance_stability_pareto.png
+    │   ├── fig2_smote_effect_matrix.pdf
+    │   ├── fig2_smote_effect_matrix.png
+    │   ├── fig3_dataset_method_auc_landscape.pdf
+    │   ├── fig3_dataset_method_auc_landscape.png
+    │   ├── fig4_multi_objective_configuration_score.pdf
+    │   ├── fig4_multi_objective_configuration_score.png
+    │   ├── fig5_fold_level_failure_heatmap_ADC_Post1_Post2.pdf
+    │   ├── fig5_fold_level_failure_heatmap_ADC_Post1_Post2.png
+    │   ├── fig5_fold_level_failure_heatmap_ADC_Post1_Pre.pdf
+    │   ├── fig5_fold_level_failure_heatmap_ADC_Post1_Pre.png
+    │   ├── fig6_feature_selection_stability_ADC_Post1_Post2.pdf
+    │   ├── fig6_feature_selection_stability_ADC_Post1_Post2.png
+    │   ├── fig6_feature_selection_stability_ADC_Post1_Pre.pdf
+    │   ├── fig6_feature_selection_stability_ADC_Post1_Pre.png
+    │   ├── fig6b_feature_family_contribution_ADC_Post1_Post2.pdf
+    │   ├── fig6b_feature_family_contribution_ADC_Post1_Post2.png
+    │   ├── fig6b_feature_family_contribution_ADC_Post1_Pre.pdf
+    │   ├── fig6b_feature_family_contribution_ADC_Post1_Pre.png
+    │   ├── fig6c_cumulative_feature_selection_concentration_ADC_Post1_Post2.pdf
+    │   ├── fig6c_cumulative_feature_selection_concentration_ADC_Post1_Post2.png
+    │   ├── fig6c_cumulative_feature_selection_concentration_ADC_Post1_Pre.pdf
+    │   ├── fig6c_cumulative_feature_selection_concentration_ADC_Post1_Pre.png
+    │   ├── fig7a_pooled_roc_ADC_Post1_Post2_LogisticRegression.pdf
+    │   ├── fig7a_pooled_roc_ADC_Post1_Post2_LogisticRegression.png
+    │   ├── fig7a_pooled_roc_ADC_Post1_Pre_SVM_Linear.pdf
+    │   ├── fig7a_pooled_roc_ADC_Post1_Pre_SVM_Linear.png
+    │   ├── fig7b_precision_recall_ADC_Post1_Post2_LogisticRegression.pdf
+    │   ├── fig7b_precision_recall_ADC_Post1_Post2_LogisticRegression.png
+    │   ├── fig7b_precision_recall_ADC_Post1_Pre_SVM_Linear.pdf
+    │   ├── fig7b_precision_recall_ADC_Post1_Pre_SVM_Linear.png
+    │   ├── fig7c_calibration_ADC_Post1_Post2_LogisticRegression.pdf
+    │   ├── fig7c_calibration_ADC_Post1_Post2_LogisticRegression.png
+    │   ├── fig7c_calibration_ADC_Post1_Pre_SVM_Linear.pdf
+    │   ├── fig7c_calibration_ADC_Post1_Pre_SVM_Linear.png
+    │   ├── fig7d_decision_curve_ADC_Post1_Post2_LogisticRegression.pdf
+    │   ├── fig7d_decision_curve_ADC_Post1_Post2_LogisticRegression.png
+    │   ├── fig7d_decision_curve_ADC_Post1_Pre_SVM_Linear.pdf
+    │   ├── fig7d_decision_curve_ADC_Post1_Pre_SVM_Linear.png
+    │   ├── fig8_threshold_diagnostic_ADC_Post1_Post2_LogisticRegression.pdf
+    │   ├── fig8_threshold_diagnostic_ADC_Post1_Post2_LogisticRegression.png
+    │   ├── fig8_threshold_diagnostic_ADC_Post1_Pre_SVM_Linear.pdf
+    │   ├── fig8_threshold_diagnostic_ADC_Post1_Pre_SVM_Linear.png
+    │   ├── fig8b_confusion_count_dynamics_ADC_Post1_Post2_LogisticRegression.pdf
+    │   ├── fig8b_confusion_count_dynamics_ADC_Post1_Post2_LogisticRegression.png
+    │   ├── fig8b_confusion_count_dynamics_ADC_Post1_Pre_SVM_Linear.pdf
+    │   ├── fig8b_confusion_count_dynamics_ADC_Post1_Pre_SVM_Linear.png
+    │   ├── prepared_feature_stability_ADC_Post1_Post2.csv
+    │   ├── prepared_feature_stability_ADC_Post1_Pre.csv
+    │   ├── prepared_fold_level_auc_ADC_Post1_Post2.csv
+    │   ├── prepared_fold_level_auc_ADC_Post1_Pre.csv
+    │   ├── prepared_oof_predictions_ADC_Post1_Post2_LogisticRegression.csv
+    │   ├── prepared_oof_predictions_ADC_Post1_Pre_SVM_Linear.csv
+    │   ├── prepared_smote_delta_table_for_plot.csv
+    │   ├── prepared_threshold_diagnostic_ADC_Post1_Post2_LogisticRegression.csv
+    │   ├── prepared_threshold_diagnostic_ADC_Post1_Pre_SVM_Linear.csv
+    │   ├── supplementary_model_selection_table.csv
+    │   └── supplementary_model_selection_table.xlsx
+    └── Triple.ipynb
+
+150 directories, 548 files

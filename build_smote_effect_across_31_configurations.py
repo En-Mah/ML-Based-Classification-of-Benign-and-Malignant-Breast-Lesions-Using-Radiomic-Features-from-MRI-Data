@@ -1,16 +1,10 @@
 #!/usr/bin/env python3
 """Build Figure 4: effect of SMOTE across 31 source configurations.
 
-The script accepts either:
-1) the batch ``*_full_best_per_fs_method.csv`` tables, or
-2) the publication ``*_smote_vs_no_smote_summary.csv`` tables.
-
 For every source configuration, it independently selects the highest
 Mean_AUC under SMOTE and under no-SMOTE, then calculates:
 
     Delta Mean AUC = best SMOTE Mean_AUC - best no-SMOTE Mean_AUC
-
-Run this script from the project root, or pass --project-root explicitly.
 """
 
 from __future__ import annotations
@@ -393,18 +387,31 @@ def configure_matplotlib() -> None:
         {
             "font.family": "serif",
             "font.serif": ["Times New Roman", "Times", "DejaVu Serif"],
-            "font.size": 10,
-            "axes.titlesize": 11,
-            "axes.labelsize": 10,
-            "xtick.labelsize": 8.5,
-            "ytick.labelsize": 8.2,
-            "legend.fontsize": 9,
+
+            # Main font
+            "font.size": 16,
+
+            # Titles and axis labels
+            "axes.titlesize": 15,
+            "axes.labelsize": 14,
+
+            # Tick labels
+            "xtick.labelsize": 13,
+            "ytick.labelsize": 13,
+
+            # Legend
+            "legend.fontsize": 11,
+
+            # Export quality
             "pdf.fonttype": 42,
             "ps.fonttype": 42,
+
+            # Remove top/right borders
             "axes.spines.top": False,
             "axes.spines.right": False,
         }
     )
+        
 
 
 def draw_figure(df: pd.DataFrame, output_dir: Path, annotate_deltas: bool) -> None:
@@ -446,7 +453,7 @@ def draw_figure(df: pd.DataFrame, output_dir: Path, annotate_deltas: bool) -> No
             transform=ax_a.get_yaxis_transform(),
             ha="left",
             va="center",
-            fontsize=8.5,
+            fontsize=11,
             fontweight="bold",
             color="#555555",
             clip_on=False,
@@ -492,7 +499,7 @@ def draw_figure(df: pd.DataFrame, output_dir: Path, annotate_deltas: bool) -> No
                 f"{delta:+.3f}",
                 ha="left" if delta >= 0 else "right",
                 va="center",
-                fontsize=6.8,
+                fontsize=10,
                 color="#333333",
             )
 
@@ -512,7 +519,7 @@ def draw_figure(df: pd.DataFrame, output_dir: Path, annotate_deltas: bool) -> No
         transform=ax_a.transAxes,
         ha="left",
         va="bottom",
-        fontsize=8.5,
+        fontsize=11,
         color=NO_SMOTE_COLOR,
         fontweight="bold",
     )
@@ -523,7 +530,7 @@ def draw_figure(df: pd.DataFrame, output_dir: Path, annotate_deltas: bool) -> No
         transform=ax_a.transAxes,
         ha="right",
         va="bottom",
-        fontsize=8.5,
+        fontsize=11,
         color=SMOTE_COLOR,
         fontweight="bold",
     )
@@ -567,15 +574,31 @@ def draw_figure(df: pd.DataFrame, output_dir: Path, annotate_deltas: bool) -> No
         color=NO_SMOTE_COLOR,
     )
 
-    ax_b.bar_label(bars_sm, padding=3, fontsize=9)
-    ax_b.bar_label(bars_no, padding=3, fontsize=9)
+    ax_b.bar_label(
+        bars_sm,
+        padding=3,
+        fontsize=12
+    )
+
+    ax_b.bar_label(
+        bars_no,
+        padding=3,
+        fontsize=12
+    )
 
     totals = work.groupby("Fusion_Level").size().reindex(LEVEL_ORDER).fillna(0).astype(int)
     group_max = np.maximum(
         wins["SMOTE higher"].to_numpy(), wins["No-SMOTE higher"].to_numpy()
     )
     for xi, total, top in zip(x, totals.to_numpy(), group_max):
-        ax_b.text(xi, top + 0.65, f"n={total}", ha="center", va="bottom", fontsize=8.5)
+        ax_b.text(
+            xi,
+            top + 0.65,
+            f"n={total}",
+            ha="center",
+            va="bottom",
+            fontsize=11
+        )
 
     ax_b.set_xticks(x)
     ax_b.set_xticklabels(["Single", "Pairwise", "Triple", "Quadruple", "All-five"], rotation=28, ha="right")

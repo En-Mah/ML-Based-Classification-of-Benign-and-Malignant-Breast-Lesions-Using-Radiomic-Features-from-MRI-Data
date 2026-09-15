@@ -6,12 +6,11 @@ Build the publication figure:
 for the highest-ranked ADC--Post1--Pre pipeline:
     Elastic Net -> mRMR -> Auto-k -> no SMOTE -> Linear SVM.
 
-
 Panels
 ------
-(a) Outer-fold selection frequency for recurrent features (selected >=2/5 folds)
-(b) Global SHAP importance, mean(|SHAP|), for the same recurrent features
-(c) SHAP beeswarm summary; each point is one ROI and colour is the standardized
+Outer-fold selection frequency for recurrent features (selected >=2/5 folds)
+Global SHAP importance, mean(|SHAP|), for the same recurrent features
+SHAP beeswarm summary; each point is one ROI and colour is the standardized
     feature value.
 
 Interpretation model
@@ -596,6 +595,7 @@ def make_figure(
     output_dir: Path,
     shap_output_mode: str,
 ) -> Dict[str, str]:
+    """Save the three plots as separate PDF files, without panel-letter labels."""
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Consistent display labels across all panels.
@@ -616,56 +616,68 @@ def make_figure(
 
     n_features = len(feature_results)
     fig_height = max(5.8, min(10.5, 3.2 + 0.42 * n_features))
-    fig = plt.figure(figsize=(19.5, fig_height), constrained_layout=False)
-    gs = fig.add_gridspec(
-        1, 3,
-        width_ratios=[1.05, 1.05, 1.70],
-        wspace=0.82,
-        left=0.05,
-        right=0.985,
-        top=0.92,
-        bottom=0.12,
-    )
-    ax_a = fig.add_subplot(gs[0, 0])
-    ax_b = fig.add_subplot(gs[0, 1])
-    ax_c = fig.add_subplot(gs[0, 2])
 
-    # ---- Panel (a): recurrence ------------------------------------------------
+    # ------------------------------------------------------------------
+    # Feature-selection recurrence
+    # ------------------------------------------------------------------
     a = feature_results.sort_values(
         ["Selection_Frequency", "MeanAbsSHAP", "Feature_Name"],
         ascending=[True, True, False]
     ).copy()
+
+    fig_a, ax_a = plt.subplots(figsize=(7.2, fig_height))
     y_a = np.arange(len(a))
     ax_a.barh(y_a, a["Selection_Frequency"].to_numpy())
     ax_a.set_yticks(y_a)
-    ax_a.set_yticklabels([display_name[x] for x in a["Feature_Name"]], fontsize=7.6)
+    ax_a.set_yticklabels([display_name[x] for x in a["Feature_Name"]], fontsize=8.2)
     ax_a.set_xlim(0, 1.0)
     ax_a.xaxis.set_major_locator(FixedLocator([0.4, 0.6, 0.8]))
-    ax_a.set_xlabel("Outer-fold selection frequency", fontsize=9.5)
-    ax_a.set_title("Feature-selection recurrence", fontsize=10.5, fontweight="bold", pad=8)
+    ax_a.set_xlabel("Outer-fold selection frequency", fontsize=10)
+    ax_a.set_title("Feature-selection recurrence", fontsize=11, fontweight="bold", pad=8)
     ax_a.grid(axis="x", linestyle=":", alpha=0.35)
     ax_a.set_axisbelow(True)
+
     for i, row in enumerate(a.itertuples()):
         ax_a.text(
             min(row.Selection_Frequency + 0.018, 0.94), i,
             f"{int(row.Selection_Count)}/5",
-            va="center", ha="left", fontsize=7.2
+            va="center", ha="left", fontsize=7.8
         )
 
-    # ---- Panel (b): global SHAP ----------------------------------------------
+    fig_a.subplots_adjust(left=0.39, right=0.97, top=0.91, bottom=0.12)
+
+    panel_a_pdf = output_dir / "best_model_feature_selection_recurrence.pdf"
+    fig_a.savefig(panel_a_pdf, bbox_inches="tight")
+    plt.close(fig_a)
+
+    # ------------------------------------------------------------------
+    # Global SHAP importance
+    # ------------------------------------------------------------------
     b = feature_results.sort_values(
         ["MeanAbsSHAP", "Feature_Name"], ascending=[True, False]
     ).copy()
+
+    fig_b, ax_b = plt.subplots(figsize=(7.2, fig_height))
     y_b = np.arange(len(b))
     ax_b.barh(y_b, b["MeanAbsSHAP"].to_numpy())
     ax_b.set_yticks(y_b)
-    ax_b.set_yticklabels([display_name[x] for x in b["Feature_Name"]], fontsize=7.6)
-    ax_b.set_xlabel("Mean absolute SHAP value", fontsize=9.5)
-    ax_b.set_title("Global SHAP importance", fontsize=10.5, fontweight="bold", pad=8)
+    ax_b.set_yticklabels([display_name[x] for x in b["Feature_Name"]], fontsize=8.2)
+    ax_b.set_xlabel("Mean absolute SHAP value", fontsize=10)
+    ax_b.set_title("Global SHAP importance", fontsize=11, fontweight="bold", pad=8)
     ax_b.grid(axis="x", linestyle=":", alpha=0.35)
     ax_b.set_axisbelow(True)
 
-    # ---- Panel (c): SHAP beeswarm --------------------------------------------
+    fig_b.subplots_adjust(left=0.39, right=0.97, top=0.91, bottom=0.12)
+
+    panel_b_pdf = output_dir / "best_model_global_shap_importance.pdf"
+    fig_b.savefig(panel_b_pdf, bbox_inches="tight")
+    plt.close(fig_b)
+
+    # ------------------------------------------------------------------
+    # SHAP beeswarm summary
+    # ------------------------------------------------------------------
+    fig_c, ax_c = plt.subplots(figsize=(8.8, fig_height))
+
     # SHAP's beeswarm sorts by mean absolute SHAP by default.
     shap.plots.beeswarm(
         explanation_plot,
@@ -677,40 +689,31 @@ def make_figure(
         s=18,
     )
     ax_c.axvline(0.0, linewidth=0.8, linestyle="--")
+
     if shap_output_mode == "probability":
-        ax_c.set_xlabel("SHAP value (malignant-class probability)", fontsize=9.5)
+        ax_c.set_xlabel("SHAP value (malignant-class probability)", fontsize=10)
     else:
-        ax_c.set_xlabel("SHAP value (malignant-class decision score)", fontsize=9.5)
-    ax_c.set_title("SHAP summary", fontsize=10.5, fontweight="bold", pad=8)
-    ax_c.tick_params(axis="y", labelsize=7.6, pad=-8)
-    ax_c.tick_params(axis="x", labelsize=8.2)
+        ax_c.set_xlabel("SHAP value (malignant-class decision score)", fontsize=10)
+
+    ax_c.set_title("SHAP summary", fontsize=11, fontweight="bold", pad=8)
+
+    # Keep the feature labels close to the beeswarm plot.
+    ax_c.tick_params(axis="y", labelsize=8.2, pad=-4)
+    ax_c.tick_params(axis="x", labelsize=8.5)
     ax_c.grid(axis="x", linestyle=":", alpha=0.25)
     ax_c.set_axisbelow(True)
 
-    # Panel labels
-    for ax, label in [(ax_a, "(a)"), (ax_b, "(b)"), (ax_c, "(c)")]:
-        ax.text(
-            -0.11, 1.035, label,
-            transform=ax.transAxes,
-            fontsize=12,
-            fontweight="bold",
-            va="bottom",
-            ha="left",
-        )
+    fig_c.subplots_adjust(left=0.36, right=0.91, top=0.91, bottom=0.12)
 
-    stem = output_dir / "best_model_feature_stability_and_shap"
-    pdf = str(stem.with_suffix(".pdf"))
-    png = str(stem.with_suffix(".png"))
-    svg = str(stem.with_suffix(".svg"))
+    panel_c_pdf = output_dir / "best_model_shap_summary.pdf"
+    fig_c.savefig(panel_c_pdf, bbox_inches="tight")
+    plt.close(fig_c)
 
-    # Vector PDF/SVG are preferred for the manuscript; PNG is a 600-dpi fallback.
-    fig.savefig(pdf, bbox_inches="tight")
-    fig.savefig(svg, bbox_inches="tight")
-    fig.savefig(png, dpi=600, bbox_inches="tight")
-    plt.close(fig)
-
-    return {"pdf": pdf, "png": png, "svg": svg}
-
+    return {
+        "feature_selection_recurrence_pdf": str(panel_a_pdf),
+        "global_shap_importance_pdf": str(panel_b_pdf),
+        "shap_summary_pdf": str(panel_c_pdf),
+    }
 
 def save_long_shap_table(
     df: pd.DataFrame,
@@ -920,12 +923,12 @@ def main() -> None:
     print(feature_results[show_cols].head(15).to_string(index=False))
 
     print("\nSaved:")
-    print(f"  PDF : {figure_paths['pdf']}")
-    print(f"  PNG : {figure_paths['png']}")
-    print(f"  SVG : {figure_paths['svg']}")
-    print(f"  CSV : {feature_csv}")
-    print(f"  CSV : {long_csv}")
-    print(f"  JSON: {metadata_path}")
+    print(f"  PDF: {figure_paths['feature_selection_recurrence_pdf']}")
+    print(f"  PDF: {figure_paths['global_shap_importance_pdf']}")
+    print(f"  PDF: {figure_paths['shap_summary_pdf']}")
+    print(f"  CSV    : {feature_csv}")
+    print(f"  CSV    : {long_csv}")
+    print(f"  JSON   : {metadata_path}")
     print("\nIMPORTANT: report only the nested-CV/OOF performance values; the full-cohort refit is for interpretation only.")
 
 
