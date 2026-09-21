@@ -1,22 +1,79 @@
-# Patient-Aware Explainable Machine Learning for Breast MRI Radiomics
+<div align="center">
 
-**Reproducible machine-learning framework for classifying benign and malignant breast lesions using single- and multiparametric MRI radiomic features.**
+# 🧬 Patient-Aware Breast MRI Radiomics
 
-![Python](https://img.shields.io/badge/Python-3.13.9-blue)
-![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-orange)
-![Machine Learning](https://img.shields.io/badge/ML-Patient--Aware%20Nested%20CV-brightgreen)
-![Radiomics](https://img.shields.io/badge/Imaging-MRI%20Radiomics-purple)
-![Explainable AI](https://img.shields.io/badge/XAI-SHAP-blueviolet)
+### Explainable **patient-aware machine learning** with **single- and multi-source MRI radiomics**<br>for benign vs. malignant breast lesion classification
 
-This repository contains the computational machine-learning workflow associated with the study:
+<p>
+<img alt="Python" src="https://img.shields.io/badge/Python-3.13.9-3776AB?style=flat-square&logo=python&logoColor=white">
+<img alt="scikit-learn" src="https://img.shields.io/badge/scikit--learn-ML-F7931E?style=flat-square&logo=scikitlearn&logoColor=white">
+<img alt="Validation" src="https://img.shields.io/badge/validation-patient--aware%20nested%20CV-2D6A2D?style=flat-square">
+<img alt="Configurations" src="https://img.shields.io/badge/MRI%20configurations-31-6C8EBF?style=flat-square">
+<img alt="Explainability" src="https://img.shields.io/badge/XAI-SHAP-8A5A00?style=flat-square">
+<img alt="Status" src="https://img.shields.io/badge/status-research%20code-555555?style=flat-square">
+</p>
 
-> **Patient-Aware Explainable Machine Learning for Preoperative Classification of Benign and Malignant Breast Lesions Using Single- and Multiparametric MRI Radiomics**
+<sub>Computational code accompanying the manuscript</sub>
 
-The project systematically evaluates whether combining radiomic features from multiple breast MRI sources improves lesion classification while controlling patient-level data leakage, high feature dimensionality, class imbalance, model selection, and model interpretability.
+</div>
 
 ---
 
-## Overview
+## 📋 At a glance
+
+| | |
+|---|---|
+| 🎯 **Task** | Binary classification of benign vs. malignant breast lesions from radiomic features |
+| 🧲 **MRI sources** | ADC · Pre · Post1 · Post2 · T2 |
+| 🔀 **Feature-source configurations** | **31** total: 5 single + 10 pairwise + 10 triple + 5 quadruple + 1 all-five |
+| 🧠 **Classifiers** | 10 supervised ML models |
+| 🧬 **Feature selection** | Correlation → mRMR · Elastic Net → mRMR · mRMR → Elastic Net |
+| 🎛️ **Feature count** | Auto-k selected inside training data |
+| ⚖️ **Class balancing** | SMOTE vs. no-SMOTE |
+| 🎲 **Validation** | 5-fold outer + up to 3-fold inner **patient-aware nested CV** |
+| 🔧 **Optimization** | Optuna with TPE sampling |
+| 👁️ **Interpretability** | Feature-selection stability + SHAP |
+| 🏆 **Best pipeline** | ADC + Post1 + Pre · EN → mRMR · Auto-k · no SMOTE · Linear SVM |
+| 📈 **Best mean ROC-AUC** | **0.836 ± 0.088** |
+
+> [!IMPORTANT]
+> The machine-learning analysis starts from **pre-extracted tabular radiomic features**.  
+> MRI acquisition, lesion segmentation, image preprocessing, and radiomic feature extraction are described in the associated manuscript and are not part of the downstream model-fitting notebooks.
+
+---
+
+## 🗂️ Repository layout
+
+| Path | Stage | Purpose |
+|---|:---:|---|
+| 📦 `Dataset/` | 0 | Source radiomic CSV files used by the modelling pipeline |
+| 1️⃣ `Single/` | 1 | Single-source analysis for ADC, Pre, Post1, Post2, and T2 |
+| 2️⃣ `Pairwise/` | 2 | All 10 two-source feature-fusion experiments |
+| 3️⃣ `Triple/` | 3 | All 10 three-source feature-fusion experiments |
+| 4️⃣ `Quadruple/` | 4 | All 5 four-source feature-fusion experiments |
+| 5️⃣ `AllFive/` | 5 | Complete five-source feature concatenation |
+| 📊 `Figs/` | — | Publication and diagnostic figures |
+| 📄 `README.md` | — | Repository overview and execution guide |
+
+Representative modelling and batch-runner notebooks include:
+
+```text
+Single.ipynb
+Batch_Run_On_Single_batch.ipynb
+
+Pairwise.ipynb
+Batch_Run_All_10_Pairwise.ipynb
+
+Triple/
+Quadruple/
+AllFive/
+```
+
+Each experiment group follows the same modelling logic; only the input feature-source combination changes.
+
+---
+
+## 🧲 MRI feature sources
 
 Five MRI-derived radiomic feature sources are evaluated:
 
@@ -28,254 +85,276 @@ Five MRI-derived radiomic feature sources are evaluated:
 | **Post2** | Second post-contrast DCE T1-weighted MRI |
 | **T2** | T2-weighted MRI |
 
-All non-empty combinations of the five sources are investigated:
+All non-empty combinations are tested:
 
-| Fusion level | Number of configurations |
-|---|---:|
-| Single-source | 5 |
-| Pairwise | 10 |
-| Triple-source | 10 |
-| Quadruple-source | 5 |
-| All five sources | 1 |
-| **Total** | **31** |
+```text
+5 single-source
++ 10 pairwise
++ 10 triple-source
++ 5 quadruple-source
++ 1 all-five
+= 31 source configurations
+```
 
-For each source configuration, the workflow compares:
-
-- **3 feature-selection strategies**
-- **SMOTE vs. no-SMOTE**
-- **10 machine-learning classifiers**
-
-This produces:
+For every source configuration:
 
 ```text
 3 feature-selection strategies
 × 2 SMOTE conditions
 × 10 classifiers
-= 60 primary pipelines per source configuration
+= 60 primary pipelines
 ```
 
-Across all 31 source configurations:
+Across the complete study:
 
 ```text
 31 × 60 = 1,860 primary machine-learning pipelines
 ```
 
-The repository focuses on the **downstream computational analysis of pre-extracted radiomic feature tables**. MRI acquisition, lesion segmentation, image preprocessing, and radiomic feature extraction are described in the associated manuscript.
-
 ---
 
-## Computational Workflow
+## 🔄 Pipeline
 
-```mermaid
-flowchart LR
-    A[Five radiomic feature sources<br/>ADC · Pre · Post1 · Post2 · T2]
-    B[31 single- and multi-source<br/>dataset configurations]
-    C[Patient-aware outer CV<br/>5 folds]
-    D[Patient-aware inner CV<br/>up to 3 folds]
-    E[Training-only preprocessing]
-    F[Feature selection<br/>+ Auto-k]
-    G[Standardization]
-    H[Optional SMOTE]
-    I[Optuna hyperparameter tuning]
-    J[10 ML classifiers]
-    K[Outer-test predictions]
-    L[OOF performance evaluation]
-    M[Feature stability + SHAP]
-
-    A --> B --> C --> D --> E --> F --> G --> H --> I --> J --> K --> L --> M
+```text
+ five pre-extracted MRI radiomic feature tables
+ ADC · Pre · Post1 · Post2 · T2
+        │
+        │  match ROIs and build source combinations
+        ▼
+ 31 validated source configurations
+        │
+        │  patient-aware 5-fold outer CV
+        ▼
+ outer-training patients
+        │
+        ├── median imputation
+        ├── variance filtering
+        ├── feature selection
+        ├── Auto-k feature-count selection
+        ├── standardisation
+        ├── optional SMOTE
+        └── Optuna hyperparameter optimisation
+        │
+        ▼
+ final model fitted on outer-training patients
+        │
+        ▼
+ untouched outer-test patients
+        │
+        ├── fold-level metrics
+        ├── out-of-fold predictions
+        ├── pooled ROC / PR evaluation
+        ├── calibration and Brier score
+        └── patient-cluster bootstrap CIs
+        │
+        ▼
+ feature-selection stability + SHAP interpretation
 ```
 
-The central methodological principle is **patient-aware validation**.
+Two properties of the validation design are central to how the reported results should be interpreted:
 
-All ROIs belonging to the same patient remain in the same training, validation, or test partition. Outer-test patients are not used for:
-
-- missing-value imputation;
-- variance filtering;
-- feature selection;
-- feature-count optimization;
-- standardization;
-- SMOTE;
-- hyperparameter optimization.
-
-This design reduces the risk of patient-level information leakage and overly optimistic performance estimates.
+- 🔒 **All ROIs from the same patient stay in the same fold.** A patient cannot contribute one ROI to training and another ROI to validation or testing.
+- ✅ **All data-dependent operations are training-only.** Imputation, variance filtering, feature selection, standardisation, SMOTE, and hyperparameter optimisation are fitted without access to the corresponding outer-test patients.
 
 ---
 
-## Experimental Design
+## 📦 Expected input format
 
-| Component | Setting |
+The modelling notebooks consume CSV files containing one row per ROI.
+
+| Field | Role |
 |---|---|
-| Prediction unit | ROI / lesion |
-| Grouping unit | Patient |
-| Outer validation | 5-fold patient-aware cross-validation |
-| Inner validation | Up to 3 patient-aware folds |
-| Splitter | `StratifiedGroupKFold` |
-| Random seed | 100 |
-| Primary ranking metric | Mean outer-fold ROC-AUC |
-| Feature-count candidates | 4, 6, 8, 10, 12, 14, 16, 18 |
-| Feature-selection strategies | 3 |
-| Class balancing | SMOTE vs. no-SMOTE |
-| Classifiers | 10 |
-| Pipelines per source configuration | 60 |
-| Total primary pipelines | 1,860 |
-| Hyperparameter optimization | Optuna with TPE sampling |
-| Optuna budget | 10 trials per classifier / outer-fold study |
-| Uncertainty estimation | Patient-cluster bootstrap |
-| Bootstrap resamples | 2,000 |
+| `INFO_PatientName` / `PatientID` | Patient grouping variable used for patient-aware splitting |
+| `INFO_NameOfRoi` | ROI identifier used for matching observations across MRI sources |
+| `Label` | Binary target: `0 = benign`, `1 = malignant` |
+| Numerical columns | Candidate radiomic predictors |
+
+For multi-source experiments, matched ROIs are joined **column-wise**. Feature names retain a source prefix so the origin of every predictor remains traceable.
+
+Examples:
+
+```text
+ADC__GLCM_Correlation
+Post1__GLCM_Correlation
+T2__GLCM_Correlation
+```
+
+<details>
+<summary><b>Show a representative project tree</b></summary>
+
+```text
+Dataset/
+└── Breast-Data/
+    └── Mask1/
+        ├── ADC_M1.csv
+        ├── Pre_M1.csv
+        ├── Post1_M1.csv
+        ├── Post2_M1.csv
+        └── T2_M1.csv
+
+Single/
+├── Single.ipynb
+└── Batch_Run_On_Single_batch.ipynb
+
+Pairwise/
+├── Pairwise.ipynb
+└── Batch_Run_All_10_Pairwise.ipynb
+
+Triple/
+├── generated triple-source datasets
+├── executed notebooks
+├── nested_cv_outputs_all_triple_concat_batch_smote_compare/
+└── summary tables/
+
+Quadruple/
+├── generated quadruple-source datasets
+├── batch notebooks
+└── outputs/
+
+AllFive/
+├── complete five-source dataset
+├── modelling notebooks
+└── outputs/
+
+Figs/
+└── publication figures
+```
+
+</details>
 
 ---
 
-## Feature-Selection Strategies
+## 🧬 Feature selection
 
-Three sequential feature-selection pipelines are evaluated:
+Three sequential feature-selection strategies are compared.
 
-1. **Correlation filtering → mRMR**
-2. **Elastic Net → mRMR**
-3. **mRMR → Elastic Net**
+| Strategy | Description |
+|---|---|
+| **Correlation → mRMR** | Removes strongly correlated variables, then selects informative low-redundancy predictors |
+| **Elastic Net → mRMR** | Supervised regularised screening followed by mRMR refinement |
+| **mRMR → Elastic Net** | mRMR candidate reduction followed by Elastic-Net ranking |
 
 ### Correlation filtering
 
-Highly correlated predictors are reduced using an absolute Pearson correlation threshold of:
+Two predictors are treated as strongly correlated when:
 
 ```text
 |r| > 0.90
 ```
 
-Within correlated groups, predictors are prioritized using direction-independent univariate ROC-AUC.
+When several predictors are strongly correlated, the workflow prioritises them using direction-independent univariate ROC-AUC.
 
-### mRMR
+### Auto-k
 
-Minimum Redundancy Maximum Relevance selects predictors that:
+The number of final selected features is chosen inside the model-development data rather than fixed globally.
 
-- contain useful information about the target;
-- minimize redundant information with already selected predictors.
-
-### Elastic Net
-
-Elastic-Net regularized logistic regression is used as a supervised feature-selection method. Features are ranked according to the absolute magnitude of their fitted coefficients.
-
----
-
-## Automatic Feature-Count Selection
-
-The number of retained features is not fixed globally.
-
-Instead, an **Auto-k** procedure evaluates:
+Candidate values are:
 
 ```text
 k ∈ {4, 6, 8, 10, 12, 14, 16, 18}
 ```
 
-Candidate values are evaluated using patient-aware inner cross-validation within the current outer-training partition.
-
-A lightweight logistic-regression model is used to compare candidate feature counts using inner-fold ROC-AUC.
-
-When multiple values achieve the same score, the smaller feature set is preferred.
+A lightweight logistic-regression model compares the candidate values using patient-aware inner-fold ROC-AUC. If two values tie, the smaller feature set is preferred.
 
 ---
 
-## Leakage-Controlled Training Pipeline
+## ⚖️ SMOTE
 
-For every outer cross-validation fold, the modelling sequence is:
+Class balancing is treated as an experimental factor rather than a mandatory preprocessing step.
 
-```text
-Outer-training patients
-        ↓
-Median imputation
-        ↓
-Variance filtering
-        ↓
-Feature selection
-        ↓
-Auto-k feature-count selection
-        ↓
-Standardization
-        ↓
-Optional SMOTE
-        ↓
-Classifier-specific Optuna optimization
-        ↓
-Final model fit on outer-training patients
-        ↓
-Evaluation on untouched outer-test patients
-```
-
-All preprocessing and model-development operations are fitted using training data only.
-
----
-
-## SMOTE Evaluation
-
-Because class imbalance is limited, SMOTE is treated as an **experimental modelling condition** rather than a mandatory preprocessing step.
-
-Every feature-selection strategy is evaluated:
+Each feature-selection strategy is tested:
 
 ```text
 without SMOTE
 with SMOTE
 ```
 
-When enabled, SMOTE is applied:
+When enabled, SMOTE is applied only after the selected features have been standardised:
 
 ```text
-after feature selection
-after standardization
-before classifier fitting
+imputation
+→ variance filtering
+→ feature selection
+→ standardisation
+→ optional SMOTE
+→ classifier
 ```
 
-SMOTE is applied only to training observations.
-
-Validation and outer-test samples are never oversampled.
+Validation and outer-test observations are never synthetically oversampled.
 
 ---
 
-## Machine-Learning Classifiers
+## 🤖 Machine-learning models
 
-Ten supervised classifiers representing different modelling families are evaluated.
+Ten supervised classifiers are evaluated on the same selected feature representation.
 
-| Model family | Classifiers |
+| Family | Classifiers |
 |---|---|
-| Linear | Logistic Regression, Linear SVM |
-| Kernel-based | RBF SVM |
-| Tree ensembles | Random Forest, Extra Trees, Gradient Boosting, XGBoost, LightGBM |
+| Linear | Logistic Regression · Linear SVM |
+| Kernel | RBF SVM |
+| Tree ensembles | Random Forest · Extra Trees · Gradient Boosting · XGBoost · LightGBM |
 | Distance-based | K-Nearest Neighbours |
 | Probabilistic | Gaussian Naive Bayes |
 
-Classifier-specific hyperparameters are optimized independently using Optuna within the inner patient-aware cross-validation loop.
+Classifier-specific hyperparameters are selected independently inside the patient-aware inner cross-validation loop.
 
 ---
 
-## Hyperparameter Optimization
+## 🎛️ Shared modelling configuration
 
-Hyperparameter optimization is performed with **Optuna** using the Tree-structured Parzen Estimator:
+| Setting | Value |
+|---|---|
+| Prediction unit | ROI / lesion |
+| Grouping unit | Patient |
+| Outer cross-validation | 5 patient-aware folds |
+| Inner cross-validation | Up to 3 patient-aware folds |
+| CV splitter | `StratifiedGroupKFold` |
+| Random seed | 100 |
+| Primary ranking metric | Mean outer-fold ROC-AUC |
+| Feature-count candidates | 4, 6, 8, 10, 12, 14, 16, 18 |
+| Feature-selection strategies | 3 |
+| Class-balancing conditions | SMOTE / no SMOTE |
+| Classifiers | 10 |
+| Optuna sampler | TPE |
+| Optuna trials | 10 per classifier / outer-fold study |
+| Bootstrap resamples | 2,000 patient-cluster resamples |
+| Classification threshold | 0.5 for threshold-dependent metrics |
+
+---
+
+## 🔧 Hyperparameter optimisation
+
+Classifier hyperparameters are tuned with Optuna using:
 
 ```python
 optuna.samplers.TPESampler(seed=100)
 ```
 
-A separate optimization study is created for each combination of:
+A separate optimization study is created for each:
 
 ```text
-dataset configuration
+source configuration
 × feature-selection strategy
 × SMOTE condition
 × classifier
 × outer fold
 ```
 
-Each study evaluates **10 candidate hyperparameter configurations**.
+Each study evaluates 10 candidate hyperparameter settings.
 
-The outer-test patients do not influence hyperparameter selection.
+The corresponding outer-test fold is not used during tuning.
 
 ---
 
-## Performance Evaluation
+## 📊 Performance evaluation
 
 The primary ranking criterion is:
 
-> **Mean ROC-AUC across the five patient-aware outer folds**
+```text
+mean ROC-AUC across the five patient-aware outer folds
+```
 
-Additional evaluation measures include:
+Additional metrics include:
 
 - ROC-AUC
 - PR-AUC
@@ -285,29 +364,19 @@ Additional evaluation measures include:
 - specificity
 - precision
 - F1-score
-- Cohen's kappa
+- Cohen's κ
 - Brier score
 - calibration
-- confusion matrices
 
-Predictions from all outer-test folds are combined into **out-of-fold (OOF) predictions** for pooled evaluation.
+Predictions from the outer-test folds are concatenated into an **out-of-fold (OOF)** prediction vector for pooled evaluation.
 
-### Uncertainty estimation
-
-Confidence intervals are estimated using **patient-cluster bootstrap resampling**.
-
-Patients, rather than individual ROIs, are resampled so that all ROIs belonging to the same patient remain together.
-
-```text
-Bootstrap resamples = 2,000
-Confidence interval = 95%
-```
+Uncertainty is estimated with **patient-cluster bootstrap resampling** so that all ROIs from one patient remain grouped during resampling.
 
 ---
 
-## Key Results
+## 🏆 Main results
 
-The highest-ranked pipeline used the **ADC + Post1 + Pre** triple-source configuration.
+The highest-ranked pipeline in the complete experiment was:
 
 | Component | Selected setting |
 |---|---|
@@ -322,216 +391,59 @@ The highest-ranked pipeline used the **ADC + Post1 + Pre** triple-source configu
 | Pooled PR-AUC | **0.832** |
 | Pooled balanced accuracy | **0.713** |
 | Pooled F1-score | **0.746** |
-| Brier score | **0.183** |
 
-A major result of the study is that **adding more MRI sources did not consistently improve classification performance**.
+Best configuration at each fusion level:
 
-The best model was obtained from a selected three-source combination rather than the complete five-source feature set.
-
-### Best configuration at each fusion level
-
-| Fusion level | Best configuration | Mean ROC-AUC |
+| Fusion level | Best source configuration | Mean ROC-AUC |
 |---|---|---:|
-| Single-source | Post2 | 0.790 |
+| Single | Post2 | 0.790 |
 | Pairwise | ADC + T2 | 0.799 |
-| Triple-source | **ADC + Post1 + Pre** | **0.836** |
-| Quadruple-source | ADC + Post2 + Pre + T2 | 0.802 |
+| Triple | **ADC + Post1 + Pre** | **0.836** |
+| Quadruple | ADC + Post2 + Pre + T2 | 0.802 |
 | All-five | ADC + Pre + Post1 + Post2 + T2 | 0.747 |
 
-Across all 31 configurations, **Elastic Net → mRMR** was the most frequently selected feature-selection strategy.
-
-The effect of SMOTE was configuration-dependent and did not provide a universal improvement in discriminative performance.
+The central computational finding is that **adding more MRI sources did not consistently improve classification performance**. The strongest result was obtained from a selected triple-source representation rather than complete five-source concatenation.
 
 ---
 
-## Feature Stability and Explainability
+## 👁️ Feature stability and SHAP
 
-The highest-ranked pipeline is further analyzed using:
+Feature-selection stability and SHAP answer two different questions:
 
-- feature-selection stability across outer folds;
-- recurrent-feature analysis;
-- SHAP-based model interpretation.
+- **Selection stability:** how consistently is a feature retained across patient-aware outer folds?
+- **SHAP:** how strongly does a recurrent feature influence the fitted interpretation model?
 
-### Feature-selection stability
-
-For every radiomic feature, the workflow records how often it is selected across the five outer cross-validation folds.
-
-A feature selected in:
+Selection frequency across five folds is recorded as:
 
 ```text
-5 / 5 folds → frequency = 1.0
-4 / 5 folds → frequency = 0.8
-3 / 5 folds → frequency = 0.6
-2 / 5 folds → frequency = 0.4
-1 / 5 folds → frequency = 0.2
+5 / 5 folds → 1.0
+4 / 5 folds → 0.8
+3 / 5 folds → 0.6
+2 / 5 folds → 0.4
+1 / 5 folds → 0.2
 ```
 
-### SHAP
+SHAP outputs include:
 
-SHapley Additive exPlanations (**SHAP**) are used to evaluate the contribution of recurrent predictors to the fitted interpretation model.
+- global mean absolute SHAP importance;
+- summary dot plots;
+- direction and magnitude of feature contributions.
 
-The workflow generates:
-
-- global SHAP feature-importance plots;
-- SHAP summary plots;
-- mean absolute SHAP values;
-- direction of feature contributions.
-
-SHAP values are interpreted as explanations of **model behaviour**, not evidence of biological causality.
-
-Predictive performance remains based on patient-aware out-of-fold predictions rather than the full-cohort interpretation model.
+> [!NOTE]
+> SHAP values explain the behaviour of the fitted model. They should not be interpreted as evidence of biological causality.
 
 ---
 
-## Repository Organization
+## ⚙️ Environment
 
-The project is organized according to the number of combined MRI sources.
-
-```text
-.
-├── Dataset/
-│   └── Breast-Data/
-│       └── Mask1/
-│           ├── ADC_M1.csv
-│           ├── Pre_M1.csv
-│           ├── Post1_M1.csv
-│           ├── Post2_M1.csv
-│           └── T2_M1.csv
-│
-├── Single/
-│   ├── Single.ipynb
-│   ├── Batch_Run_On_Single_batch.ipynb
-│   └── outputs/
-│
-├── Pairwise/
-│   ├── Pairwise.ipynb
-│   ├── Batch_Run_All_10_Pairwise.ipynb
-│   └── outputs/
-│
-├── Triple/
-│   ├── triple dataset generation
-│   ├── batch execution notebooks
-│   ├── nested_cv_outputs_all_triple_concat_batch_smote_compare/
-│   └── summary tables/
-│
-├── Quadruple/
-│   ├── quadruple-source datasets
-│   ├── batch execution notebooks
-│   └── outputs/
-│
-├── AllFive/
-│   ├── complete five-source dataset
-│   ├── modelling notebooks
-│   └── outputs/
-│
-├── Figs/
-│   └── publication figures
-│
-└── README.md
-```
-
-Generated directories may contain:
-
-- combined datasets;
-- dataset-construction logs;
-- quality-control summaries;
-- patient fold assignments;
-- feature-selection results;
-- Auto-k results;
-- Optuna studies;
-- fold-level predictions;
-- pooled OOF predictions;
-- performance metrics;
-- bootstrap confidence intervals;
-- executed notebooks;
-- feature-stability summaries;
-- SHAP outputs;
-- publication figures;
-- publication-oriented CSV summary tables.
-
----
-
-## Input Data Format
-
-Each MRI source is represented by a CSV file with one row per ROI.
-
-| Field | Role |
-|---|---|
-| `INFO_PatientName` / `PatientID` | Patient grouping variable |
-| `INFO_NameOfRoi` | ROI identifier |
-| `Label` | Binary target |
-| Numerical feature columns | Radiomic predictors |
-
-Target labels are encoded as:
-
-```text
-0 = benign
-1 = malignant
-```
-
-For multi-source experiments, matching ROIs are joined **column-wise**.
-
-Source prefixes are retained in the combined datasets so the origin of each radiomic predictor remains traceable.
-
-Examples:
-
-```text
-ADC__GLCM_Correlation
-Post1__GLCM_Correlation
-T2__GLCM_Correlation
-```
-
----
-
-## Multi-Source Dataset Construction
-
-Pairwise, triple-source, quadruple-source, and all-five datasets are constructed by matching corresponding ROIs across sources.
-
-The pipeline checks:
-
-- ROI identifiers;
-- patient identifiers;
-- target-label consistency;
-- duplicate matching keys;
-- one-to-one correspondence between sources.
-
-Only ROIs present in all selected sources are retained.
-
-A dataset-construction log records:
-
-- included MRI sources;
-- matching strategy;
-- number of retained ROIs;
-- feature counts;
-- class distribution;
-- execution status;
-- detected errors.
-
----
-
-## Installation
-
-The manuscript workflow was developed using **Python 3.13.9** and Jupyter notebooks.
-
-Create a virtual environment:
+The manuscript workflow was developed with **Python 3.13.9** and Jupyter notebooks.
 
 ```bash
 python -m venv .venv
-```
-
-Activate it on macOS / Linux:
-
-```bash
 source .venv/bin/activate
 ```
 
-On Windows:
-
-```bash
-.venv\Scripts\activate
-```
-
-Install the main dependencies:
+Install the main packages used by the analysis:
 
 ```bash
 python -m pip install \
@@ -552,27 +464,24 @@ python -m pip install \
   jupyter
 ```
 
-For exact numerical reproducibility, use pinned package versions from the environment used to generate the final manuscript results when available.
+For exact numerical reproducibility, use the pinned environment associated with the final manuscript runs when available.
+
+> The workflow uses `seed = 100` wherever the underlying library supports an explicit random seed.
 
 ---
 
-## Running the Analysis
+## ▶️ Running the experiments
 
-### 1. Start Jupyter
+The project uses interactive modelling notebooks and batch-runner notebooks.
 
-```bash
-jupyter lab
-```
-
-### 2. Run a single-source experiment
-
-Open:
+### Single-source analysis
 
 ```text
-Single/Single.ipynb
+Single.ipynb
+Batch_Run_On_Single_batch.ipynb
 ```
 
-Update the notebook parameters, for example:
+Typical notebook parameters include:
 
 ```python
 INPUT_FILE = "path/to/ADC_M1.csv"
@@ -580,18 +489,28 @@ DATASET_TAG = "ADC"
 TARGET_COLUMN = "Label"
 ```
 
-### 3. Run experiment groups in batch
-
-Representative batch notebooks include:
+### Pairwise analysis
 
 ```text
-Batch_Run_On_Single_batch.ipynb
+Pairwise.ipynb
 Batch_Run_All_10_Pairwise.ipynb
 ```
 
-The same batch-execution pattern is used for triple-source, quadruple-source, and all-five experiments.
+The batch runner evaluates all ten two-source combinations.
 
-### 4. Papermill execution
+### Triple, quadruple, and all-five analysis
+
+The same execution pattern is used for:
+
+```text
+Triple/
+Quadruple/
+AllFive/
+```
+
+### Papermill example
+
+Parameterized notebooks can be executed with Papermill:
 
 ```bash
 papermill Single.ipynb Single_ADC_executed.ipynb \
@@ -604,118 +523,85 @@ papermill Single.ipynb Single_ADC_executed.ipynb \
 
 ---
 
-## Outputs
+## 📤 Output of an experiment
 
-Depending on the experiment and execution mode, the workflow saves:
+<details>
+<summary><b>Show representative generated artifacts</b></summary>
 
-| Output type | Examples |
-|---|---|
-| Dataset validation | QC summaries, merge logs, class counts, missing-value reports |
-| Validation traceability | Patient-level fold assignments |
-| Feature selection | Selected features, Auto-k results, selection frequencies |
-| Hyperparameter optimization | Optuna parameters and inner-CV scores |
-| Predictions | Fold-level and pooled OOF predictions |
-| Discrimination | ROC-AUC and PR-AUC |
-| Classification | Accuracy, balanced accuracy, sensitivity, specificity, precision, F1 |
-| Agreement | Cohen's kappa |
-| Calibration | Calibration curves and Brier score |
-| Uncertainty | Patient-cluster bootstrap confidence intervals |
-| Interpretation | Feature-stability and SHAP outputs |
-| Figures | ROC, PR, calibration, confusion matrix, decision curves, SHAP |
-| Summary tables | Per-model, feature-selection, SMOTE, and publication tables |
+```text
+<experiment-output>/
+├── dataset / merge / QC logs
+├── patient-fold assignments
+├── selected-feature tables
+├── Auto-k results
+├── Optuna parameters and inner-CV scores
+├── fold-level predictions
+├── pooled out-of-fold predictions
+├── ROC-AUC / PR-AUC metrics
+├── threshold-dependent metrics
+├── calibration / Brier summaries
+├── patient-cluster bootstrap confidence intervals
+├── feature-selection stability tables
+├── SHAP outputs
+├── executed notebooks
+├── publication figures
+└── publication-oriented CSV summaries
+```
+
+</details>
+
+The saved OOF predictions allow pooled performance analyses to be reproduced without evaluating a model on observations that were used to fit that model.
 
 ---
 
-## Reproducibility
+## 🔁 Reproducibility and leakage control
 
-The workflow includes several safeguards designed for small, high-dimensional radiomics datasets:
+The workflow is designed to reduce optimistic bias in a small, high-dimensional radiomics setting.
 
-- patient-level grouping throughout cross-validation;
-- nested separation of model optimization and final evaluation;
-- training-only preprocessing;
-- training-only feature selection;
-- training-only SMOTE;
-- fixed random seed where supported;
-- identical outer folds for comparable modelling conditions;
-- out-of-fold predictions for pooled evaluation;
-- patient-cluster bootstrap confidence intervals;
-- saved fold assignments, selected features, hyperparameters, predictions, logs, and executed notebooks.
+Key safeguards include:
 
-A fixed random seed of:
-
-```text
-100
-```
-
-is used wherever supported.
+- 🔒 patient-level grouping in every validation split;
+- 🔁 nested separation of model development and outer-test evaluation;
+- 🧹 training-only median imputation and variance filtering;
+- 🧬 training-only feature selection and Auto-k;
+- 📏 training-only standardisation;
+- ⚖️ training-only SMOTE;
+- 🎛️ inner-loop hyperparameter optimisation;
+- 🎲 fixed random seed where supported;
+- 📈 pooled evaluation from OOF predictions;
+- 👥 patient-cluster bootstrap uncertainty estimates;
+- 💾 saved fold assignments, selected features, parameters, predictions, logs, and executed notebooks.
 
 ---
 
-## Main Study Finding
+## 🧪 Research use
 
-The results support **selective multiparametric feature fusion** rather than simple accumulation of all available MRI-derived radiomic features.
+This repository is intended for **research and reproducibility**.
 
-The best-performing configuration was:
+It is not intended for direct clinical diagnosis or clinical decision-making.
 
-```text
-ADC + Post1 + Pre
-```
+The reported performance is based on internal patient-aware validation. Larger independent and multicentre validation is required before clinical translation.
 
-using:
-
-```text
-Elastic Net → mRMR
-Auto-k
-No SMOTE
-Linear SVM
-```
-
-with:
-
-```text
-Mean outer-fold ROC-AUC = 0.836 ± 0.088
-Pooled ROC-AUC          = 0.799
-```
-
-The complete five-source representation did not outperform this selected triple-source combination.
-
-> **More input features do not necessarily produce a better predictive model.**
+Patient-level imaging data or derived datasets should only be distributed when permitted by the relevant ethics approval, institutional policy, and data-use agreements.
 
 ---
 
-## Data and Clinical Use
+## 📖 Citation
 
-This repository is intended for **research and reproducibility purposes**.
-
-It is **not intended for direct clinical diagnosis or clinical decision-making**.
-
-The reported performance is based on internal patient-aware validation. Larger independent and multicentre datasets are required before clinical translation.
-
-Medical imaging data and derived patient-level datasets should only be distributed when permitted by the relevant ethics approval, institutional policies, and data-use agreements.
-
----
-
-## Associated Manuscript
-
-**Elmira Yazdani, Mahla Entezari, Zahra Farzanehgan, Hengameh Nazari, Elahe Mirzaee, Zahra Bagherpour, Pedram Fadavi, Saeed Hosseini Toudeshki, Hasan Abdollahzadeh, Mojtaba Safari, Saeed Reza Kheradpisheh, and Manijeh Beigi.**
-
-*Patient-Aware Explainable Machine Learning for Preoperative Classification of Benign and Malignant Breast Lesions Using Single- and Multiparametric MRI Radiomics.*
-
-2026.
-
-If this repository contributes to your work, please cite the associated manuscript.
+> Yazdani E, Entezari M, Farzanehgan Z, Nazari H, Mirzaee E, Bagherpour Z, Fadavi P,  
+> Hosseini Toudeshki S, Abdollahzadeh H, Safari M, Kheradpisheh SR, Beigi M.  
+> *Patient-Aware Explainable Machine Learning for Preoperative Classification of Benign and Malignant Breast Lesions Using Single- and Multiparametric MRI Radiomics.*  
+> 2026. Manuscript.
 
 ```bibtex
 @article{yazdani2026patientaware,
-  title  = {Patient-Aware Explainable Machine Learning for Preoperative Classification of Benign and Malignant Breast Lesions Using Single- and Multiparametric MRI Radiomics},
-  author = {Yazdani, Elmira and Entezari, Mahla and Farzanehgan, Zahra and Nazari, Hengameh and Mirzaee, Elahe and Bagherpour, Zahra and Fadavi, Pedram and Hosseini Toudeshki, Saeed and Abdollahzadeh, Hasan and Safari, Mojtaba and Kheradpisheh, Saeed Reza and Beigi, Manijeh},
-  year   = {2026},
-  note   = {Manuscript}
+  title   = {Patient-Aware Explainable Machine Learning for Preoperative Classification of Benign and Malignant Breast Lesions Using Single- and Multiparametric MRI Radiomics},
+  author  = {Yazdani, Elmira and Entezari, Mahla and Farzanehgan, Zahra and Nazari, Hengameh and Mirzaee, Elahe and Bagherpour, Zahra and Fadavi, Pedram and Hosseini Toudeshki, Saeed and Abdollahzadeh, Hasan and Safari, Mojtaba and Kheradpisheh, Saeed Reza and Beigi, Manijeh},
+  year    = {2026},
+  note    = {Manuscript}
 }
 ```
 
----
-
-## Keywords
-
-`Breast MRI` · `Radiomics` · `Machine Learning` · `Patient-Aware Cross-Validation` · `Nested Cross-Validation` · `Feature Selection` · `SMOTE` · `Optuna` · `SVM` · `SHAP` · `Explainable AI`
+<div align="center">
+<sub>Breast MRI · Radiomics · Patient-Aware Nested CV · Feature Selection · SMOTE · Optuna · SVM · SHAP</sub>
+</div>
