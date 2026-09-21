@@ -1,12 +1,4 @@
-<div align="center">
 
-🌐 **Project Website**
-
-<a href="https://en-mah.github.io/MRI-Breast-Radiomics-Classification/">
-https://en-mah.github.io/MRI-Breast-Radiomics-Classification/
-</a>
-
-</div>
 
 
 <div align="center">
