@@ -19,6 +19,14 @@
 
 ---
 
+<div align="center">
+<img src="Figures/overall_31_configuration_performance.png" alt="Classification performance across the 31 single- and multi-source MRI radiomic configurations" width="100%">
+<br>
+<sub><b>Performance across all 31 MRI radiomic source configurations.</b> Bars show the highest-ranked pipeline for each source configuration according to mean ROC-AUC across the five patient-aware outer folds; error bars show fold-to-fold variability.</sub>
+</div>
+
+---
+
 ## 📋 At a glance
 
 | | |
@@ -383,6 +391,12 @@ FP = 16
 FN = 16
 ```
 
+<div align="center">
+<img src="Figures/best_overall_model_oof_performance.png" alt="Out-of-fold ROC, precision-recall, confusion matrix and calibration performance of the best ADC-Post1-Pre model" width="100%">
+<br>
+<sub><b>Detailed out-of-fold performance of the highest-ranked pipeline.</b> ADC + Post1 + Pre with Elastic Net → mRMR, Auto-k, no SMOTE and Linear SVM. The panels show the pooled ROC curve, precision-recall curve, confusion matrix at threshold 0.5, and probability calibration.</sub>
+</div>
+
 ---
 
 ## 🔬 Feature-fusion comparison
@@ -422,6 +436,12 @@ SHAP analysis showed that the model relied mainly on:
 
 ADC histogram median-related features showed particularly strong contributions.
 
+<div align="center">
+<img src="Figures/best_model_feature_stability_and_shap.png" alt="Feature-selection recurrence, global SHAP importance and SHAP summary for the best model" width="100%">
+<br>
+<sub><b>Feature stability and explainability of the optimal model.</b> The panels show recurrence across outer folds, global mean absolute SHAP importance, and the direction and magnitude of feature contributions to malignant-class probability.</sub>
+</div>
+
 > [!NOTE]
 > SHAP values explain model behaviour and feature contribution. They do **not** establish direct
 > biological causality.
@@ -447,6 +467,8 @@ Independent multicenter validation is required before clinical translation.
 ---
 
 ## 🔁 Relation to the manuscript
+
+This README intentionally shows only three representative result figures. Additional manuscript figures — including classifier-win counts and SMOTE analyses — are kept as supporting outputs so the repository front page remains concise.
 
 This repository represents the computational machine-learning component of the study.
 
