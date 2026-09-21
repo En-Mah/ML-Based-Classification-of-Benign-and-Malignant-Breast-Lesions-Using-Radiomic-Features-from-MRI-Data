@@ -496,14 +496,6 @@ evaluation stages.
 > *Patient-Aware Explainable Machine Learning for Preoperative Classification of Benign and
 > Malignant Breast Lesions Using Single- and Multiparametric MRI Radiomics.* 2026.
 
-```bibtex
-@article{yazdani2026patientaware,
-  title   = {Patient-Aware Explainable Machine Learning for Preoperative Classification of Benign and Malignant Breast Lesions Using Single- and Multiparametric MRI Radiomics},
-  author  = {Yazdani, Elmira and Entezari, Mahla and Farzanehgan, Zahra and Nazari, Hengameh and Mirzaee, Elahe and Bagherpour, Zahra and Fadavi, Pedram and Hosseini Toudeshki, Saeed and Abdollahzadeh, Hasan and Safari, Mojtaba and Kheradpisheh, Saeed Reza and Beigi, Manijeh},
-  year    = {2026},
-  note    = {Manuscript}
-}
-```
 
 <div align="center">
 <sub>Breast MRI · Radiomics · Patient-Aware Nested CV · Feature Selection · SMOTE · SVM · SHAP</sub>
