@@ -206,7 +206,7 @@ Only matched ROIs are retained in a given multi-source configuration.
 
 ## 🧪 MRI preprocessing and radiomics
 
-The manuscript reports preprocessing with **LIFEx V25.06.1**.
+MRI preprocessing was performed using LIFEx V25.06.1.
 
 | Setting | Value |
 |---|---|
@@ -229,7 +229,7 @@ A total of **144 radiomic features per MRI source** were extracted, including:
 - GLZLM / GLSZM texture features;
 - NGLDM texture features.
 
-The manuscript states that the feature definitions were consistent with IBSI recommendations.
+Feature definitions were consistent with IBSI recommendations.
 
 ---
 
