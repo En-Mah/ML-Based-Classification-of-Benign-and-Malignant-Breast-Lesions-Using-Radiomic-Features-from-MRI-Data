@@ -483,13 +483,13 @@ assess model generalizability before potential clinical translation.
 
 ---
 
+
 ## 🔁 Relation to the manuscript
 
-This README intentionally shows only three representative result figures. Additional manuscript figures — including classifier-win counts and SMOTE analyses — are kept as supporting outputs so the repository front page remains concise.
+This repository contains the computational machine-learning component of the
+study.
 
-This repository represents the computational machine-learning component of the study.
-
-The manuscript additionally describes:
+The manuscript describes the complete research workflow, including:
 
 1. patient enrollment and BI-RADS-based labeling;
 2. MRI acquisition;
@@ -497,12 +497,19 @@ The manuscript additionally describes:
 4. mask-to-image alignment;
 5. image preprocessing;
 6. radiomic feature extraction;
-7. patient-aware ML development;
+7. patient-aware machine-learning development;
 8. model evaluation;
-9. feature stability and SHAP interpretation.
+9. feature stability analysis and SHAP-based interpretation.
 
-The downstream notebooks begin from the radiomic feature tables and reproduce the modelling and
-evaluation stages.
+The notebooks provided in this repository begin from the extracted radiomic
+feature tables and reproduce the downstream computational pipeline, including
+feature selection, model optimization, validation, performance evaluation,
+and explainability analysis.
+
+Representative manuscript figures are included in this repository, while
+additional experimental outputs and supporting analyses are provided in the
+generated result folders.
+
 
 ---
 
