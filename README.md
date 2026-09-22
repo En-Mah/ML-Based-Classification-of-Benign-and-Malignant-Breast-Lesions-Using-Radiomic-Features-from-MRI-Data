@@ -1,4 +1,12 @@
+<div align="center">
 
+🌐 **Project Website**
+
+<a href="https://en-mah.github.io/MRI-Breast-Radiomics-Classification/">
+https://en-mah.github.io/MRI-Breast-Radiomics-Classification/
+</a>
+
+</div>
 
 
 <div align="center">
@@ -451,21 +459,27 @@ ADC histogram median-related features showed particularly strong contributions.
 
 ---
 
-## ⚠️ A note on study scope
+## ⚠️ Study scope and limitations
 
-The manuscript reports a retrospective, single-center study with a relatively limited cohort.
+This repository accompanies a retrospective single-center study evaluating
+patient-aware machine-learning models for breast MRI radiomics-based lesion
+classification.
 
-The paper also notes that radiomic features can be sensitive to:
+Although nested patient-aware validation was used to reduce optimistic
+performance estimates, the reported results should be interpreted within the
+specific imaging protocol, preprocessing pipeline, and study population used
+for model development.
 
-- MRI acquisition parameters;
-- reconstruction methods;
-- preprocessing;
-- lesion segmentation.
+Radiomic features may be influenced by MRI acquisition parameters,
+reconstruction methods, preprocessing choices, and lesion segmentation
+procedures.
 
-The predictive models use imaging-derived radiomic features only; clinical variables, molecular
-subtypes and BI-RADS descriptors were not included as model predictors.
+The developed models use imaging-derived radiomic features only and do not
+incorporate clinical variables, molecular subtype information, or BI-RADS
+descriptors.
 
-Independent multicenter validation is required before clinical translation.
+External validation on independent multicenter datasets is required to further
+assess model generalizability before potential clinical translation.
 
 ---
 
